@@ -1,3 +1,9 @@
 [user]
 	name = kmkinney
 	email = 65429603+kmkinney@users.noreply.github.com
+[alias]
+	co = checkout
+	br = branch
+	f = fetch
+[core]
+	editor = vim

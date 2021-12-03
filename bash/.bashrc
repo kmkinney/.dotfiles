@@ -122,6 +122,10 @@ export PATH=$PATH:/home/kevin/.local/bin
 #gradle path
 export PATH=$PATH:/opt/gradle/gradle-7.1.1/bin
 
+
+# Custom Shell Prompt will go here
+export PS1="\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W/ \[\033[01;36m\]\$(__git_ps1 '[%s]')\[\033[01;33m\]\$\[\033[00m\]"
+
 # Custom ENV variables
 if [ -f /etc/keys/private_key.pem ]; then
   export PRIVATE_KEY=$(cat /etc/keys/private_key.pem)
@@ -133,3 +137,5 @@ fi
 
 # More env variables
 export BUCKET_NAME="rf-tree-downloads"
+export AWS_REGION="us-west-2"
+# export DEBUG="tree-downloader:*"
