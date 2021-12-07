@@ -1,0 +1,99 @@
+##########################
+# | Alacritty Config
+# | Kevin Kinney
+##########################
+
+# THEMES
+schemes:
+  everforest_dark: &everforest_dark
+    primary:
+      background: '#2f383e'
+      foreground: '#d3c6aa'
+
+    normal:
+      black:   '#4b565c'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'
+
+    bright:
+      black:   '#4b565c'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'
+
+  sonokai_espresso: &sonokai_espresso
+    primary:
+      background: "#312c2b"
+      foreground: "#e4e3e1"
+
+    normal:
+      black: "#1f1e1c"
+      red: "#f86882"
+      green: "#a6cd77"
+      yellow: "#f0c66f"
+      blue: "#81d0c9"
+      magenta: "#9fa0e1"
+      cyan: "#f08d71"
+      white: "#e4e3e1"
+
+    bright:
+      black: "#1f1e1c"
+      red: "#f86882"
+      green: "#a6cd77"
+      yellow: "#f0c66f"
+      blue: "#81d0c9"
+      magenta: "#9fa0e1"
+      cyan: "#f08d71"
+      white: "#e4e3e1"
+
+colors: *everforest_dark
+# colors: *sonokai_espresso
+
+# Window Settings
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 180
+    lines: 60
+  position:
+    x: 0
+    y: 0
+  padding:
+    x: 0
+    y: 0
+  dynamic_padding: false
+  decorations: none
+  startup_mode: Maximized
+  title: Alacritty
+  dynamic_title: true
+  class:
+    instance: Alacritty
+    general: Alacritty
+  gtk_theme_variant: None
+  opacity: 0.95
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+  hide_when_typing: true
+
+live_config_reload: true
