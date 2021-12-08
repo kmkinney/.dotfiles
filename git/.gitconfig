@@ -4,6 +4,12 @@
 [alias]
 	co = checkout
 	br = branch
-	f = fetch
+    f = fetch
+    a = add .
+    c = commit
+    cm = commit -m
+    p = push
+    pu = push -u
+
 [core]
 	editor = nvim
