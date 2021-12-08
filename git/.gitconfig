@@ -6,4 +6,4 @@
 	br = branch
 	f = fetch
 [core]
-	editor = vim
+	editor = nvim
