@@ -5,5 +5,9 @@
 	co = checkout
 	br = branch
 	f = fetch
+    a = add .
+    c = commit
+    cm = commit -m
+    ca = commit -a
 [core]
 	editor = vim
