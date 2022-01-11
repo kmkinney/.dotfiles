@@ -8,3 +8,5 @@ alias prune="git remote prune origin"
 alias tf="terraform"
 alias awslogin-dev="export AWS_PROFILE=dev && aws sso login --profile dev"
 alias awslogin-prd="export AWS_PROFILE=prd && aws sso login --profile prd"
+
+alias vim="nvim"

@@ -10,4 +10,4 @@
     cm = commit -m
     ca = commit -a
 [core]
-	editor = vim
+	editor = nvim
