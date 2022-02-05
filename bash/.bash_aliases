@@ -1,15 +1,18 @@
+# Bash alias file
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# dotfiles aliases
+
 # my custom aliases
 alias gst="git status"
 alias py="python3"
 alias pyserve="python3 -m http.server"
 alias cls="clear"
-alias stat="~/stats.sh"
 alias tfmt="terraform fmt --recursive"
-alias prune="git remote prune origin"
 alias tf="terraform"
-alias rm='echo "rm is disabled, use safer remove command"'
-alias remove="/bin/rm -irv"
-alias rf-build="cd .. && gulp && cd static/ && pyserve 8000"
 alias awslogin-dev="export AWS_PROFILE=dev && aws sso login --profile dev"
 alias awslogin-prd="export AWS_PROFILE=prd && aws sso login --profile prd"
-alias fhtlclone="gh repo clone byuawsfhtl/$1"
