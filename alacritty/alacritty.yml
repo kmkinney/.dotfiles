@@ -134,7 +134,7 @@ window:
     y: 0
   dynamic_padding: false
   decorations: none
-  startup_mode: Maximized
+  startup_mode: Windowed
   title: Alacritty
   dynamic_title: true
   class:

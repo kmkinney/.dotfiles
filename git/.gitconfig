@@ -13,4 +13,4 @@
     pu = push -u
 
 [core]
-	editor = nvim
+	editor = vim
