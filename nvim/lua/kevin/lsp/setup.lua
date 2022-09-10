@@ -81,5 +81,7 @@ lspconfig.html.setup{
 lspconfig.cssls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
+  cmd = {"ccls"},
+  filetype = {"c", "cpp", "h"},
   handlers = handlers
 }
