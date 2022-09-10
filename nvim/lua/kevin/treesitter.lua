@@ -7,12 +7,15 @@ treesitter_configs.setup {
   ensure_installed = {
       "python",
       "c",
+      "cpp",
       "lua",
       "cpp",
       "bash",
       "javascript",
       "typescript",
       "json",
+      "markdown",
+      "markdown_inline"
   },
   sync_install = false,
   ignore_install = {""},

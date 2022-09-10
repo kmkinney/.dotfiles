@@ -71,8 +71,6 @@ local term = {}
 
 -- Mappings for command mode
 local command = {
-  ["W"] = "w", -- because I do this all the time
-  ["Q"] = "q" -- because I do this all the time
 }
 
 local modes = {
