@@ -78,10 +78,15 @@ lspconfig.html.setup{
   handlers = handlers
 }
 
-lspconfig.cssls.setup{
+lspconfig.ccls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = {"ccls"},
-  filetype = {"c", "cpp", "h"},
+  filetype = {"c", "cpp"},
+  init_options = {
+    cache = {
+      directory = ".ccls-cache";
+    };
+  },
   handlers = handlers
 }

@@ -17,3 +17,4 @@ alias tf="terraform"
 alias awslogin-dev="export AWS_PROFILE=dev && aws sso login --profile dev"
 alias awslogin-prd="export AWS_PROFILE=prd && aws sso login --profile prd"
 alias fhtl-clone="echo $1 && git clone git@github.com:byuawsfhtl/$1.git"
+
