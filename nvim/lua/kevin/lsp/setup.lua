@@ -60,23 +60,14 @@ lspconfig.sumneko_lua.setup({
   handlers = handlers
 })
 
-lspconfig.pyright.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  handlers = handlers
-})
-
-lspconfig.tsserver.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-  handlers = handlers
-}
-
-lspconfig.html.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-  handlers = handlers
-}
+local basic_lsp_servers = {"pyright", "tsserver", "html", "terraformls"}
+for _, server in ipairs(basic_lsp_servers) do
+  lspconfig[server].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    handlers = handlers
+  })
+end
 
 lspconfig.ccls.setup{
   on_attach = on_attach,
@@ -90,3 +81,5 @@ lspconfig.ccls.setup{
   },
   handlers = handlers
 }
+
+
