@@ -1,9 +1,9 @@
 [user]
-	name = kmkinney
-	email = 65429603+kmkinney@users.noreply.github.com
+    name = kmkinney
+    email = kevinmk712@gmail.com
 [alias]
-	co = checkout
-	br = branch
+    co = checkout
+    br = branch
     st = status -sb
     f = fetch
     a = add .
@@ -11,9 +11,8 @@
     cm = commit -m
     p = push
     pu = push -u
-
 [core]
-	editor = vim
-	autocrlf = input
+    editor = vim
+    autocrlf = input
 [init]
-	defaultBranch = main
+    defaultBranch = main
