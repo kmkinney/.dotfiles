@@ -26,6 +26,7 @@ local function lsp_set_keymaps(bufn)
   keymap("n", "K", vim.lsp.buf.hover, opt)
   keymap("n", "gd", vim.lsp.buf.definition, opt)
   keymap("n", "gt", vim.lsp.buf.type_definition, opt)
+  keymap("n", "gr", vim.lsp.buf.references, opt)
   keymap("n", "gi", vim.lsp.buf.implementation, opt)
   keymap("n", "<leader>d", vim.diagnostic.open_float, opt)
   vim.cmd[[ command! Format execute 'lua vim.lsp.buf.formatting()']]
