@@ -18,6 +18,7 @@ local normal = {
   ["<leader>t"] = "<cmd>tabnext<CR>",
   ["<leader>ok"] = "<cmd>e $HOME/.config/nvim/lua/kevin/keymaps.lua<CR>",
   ["<leader>hc"] = "<cmd>nohlsearch<CR>",
+  ["<leader>p"] = "<cmd>MarkdownPreview<CR>",
 -- Telescope
   ["<leader>ff"] = "<cmd>lua require'telescope.builtin'.find_files()<CR>",
   ["<leader>fg"] = "<cmd>lua require'telescope.builtin'.live_grep()<CR>",  -- depends on ripgrep

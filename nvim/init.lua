@@ -14,3 +14,4 @@ require "kevin.autopairs"
 require "kevin.toggleterm"
 require "kevin.comment"
 require "kevin.git"
+

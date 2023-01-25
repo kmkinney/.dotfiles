@@ -64,7 +64,7 @@ return packer.startup(function(use)
   -- Functional
 	use "akinsho/toggleterm.nvim"
   use "nvim-telescope/telescope.nvim"
-  use({"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons", opt = true}})
+  use({"nvim-tree/nvim-tree.lua", requires = {"nvim-tree/nvim-web-devicons"}})
 
 	-- Colorschemes
 	use("sainnhe/everforest") -- Best colorscheme :)
@@ -90,6 +90,15 @@ return packer.startup(function(use)
 	use "lewis6991/gitsigns.nvim"
   use "akinsho/bufferline.nvim" 
 	--use({ "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" })
+  
+  -- Productivity
+  use({"iamcco/markdown-preview.nvim", 
+    run = "cd app && npm i",
+    setup = function ()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" }
+  })
 
   -- Future Plugins
 	--use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
