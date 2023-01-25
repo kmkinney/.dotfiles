@@ -9,6 +9,7 @@ alias l='ls -CF'
 
 # my custom aliases
 alias gst="git status"
+alias lg="lazygit"
 alias py="python3"
 alias pyserve="python3 -m http.server"
 alias cls="clear"
