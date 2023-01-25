@@ -41,7 +41,8 @@ local normal = {
   ["k"] = "gk",
 
   -- Terminal commands
-  ["<leader>py"] = "<cmd>lua _PYTHON_TERMINAL()<CR>"
+  ["<leader>py"] = "<cmd>lua _PYTHON_TERMINAL()<CR>",
+  ["<leader>g"] = "<cmd>lua _LAZYGIT_TERMINAL()<CR>"
 }
 
 -- Mappings for insert mode

@@ -17,6 +17,11 @@ function _PYTHON_TERMINAL()
   python:toggle()
 end
 
+local lazygit = Terminal:new({cmd = "lazygit", hidden = true})
+function _LAZYGIT_TERMINAL()
+  lazygit:toggle()
+end
+
 -- local kattis_init = Terminal:new({cmd = "kattis-init", hidden = false})
 -- function _KATTIS_INIT(pname)
 -- end
