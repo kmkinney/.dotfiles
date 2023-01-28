@@ -42,7 +42,8 @@ if not status_ok then
   return
 end
 
-local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 
 local handlers = {
@@ -61,7 +62,7 @@ lspconfig.sumneko_lua.setup({
   handlers = handlers
 })
 
-local basic_lsp_servers = {"pyright", "tsserver", "html", "terraformls"}
+local basic_lsp_servers = {"pyright", "tsserver", "html", "terraformls", "jdtls"}
 for _, server in ipairs(basic_lsp_servers) do
   lspconfig[server].setup({
     on_attach = on_attach,
