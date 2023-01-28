@@ -9,7 +9,7 @@ require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
 -- Theme handling library
-local beautiful = require("beautiful")
+-- local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
@@ -50,7 +50,9 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
  -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.init("/home/kevin/.config/awesome/theme.lua")
+-- beautiful.init("/home/kevin/.config/awesome/theme.lua")
+
+require('theme')
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
