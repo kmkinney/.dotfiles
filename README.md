@@ -18,3 +18,6 @@ run the `ubuntu-setup.sh` bash file
 before vim/neovim packages can work install Vundle
 
 `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+
+## NVIM Kickstart
+https://github.com/nvim-lua/kickstart.nvim

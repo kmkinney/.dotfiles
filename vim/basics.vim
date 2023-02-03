@@ -14,7 +14,7 @@ set path+=**
 set clipboard="unnamedplus"
 set cursorline
 set wrap
-colorscheme murphy
+" colorscheme murphy
 
 " Keymaps
 inoremap kj <Esc>
