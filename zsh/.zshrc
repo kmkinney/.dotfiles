@@ -111,6 +111,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
+
 # Options
 set -o vi
 
