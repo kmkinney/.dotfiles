@@ -169,4 +169,11 @@ mouse:
   hide_when_typing: true
 
 live_config_reload: true
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux a || tmux"
 # vim: fdm=marker fmr={{{,}}}:
