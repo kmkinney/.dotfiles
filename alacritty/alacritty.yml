@@ -175,5 +175,5 @@ shell:
   args:
     - -l
     - -c
-    - "tmux a || tmux"
+    - tmux
 # vim: fdm=marker fmr={{{,}}}:
