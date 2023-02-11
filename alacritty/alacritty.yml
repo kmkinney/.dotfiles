@@ -135,6 +135,7 @@ window:
     x: 0
     y: 1
   dynamic_padding: false
+  # decorations: full
   decorations: none
   title: Alacritty
   dynamic_title: true
