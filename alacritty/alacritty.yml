@@ -7,7 +7,6 @@
 schemes:
   everforest_dark: &everforest_dark
     primary:
-      #background: '#2f383e'
       background: '#1e2327'
       foreground: '#d3c6aa'
 
@@ -93,30 +92,55 @@ draw_bold_text_with_bright_colors: true
 ###########
 # Fonts   #
 ###########
-# {{{ Font Config
-# Inconsolata
 font:
   # Normal (roman) font face
   normal:
-    family: CaskaydiaCove Nerd Font
-    style: Regular
-  bold:
-    family: CaskaydiaCove Nerd Font
-    style: Bold
-  italic:
-    family: CaskaydiaCove Nerd Font
-    style: Italic
-  bold_italic:
-    family: CaskaydiaCove Nerd Font
-    style: Bold Italic
-  size: 12.0
-  offset:
-   x: 0
-   y: 0
-  glyph_offset:
-   x: 0
-   y: 0
-# }}}
+    # Font family
+    #
+    # Default:
+    #   - (macOS) Menlo
+    #   - (Linux/BSD) monospace
+    #   - (Windows) Consolas
+    family: CaskaydiaCove Nerd Font Mono
+
+    # The `style` can be specified to pick a specific face.
+    #style: Regular
+
+  # Bold font face
+  #bold:
+    # Font family
+    #
+    # If the bold family is not specified, it will fall back to the
+    # value specified for the normal font.
+    #family: JetBrainsMono
+
+    # The `style` can be specified to pick a specific face.
+    #style: Bold
+
+  # Italic font face
+  #italic:
+    # Font family
+    #
+    # If the italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    #family: monospace
+
+    # The `style` can be specified to pick a specific face.
+    #style: Italic
+
+  # Bold italic font face
+  #bold_italic:
+    # Font family
+    #
+    # If the bold italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    #family: monospace
+
+    # The `style` can be specified to pick a specific face.
+    #style: Bold Italic
+
+  # Point size
+  #size: 11.0
 
 ###################
 # Window Settings #
@@ -143,7 +167,7 @@ window:
     instance: Alacritty
     general: Alacritty
   gtk_theme_variant: None
-  opacity: 0.90
+  opacity: 0.80
 
 startup_mode: Windowed
 
@@ -173,8 +197,8 @@ live_config_reload: true
 
 shell:
   program: /bin/zsh
-  args:
-    - -l
-    - -c
-    - tmux
+  #args:
+  #- -l
+  #- -c
+  #- tmux
 # vim: fdm=marker fmr={{{,}}}:
