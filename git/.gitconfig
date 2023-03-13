@@ -12,6 +12,7 @@
     cm = commit -m
     p = push
     pu = push -u
+    root = rev-parse --show-toplevel
 [core]
     editor = vim
     autocrlf = input
