@@ -1,4 +1,4 @@
-" Basic Config as single file. Use for root config
+" Basic Config as single file. 
 
 " Options
 set number
@@ -12,9 +12,7 @@ set noswapfile
 set confirm
 set path+=**
 set clipboard="unnamedplus"
-set cursorline
 set wrap
-" colorscheme murphy
 
 " Keymaps
 inoremap kj <Esc>
