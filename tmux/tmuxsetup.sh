@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #------------#
-# tmux Setup #
+# tmux setup #
 #------------#
 
 if [[ -f $HOME/.tmux.conf ]]; then
