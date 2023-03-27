@@ -14,7 +14,7 @@
     pu = push -u
     root = rev-parse --show-toplevel
 [core]
-    editor = vim
+    editor = nvim
     autocrlf = input
 [init]
     defaultBranch = main

@@ -6,6 +6,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # dotfiles aliases
+alias dotfiles="cd ~/.dotfiles && nvim ."
 
 # my custom aliases
 alias gst="git status"
@@ -19,4 +20,4 @@ alias awslogin-dev="export AWS_PROFILE=dev && aws sso login --profile dev"
 alias awslogin-prd="export AWS_PROFILE=prd && aws sso login --profile prd"
 alias fhtl-clone="echo $1 && git clone git@github.com:byuawsfhtl/$1.git"
 alias chkports="sudo netstat -natp | grep LISTEN"
-
+alias k="kattis"

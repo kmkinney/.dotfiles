@@ -13,5 +13,5 @@ git clone --depth=1 https://github.com/paulirish/git-open.git ${ZSH_CUSTOM:-$HOM
 # Remove any old config file
 rm -f $HOME/.zshrc
 
-[[ ! -f $HOME/.zshrc ]] && ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
-[[ ! -f $HOME/.p10k.zsh ]] && ln -s $HOME/.dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh
+[[ ! -f $HOME/.zshrc ]] && ln -s $HOME/.dotfiles/zsh/zshrc.zsh $HOME/.zshrc
+[[ ! -f $HOME/.p10k.zsh ]] && ln -s $HOME/.dotfiles/zsh/p10k.zsh $HOME/.p10k.zsh
