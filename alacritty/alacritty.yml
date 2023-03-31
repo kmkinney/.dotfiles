@@ -1,60 +1,65 @@
-##########################
-# | Alacritty Config
-# | Kevin Kinney
-##########################
+#  _              _    _
+# | |            | |  (_)
+# | | ___ __ ___ | | ___ _ __  _ __   ___ _   _
+# | |/ / '_ ` _ \| |/ / | '_ \| '_ \ / _ \ | | |
+# |   <| | | | | |   <| | | | | | | |  __/ |_| |
+# |_|\_\_| |_| |_|_|\_\_|_| |_|_| |_|\___|\__, |
+#                                          __/ |
+#                                         |___/
+# alacritty config
 
 # {{{ THEMES
 schemes:
   everforest_dark: &everforest_dark
     primary:
-      background: '#1e2327'
-      foreground: '#d3c6aa'
+      background: "#1e2327"
+      foreground: "#d3c6aa"
 
     normal:
-      black:   '#4b565c'
-      red:     '#e67e80'
-      green:   '#a7c080'
-      yellow:  '#dbbc7f'
-      blue:    '#7fbbb3'
-      magenta: '#d699b6'
-      cyan:    '#83c092'
-      white:   '#d3c6aa'
+      black: "#4b565c"
+      red: "#e67e80"
+      green: "#a7c080"
+      yellow: "#dbbc7f"
+      blue: "#7fbbb3"
+      magenta: "#d699b6"
+      cyan: "#83c092"
+      white: "#d3c6aa"
 
     bright:
-      black:   '#4b565c'
-      red:     '#e67e80'
-      green:   '#a7c080'
-      yellow:  '#dbbc7f'
-      blue:    '#7fbbb3'
-      magenta: '#d699b6'
-      cyan:    '#83c092'
-      white:   '#d3c6aa'
+      black: "#4b565c"
+      red: "#e67e80"
+      green: "#a7c080"
+      yellow: "#dbbc7f"
+      blue: "#7fbbb3"
+      magenta: "#d699b6"
+      cyan: "#83c092"
+      white: "#d3c6aa"
 
   seafoam_pastel: &seafoam_pastel
     primary:
-      background: '#243435'
-      foreground: '#d4e7d4'
+      background: "#243435"
+      foreground: "#d4e7d4"
 
     normal:
-      black:   '#757575'
-      red:     '#825d4d'
-      green:   '#728c62'
-      yellow:  '#ada16d'
-      blue:    '#4d7b82'
-      magenta: '#8a7267'
-      cyan:    '#729494'
-      white:   '#e0e0e0'
+      black: "#757575"
+      red: "#825d4d"
+      green: "#728c62"
+      yellow: "#ada16d"
+      blue: "#4d7b82"
+      magenta: "#8a7267"
+      cyan: "#729494"
+      white: "#e0e0e0"
 
     bright:
-      black:   '#8a8a8a'
-      red:     '#cf937a'
-      green:   '#98d9aa'
-      yellow:  '#fae79d'
-      blue:    '#7ac3cf'
-      magenta: '#d6b2a1'
-      cyan:    '#ade0e0'
-      white:   '#e0e0e0'
-  
+      black: "#8a8a8a"
+      red: "#cf937a"
+      green: "#98d9aa"
+      yellow: "#fae79d"
+      blue: "#7ac3cf"
+      magenta: "#d6b2a1"
+      cyan: "#ade0e0"
+      white: "#e0e0e0"
+
   sonokai_espresso: &sonokai_espresso
     primary:
       background: "#312c2b"
@@ -80,67 +85,19 @@ schemes:
       cyan: "#f08d71"
       white: "#e4e3e1"
 # }}}
-#
+
 #####################
 # Select Theme Here #
 #####################
-# colors: *seafoam_pastel
 colors: *everforest_dark
-# colors: *sonokai_espresso
 draw_bold_text_with_bright_colors: true
 
 ###########
 # Fonts   #
 ###########
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
     family: CaskaydiaCove Nerd Font Mono
-
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
-
-  # Bold font face
-  #bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: JetBrainsMono
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
-
-  # Italic font face
-  #italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
-
-  # Bold italic font face
-  #bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
-
-  # Point size
-  #size: 11.0
 
 ###################
 # Window Settings #
@@ -157,7 +114,7 @@ window:
     y: 0
   padding:
     x: 0
-    y: 1
+    y: 0
   dynamic_padding: false
   # decorations: full
   decorations: none
@@ -197,8 +154,4 @@ live_config_reload: true
 
 shell:
   program: /bin/zsh
-  #args:
-  #- -l
-  #- -c
-  #- tmux
 # vim: fdm=marker fmr={{{,}}}:

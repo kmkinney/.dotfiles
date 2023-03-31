@@ -24,6 +24,9 @@ fi
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export ANDROID_HOME=$HOME/Android/Sdk/
+export KATTIS_HOME=$HOME/workspace/competitive-programming/kattis/problems/
+export DOTFILES_HOME=$HOME/.dotfiles/
+export MOZ_ENABLE_WAYLAND=1
 
 # Theme
 # powerlevel10k/powerlevel10k
@@ -43,6 +46,7 @@ plugins=(
   git
   git-open
   zsh-autosuggestions
+  cp
 )
 
 [[ -f $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh

@@ -1,6 +1,0 @@
-# Aliases
-alias ls="ls --color"
-alias ll="ls -al --color"
-alias cls="clear"
-alias grep="grep --color"
-alias gst="git status"

@@ -16,4 +16,5 @@ set wrap
 
 " Keymaps
 inoremap kj <Esc>
+inoremap jk <Esc>
 inoremap <C-s> <ESC>:w<CR>
