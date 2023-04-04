@@ -10,16 +10,9 @@
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-#   ___ _ ____   __
-#  / _ \ '_ \ \ / /
-# |  __/ | | \ V /
-#  \___|_| |_|\_/
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
@@ -32,15 +25,6 @@ export MOZ_ENABLE_WAYLAND=1
 # powerlevel10k/powerlevel10k
 # eastwood
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-#        _             _
-#       | |           (_)
-#  _ __ | |_   _  __ _ _ _ __  ___
-# | '_ \| | | | |/ _` | | '_ \/ __|
-# | |_) | | |_| | (_| | | | | \__ \
-# | .__/|_|\__,_|\__, |_|_| |_|___/
-# | |             __/ |
-# |_|            |___/
 
 plugins=(
   git

@@ -23,6 +23,10 @@ alias roofw="cd ~/workspace/roofworx/roofworx-monorepo/ && tmux"
 alias sd='cd $(fd . '/home/kevin' -t d | fzf)'
 alias sa='cd $(fd . '/home/kevin' -t d -H -I | fzf)'
 
+# Pacman stuff
+alias pacmanlist="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+alias pacexport="pacman -Qqen > ~/pkglist.txt"
+
 # Shorthands
 alias v="nvim"
 alias k="kattis"
