@@ -18,6 +18,7 @@ alias l='ls -CF'
 # Workflows
 alias dotfiles="cd ~/.dotfiles && nvim ."
 alias roofw="cd ~/workspace/roofworx/roofworx-monorepo/ && tmux"
+alias android-emulator="~/Android/Sdk/emulator/emulator @Pixel_6_API_33"
 
 # FZF fun stuff
 alias sd='cd $(fd . '/home/kevin' -t d | fzf)'
@@ -26,6 +27,9 @@ alias sa='cd $(fd . '/home/kevin' -t d -H -I | fzf)'
 # Pacman stuff
 alias pacmanlist="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 alias pacexport="pacman -Qqen > ~/pkglist.txt"
+
+# Hyprland stuff
+alias ch="hyprpicker | tr -d '\n' | wl-copy"
 
 # Shorthands
 alias v="nvim"
