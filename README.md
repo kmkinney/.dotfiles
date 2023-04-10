@@ -3,6 +3,7 @@
 This repo is still a work in progress, so use at your own risk
 
 ## Included Configurations
+
 - neovim
 - vim
 - tmux
@@ -14,9 +15,10 @@ This repo is still a work in progress, so use at your own risk
 run the `ubuntu-setup.sh` bash file
 
 ## NVIM Kickstart
+
 https://github.com/nvim-lua/kickstart.nvim
 
 ## Everforest Theme
 
 Everforest [Wiki](https://github.com/sainnhe/everforest/wiki)
-
+Pallete [Link](https://github.com/sainnhe/everforest/blob/master/palette.md)
