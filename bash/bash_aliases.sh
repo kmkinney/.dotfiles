@@ -18,7 +18,7 @@ alias l='ls -CF'
 # Workflows
 alias dotfiles="cd ~/.dotfiles && nvim ."
 alias roofw="cd ~/workspace/roofworx/roofworx-monorepo/ && tmux"
-alias android-emulator="~/Android/Sdk/emulator/emulator @Pixel_6_API_33"
+alias android-emulator="~/Android/Sdk/emulator/emulator"
 
 # FZF fun stuff
 alias sd='cd $(fd . '/home/kevin' -t d | fzf)'
