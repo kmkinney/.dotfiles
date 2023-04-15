@@ -1,6 +1,7 @@
 -- NOTE: LSP Plugins
 
 return {
+  { "github/copilot.vim" },
   {
     "L3MON4D3/LuaSnip",
     ---@class PluginLspOpts
@@ -29,6 +30,10 @@ return {
     opts = {
       ensure_installed = {
         "pyright",
+        "clangd",
+        "json-lsp",
+        "tailwindcss-language-server",
+        "css-lsp",
       },
     },
   },
