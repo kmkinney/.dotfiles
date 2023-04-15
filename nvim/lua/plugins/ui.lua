@@ -1,5 +1,6 @@
 return {
   { "sainnhe/everforest" },
+  { "xiyaowong/transparent.nvim" },
   {
     "goolord/alpha-nvim",
     opts = function()
