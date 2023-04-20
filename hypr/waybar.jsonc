@@ -123,6 +123,6 @@
       "car": "",
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "on-click": "killall pavucontrol || pavucontrol"
   }
 }

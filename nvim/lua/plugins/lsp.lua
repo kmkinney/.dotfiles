@@ -2,6 +2,7 @@
 
 return {
   { "github/copilot.vim" },
+  { "simrat39/rust-tools.nvim" },
   {
     "L3MON4D3/LuaSnip",
     ---@class PluginLspOpts
@@ -15,8 +16,6 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls")
       opts.sources = {
-        nls.builtins.formatting.fish_indent,
-        nls.builtins.diagnostics.fish,
         nls.builtins.formatting.stylua,
         nls.builtins.formatting.shfmt,
         nls.builtins.formatting.prettierd,
@@ -34,6 +33,8 @@ return {
         "json-lsp",
         "tailwindcss-language-server",
         "css-lsp",
+        "rust-analyzer",
+        "black",
       },
     },
   },
