@@ -9,7 +9,7 @@ if [[ -f $HOME/.vimrc ]]; then
 	mv $HOME/.vimrc $HOME/.vimrc.bak
 fi
 
-DOTFILES_DIR="$(git rev-parse --show-toplevel)"
+DOTFILES_DIR="$(git rev-parse --show-toplevel)/config"
 
 echo "Linking .vimrc"
 ln -s $DOTFILES_DIR/vim/basics.vim $HOME/.vimrc

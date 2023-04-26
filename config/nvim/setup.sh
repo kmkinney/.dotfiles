@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_DIR="$(git rev-parse --show-toplevel)"
+DOTFILES_DIR="$(git rev-parse --show-toplevel)/config"
 NVIM_CONFIG_DIR=~/.config/nvim
 
 if [[ -d ~/.config/nvim ]]; then
