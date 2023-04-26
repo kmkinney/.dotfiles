@@ -12,7 +12,7 @@ if [[ -f $CONFIG_DIR/alacritty.yml ]]; then
 	mv $CONFIG_DIR/alacritty.yml $CONFIG_DIR/alacritty.yml.bak
 fi
 
-DOTFILES_DIR="$(git rev-parse --show-toplevel)"
+DOTFILES_DIR="$(git rev-parse --show-toplevel)/config"
 
 echo "Linking alacritty.yml"
 ln -s $DOTFILES_DIR/alacritty/alacritty.yml $CONFIG_DIR/alacritty.yml
