@@ -3,7 +3,7 @@
 # /////////////////////////////
 # // Kevin ZSH Setup Script
 # /////////////////////////////
-DOTFILES_DIR="$(git rev-parse --show-toplevel)"
+DOTFILES_DIR="$(git rev-parse --show-toplevel)/config"
 
 # Install oh my zsh
 if [[ ! -d ~/.oh-my-zsh/ ]]; then
