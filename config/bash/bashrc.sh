@@ -15,6 +15,7 @@
 export PATH=$PATH:$HOME/.local/bin
 export PS1="\[\e[01;37m\]\u\[\e[01;34m\]@\h:\[\e[01;36m\]\w\[\e[01;33m\]\$\[\e[00m\]"
 export MOZ_ENABLE_WAYLAND=1
+export ANDROID_HOME=~/Android/Sdk/
 
 # Fix Ctl-S
 stty -ixon
@@ -26,3 +27,11 @@ stty -ixon
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# pnpm
+export PNPM_HOME="/home/kevin/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

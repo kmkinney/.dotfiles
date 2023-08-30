@@ -4,7 +4,7 @@
 # Hyprland Setup #
 #----------------#
 
-HYPR_DIR="~/.config/hypr/"
+HYPR_DIR=~/.config/hypr/
 
 mkdir -p $HYPR_DIR
 

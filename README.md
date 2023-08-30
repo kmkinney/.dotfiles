@@ -22,3 +22,7 @@ https://github.com/nvim-lua/kickstart.nvim
 
 Everforest [Wiki](https://github.com/sainnhe/everforest/wiki)
 Pallete [Link](https://github.com/sainnhe/everforest/blob/master/palette.md)
+
+Wallpapers [wallpapers](https://gitlab.com/dwt1/wallpapers)
+
+Grimblast [grimblast](https://github.com/hyprwm/contrib)

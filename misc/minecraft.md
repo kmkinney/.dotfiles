@@ -1,0 +1,6 @@
+`~/.alsoftrc`
+
+```
+[general]
+drivers = pulse
+```
