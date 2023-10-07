@@ -1,6 +1,7 @@
 -- NOTE: LSP Plugins
 
 return {
+  { "luckasRanarison/tree-sitter-hypr" },
   { "github/copilot.vim" },
   { "simrat39/rust-tools.nvim" },
   {
@@ -11,7 +12,7 @@ return {
     end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     ---@class PluginLspOpts
     opts = function(_, opts)
       local nls = require("null-ls")
