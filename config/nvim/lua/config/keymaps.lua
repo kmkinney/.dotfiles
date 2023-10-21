@@ -7,8 +7,8 @@ local function map(mode, lhs, rhs, opts)
 end
 print("Keymaps Sourced")
 
-map("i", "kj", "<esc>", { silent = true, desc = "Exit insert mode" })
-map("i", "jk", "<esc>", { silent = true, desc = "Exit insert mode" })
+-- map("i", "kj", "<esc>", { silent = true, desc = "Exit insert mode" })
+-- map("i", "jk", "<esc>", { silent = true, desc = "Exit insert mode" })
 map("n", "<leader>p", '"_dP', { silent = true, desc = "Paste from system clipboard" })
 
 -- NOTE: Terminal commands

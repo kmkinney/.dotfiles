@@ -1,7 +1,5 @@
 return {
-  { "rcarriga/nvim-notify", enabled = false },
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   enabled = false
-  -- }
+  { "rcarriga/nvim-notify",                    enabled = false },
+  { "folke/flash",                             enabled = false },
+  { "nvim-treesitter/nvim-treesitter-context", enabled = false }
 }

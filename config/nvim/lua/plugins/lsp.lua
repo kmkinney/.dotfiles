@@ -11,19 +11,19 @@ return {
       return {}
     end,
   },
-  {
-    "nvimtools/none-ls.nvim",
-    ---@class PluginLspOpts
-    opts = function(_, opts)
-      local nls = require("null-ls")
-      opts.sources = {
-        nls.builtins.formatting.stylua,
-        nls.builtins.formatting.shfmt,
-        nls.builtins.formatting.prettierd,
-        nls.builtins.formatting.black,
-      }
-    end,
-  },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   ---@class PluginLspOpts
+  --   opts = function(_, opts)
+  --     local nls = require("null-ls")
+  --     opts.sources = {
+  --       nls.builtins.formatting.stylua,
+  --       nls.builtins.formatting.shfmt,
+  --       nls.builtins.formatting.prettierd,
+  --       nls.builtins.formatting.black,
+  --     }
+  --   end,
+  -- },
   {
     "williamboman/mason.nvim",
     ---@class PluginLspOpts
