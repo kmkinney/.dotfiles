@@ -17,6 +17,7 @@ map("n", "<leader>tT", "<cmd>e term://zsh<cr>", { silent = true, desc = "Open a 
 
 -- NOTE: Config reloading
 map("n", "<leader>rf", "<cmd>so<cr>", { silent = true, desc = "Source current lua file" })
+map("n", "<leader>rl", ":LspRestart<cr>", { silent = true, desc = "Restart LSP" })
 
 map("n", "<C-d>", "<C-d>zz", { silent = true, desc = "Scroll down", remap = false })
 map("n", "<C-u>", "<C-u>zz", { silent = true, desc = "Scroll up", remap = false })
