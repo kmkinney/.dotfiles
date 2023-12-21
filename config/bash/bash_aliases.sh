@@ -21,9 +21,9 @@ alias roofw="cd ~/workspace/roofworx/roofworx-monorepo/ && tmux"
 alias android-emulator="~/Android/Sdk/emulator/emulator"
 
 # FZF fun stuff
-alias sd='cd $(fd . '/home/kevin' -t d | fzf)'
-alias sa='cd $(fd . '/home/kevin' -t d -H -I | fzf)'
-alias vd='nvim $(fd . '/home/kevin/.dotfiles/' -t f | fzf)'
+alias sd='cd $(fd . '$HOME' -t d | fzf)'
+alias sa='cd $(fd . '$HOME' -t d -H -I | fzf)'
+alias vd='nvim $(fd . '$HOME' -t f | fzf)'
 
 # Pacman stuff
 alias pacmanlist="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
