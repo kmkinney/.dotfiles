@@ -1,7 +1,6 @@
 -- NOTE: LSP Plugins
 
 return {
-  { "luckasRanarison/tree-sitter-hypr" },
   { "github/copilot.vim" },
   { "simrat39/rust-tools.nvim" },
   {

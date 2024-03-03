@@ -9,7 +9,7 @@ return {
     {
       "<leader><space>",
       function()
-        require("telescope.builtin").find_files({ cwd = false })
+        require("telescope.builtin").find_files({ cwd = false, hidden = false })
       end,
       silent = true,
       noremap = true,
@@ -18,7 +18,7 @@ return {
     {
       "<leader>ff",
       function()
-        require("telescope.builtin").find_files({ cwd = false })
+        require("telescope.builtin").find_files({ cwd = false, hidden = false })
       end,
       silent = true,
       noremap = true,
@@ -31,7 +31,7 @@ return {
       end,
       silent = true,
       noremap = true,
-      desc = "Find files (root dir)",
+      desc = "Find files (root dir) - ignore hidden files",
     },
     {
       "<leader>/",

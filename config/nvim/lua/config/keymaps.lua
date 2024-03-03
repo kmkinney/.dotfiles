@@ -21,3 +21,5 @@ map("n", "<leader>rl", ":LspRestart<cr>", { silent = true, desc = "Restart LSP" 
 
 map("n", "<C-d>", "<C-d>zz", { silent = true, desc = "Scroll down", remap = false })
 map("n", "<C-u>", "<C-u>zz", { silent = true, desc = "Scroll up", remap = false })
+map("n", "<leader>rq", "<cmd>s/\\v('|\")/`/g<cr>",
+  { silent = true, desc = "Replace single and double quotes with backticks" })
