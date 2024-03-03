@@ -29,9 +29,6 @@
     initialPassword = "nix";
     description = "kevin";
     isNormalUser = true;
-    openssh.authorizedKeys.keys = [
-      # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-    ];
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       steam
@@ -67,22 +64,9 @@
   # GDM
   services.xserver = {
     enable = true;
-    layout = "us";
     displayManager.gdm = {
       enable = true;
       wayland = true;
-    };
-  };
-
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # Feel free to remove if you don't need it.
-  services.openssh = {
-    enable = true;
-    settings = {
-      # Forbid root login through SSH.
-      PermitRootLogin = "no";
-      # Use keys only. Remove if you want to SSH using password (not recommended)
-      PasswordAuthentication = false;
     };
   };
 
