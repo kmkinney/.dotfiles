@@ -12,10 +12,10 @@
     };
   };
 
-  #  nix.settings = {
-  #    experimental-features = "nix-command flakes";
-  #    auto-optimise-store = true;
-  #  };
+  nix.settings = {
+    experimental-features = "nix-command flakes";
+    auto-optimise-store = true;
+  };
 
   # System config
   networking.hostName = "kmkinney-nixos";
@@ -31,7 +31,6 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      steam
       firefox
       zsh
       kitty
