@@ -8,7 +8,7 @@
     neovim
     git
     kitty
-    (import ./rebuild.nix {inherit pkgs;})
+    (import ./dotfiles.nix {inherit pkgs;})
   ];
   programs.home-manager.enable = true;
 
