@@ -25,6 +25,7 @@
     ".zshrc".source = ./config/zshrc.zsh;
     ".tmux.conf".source = ./config/tmux.conf;
     ".p10k.zsh".source = ./config/p10k.zsh;
+    ".config/nvim".source = ./config/nvim;
   };
 
   # Home Manager can also manage your environment variables through
