@@ -1,3 +1,3 @@
 return {
-  { "APZelos/blamer.nvim", opts = { enable = true } }
+  { "APZelos/blamer.nvim" }
 }
