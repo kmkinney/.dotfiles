@@ -24,6 +24,7 @@
   home.file = {
     ".zshrc".source = ./config/zshrc.zsh;
     ".tmux.conf".source = ./config/tmux.conf;
+    ".p10k.zsh".source = ./config/p10k.zsh;
   };
 
   # Home Manager can also manage your environment variables through
