@@ -23,6 +23,7 @@
   # Dotfiles using their own files
   home.file = {
     ".zshrc".source = ./config/zshrc.zsh;
+    ".tmux.conf".source = ./config/tmux.conf;
   };
 
   # Home Manager can also manage your environment variables through
