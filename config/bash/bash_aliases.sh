@@ -16,7 +16,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Workflows
-alias dotfiles="cd ~/.dotfiles && nvim ."
+# alias dotfiles="cd ~/.dotfiles && nvim ."
 alias roofw="cd ~/workspace/roofworx/roofworx-monorepo/ && tmux"
 alias android-emulator="~/Android/Sdk/emulator/emulator"
 
