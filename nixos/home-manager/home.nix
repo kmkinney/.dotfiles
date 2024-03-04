@@ -14,11 +14,16 @@
   ];
   programs.home-manager.enable = true;
 
-  # Dotfiles
+  # Dotfiles using nix
   imports = [
     ./config/kitty.nix
     ./config/git.nix
   ];
+
+  # Dotfiles using their own files
+  home.file = {
+    ".zshrc".source = ./config/zshrc.zsh;
+  };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
