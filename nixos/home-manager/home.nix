@@ -29,6 +29,7 @@ in {
     ".zshrc".source = ./config/zshrc.zsh;
     ".tmux.conf".source = ./config/tmux.conf;
     ".p10k.zsh".source = ./config/p10k.zsh;
+    # This is to allow lazy-lock.json to be writable
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/config/nvim";
   };
 }
