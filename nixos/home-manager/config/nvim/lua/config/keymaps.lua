@@ -21,3 +21,6 @@ map("n", "<C-d>", "<C-d>zz", { silent = true, desc = "Scroll down", remap = fals
 map("n", "<C-u>", "<C-u>zz", { silent = true, desc = "Scroll up", remap = false })
 map("n", "<leader>rq", "<cmd>s/\\v('|\")/`/g<cr>",
   { silent = true, desc = "Replace single and double quotes with backticks" })
+
+map("n", "<leader>gb", "<cmd>BlamerToggle<cr>", { silent = true, desc = "Toggle Git Blamer" })
+map("n", "<leader>bt", "<cmd>TransparentToggle<cr>", { silent = true, desc = "Toggle transparent background" })
