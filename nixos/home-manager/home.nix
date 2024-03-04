@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  configDir = "${config.home.homeDirectory}/.dotfiles/nixos/home-manager";
+in {
   home.username = "kevin";
   home.homeDirectory = "/Users/kevin";
 
@@ -23,6 +29,6 @@
     ".zshrc".source = ./config/zshrc.zsh;
     ".tmux.conf".source = ./config/tmux.conf;
     ".p10k.zsh".source = ./config/p10k.zsh;
-    ".config/nvim".source = ./config/nvim;
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/config/nvim";
   };
 }
