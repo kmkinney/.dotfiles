@@ -9,7 +9,7 @@
           # FONTS
           font_family  JetBrainsMono Nerd Font Mono
 
-          # Everforest Colors
+          # Everforest Color Scheme
           foreground            #d8cacc
           background            #323d43
           selection_foreground  #3c474d
