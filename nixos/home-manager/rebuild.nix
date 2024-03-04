@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  configDir = ~/.dotfiles/nixos/home-manager;
+  configDir = /Users/kevin/.dotfiles/nixos/home-manager;
 in
   pkgs.writeShellScriptBin "rebuild" ''
     echo "Rebuilding..."
