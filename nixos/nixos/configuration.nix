@@ -50,6 +50,7 @@
     tree
     cargo
     rustc
+    home-manager
   ];
 
   # Fonts
