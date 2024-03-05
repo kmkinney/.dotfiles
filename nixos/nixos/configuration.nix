@@ -35,6 +35,7 @@
       zsh
       kitty
       neofetch
+      lazygit
     ];
   };
 
@@ -47,6 +48,8 @@
     htop
     tmux
     tree
+    cargo
+    rustc
   ];
 
   # Programs
