@@ -52,6 +52,8 @@
     cargo
     rustc
     home-manager
+    alejandra
+    (import ./nixconfig.nix {inherit pkgs;})
   ];
 
   # Fonts
