@@ -42,27 +42,32 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
-    vim
-    git
+    alejandra
+    cargo
     curl
-    wget
+    git
+    home-manager
     htop
+    rustc
     tmux
     tree
-    cargo
-    rustc
-    home-manager
-    alejandra
+    vim
+    wget
+
+    # Custom packages
     (import ./nixconfig.nix {inherit pkgs;})
   ];
 
   # Fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
   # Programs
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    ohMyZsh.enable = true;
+  };
 
   programs.neovim = {
     enable = true;
