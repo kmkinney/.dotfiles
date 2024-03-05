@@ -60,6 +60,7 @@
   ];
 
   # Programs
+  programs.zsh.enable = true;
 
   programs.neovim = {
     enable = true;
