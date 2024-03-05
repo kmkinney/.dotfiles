@@ -38,6 +38,7 @@
       kitty
       neofetch
       lazygit
+      ranger
     ];
   };
 
