@@ -33,7 +33,6 @@
     # shell = pkgs.zsh;
     packages = with pkgs; [
       firefox
-      zsh
       kitty
       neofetch
       lazygit
@@ -73,10 +72,6 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-  };
-
-  programs.hyprland = {
-    enable = true;
   };
 
   # GDM
