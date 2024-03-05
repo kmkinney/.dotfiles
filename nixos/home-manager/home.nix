@@ -34,6 +34,7 @@ in {
     ".config/dunst/dunstrc".source = ./config/dunstrc.cfg;
     ".config/waybar/config".source = ./config/waybar.jsonc;
     ".config/waybar/style.css".source = ./config/waybar.css;
+    ".config/ranger/rc.conf".source = ./config/ranger.conf;
     # This is to allow lazy-lock.json to be writable
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/config/nvim";
   };
