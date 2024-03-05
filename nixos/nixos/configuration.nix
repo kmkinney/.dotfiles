@@ -4,6 +4,8 @@
   # Nixos configuration
   imports = [
     ./hardware-configuration.nix
+    ./config/hyprland.nix
+    ./config/bluetooth.nix
   ];
 
   nixpkgs = {
