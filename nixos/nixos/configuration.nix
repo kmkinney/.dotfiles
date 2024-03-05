@@ -30,7 +30,7 @@
     description = "kevin";
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel"];
-    shell = pkgs.zsh;
+    # shell = pkgs.zsh;
     packages = with pkgs; [
       firefox
       zsh
