@@ -45,6 +45,7 @@
     alejandra
     cargo
     curl
+    gcc
     git
     home-manager
     htop
