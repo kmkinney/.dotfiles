@@ -52,6 +52,11 @@
     rustc
   ];
 
+  # Fonts
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
   # Programs
 
   programs.neovim = {

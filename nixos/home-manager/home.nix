@@ -6,7 +6,7 @@
   configDir = "${config.home.homeDirectory}/.dotfiles/nixos/home-manager";
 in {
   home.username = "kevin";
-  home.homeDirectory = "/Users/kevin";
+  home.homeDirectory = "/home/kevin";
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
