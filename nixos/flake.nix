@@ -1,11 +1,8 @@
 {
-  description = "Your new nix config";
+  description = "Kevin NixOS config";
 
   inputs = {
-    # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    # Home manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,8 +23,6 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    # system = "x86_64-linux";
-    # pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
       kmkinney-nixos = nixpkgs.lib.nixosSystem {
@@ -35,13 +30,5 @@
         modules = [./nixos/configuration.nix];
       };
     };
-
-    # homeConfigurations = {
-    #   "kevin@kmkinney-nixos" = home-manager.lib.homeManagerConfiguration {
-    #     inherit pkgs;
-    #     extraSpecialArgs = {inherit inputs outputs;};
-    #     modules = [./home-manager/home.nix];
-    #   };
-    # };
   };
 }

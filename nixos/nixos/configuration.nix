@@ -3,9 +3,10 @@
 {pkgs, ...}: {
   # Nixos configuration
   imports = [
+    ./modules/bluetooth.nix
+    ./modules/hyprland.nix
+    ./modules/networking.nix
     ./hardware-configuration.nix
-    ./config/hyprland.nix
-    ./config/bluetooth.nix
   ];
 
   nixpkgs = {
@@ -19,10 +20,6 @@
     auto-optimise-store = true;
   };
 
-  # System config
-  networking.hostName = "kmkinney-nixos";
-  networking.networkmanager.enable = true;
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -33,22 +30,15 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel"];
     # shell = pkgs.zsh;
-    packages = with pkgs; [
-      firefox
-      kitty
-      neofetch
-      lazygit
-      ranger
-    ];
   };
 
-  # System Packages
+  # NixOS System Packages
   environment.systemPackages = with pkgs; [
-    alejandra
     cargo
     curl
     gcc
     git
+    firefox
     home-manager
     htop
     killall
@@ -59,7 +49,7 @@
     wget
 
     # Custom packages
-    (import ./nixconfig.nix {inherit pkgs;})
+    (import ../scripts/nixconfig.nix {inherit pkgs;})
   ];
 
   # Fonts
@@ -71,20 +61,6 @@
   programs.zsh = {
     enable = true;
     ohMyZsh.enable = true;
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
-  # GDM
-  services.xserver = {
-    enable = true;
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
