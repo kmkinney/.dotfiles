@@ -15,18 +15,19 @@
     home-manager,
     ...
   }: let
-    system = "aarch64-darwin";
-    pkgs = nixpkgs.legacyPackages.${system};
+    macOs = "aarch64-darwin";
+    linux = "x86_64-linux";
   in {
-    homeConfigurations.kevin = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+    homeConfigurations.macOs = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${macOs};
 
-      # Specify your home configuration modules here, for example,
-      # the path to your home.nix.
       modules = [./home.nix];
+    };
 
-      # Optionally use extraSpecialArgs
-      # to pass through arguments to home.nix
+    homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${linux};
+
+      modules = [./home.nix];
     };
   };
 }
