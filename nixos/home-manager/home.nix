@@ -1,12 +1,16 @@
 {
   pkgs,
   config,
+  system,
   ...
 }: let
   configDir = "${config.home.homeDirectory}/.dotfiles/nixos/home-manager";
 in {
   home.username = "kevin";
-  # home.homeDirectory = homeDirectory;
+  home.homeDirectory =
+    if system == "x84_64-linus"
+    then "/home/kevin/"
+    else "/Users/kevin";
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 

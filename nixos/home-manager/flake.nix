@@ -18,10 +18,10 @@
     macOs = "aarch64-darwin";
     linux = "x86_64-linux";
   in {
-    homeConfigurations.macOs = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${macOs};
 
-      # homeDirectory = "/Users/kevin/";
+      extraSpeicalArgs = {system = macOs;};
       modules = [./home.nix];
     };
 
@@ -29,6 +29,7 @@
       pkgs = nixpkgs.legacyPackages.${linux};
 
       # homeDirectory = "/home/kevin/";
+      extraSpeicalArgs = {system = linux;};
       modules = [./home.nix];
     };
   };
