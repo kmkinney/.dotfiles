@@ -25,8 +25,9 @@
   ];
   programs.home-manager.enable = true;
 
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
+  imports = [
+    (import ./modules/neovim.nix {inherit config;})
+  ];
 
   # Dotfiles using their own files
   home.file = {
@@ -39,6 +40,5 @@
     ".config/dunst/dunstrc".source = ./dotfiles/dunstrc.cfg;
     ".config/waybar/dotfiles".source = ./dotfiles/waybar.jsonc;
     ".config/waybar/style.css".source = ./dotfiles/waybar.css;
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/nixos/home-manager/dotfiles/nvim";
   };
 }
