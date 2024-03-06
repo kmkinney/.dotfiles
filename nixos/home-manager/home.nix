@@ -25,7 +25,7 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./modules/neovim.nix
+    ./neovim.nix
   ];
 
   # Dotfiles using their own files

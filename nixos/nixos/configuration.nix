@@ -3,9 +3,9 @@
 {pkgs, ...}: {
   # Nixos configuration
   imports = [
-    ./modules/bluetooth.nix
-    ./modules/hyprland.nix
-    ./modules/networking.nix
+    ./config/bluetooth.nix
+    ./config/hyprland.nix
+    ./config/networking.nix
     ./hardware-configuration.nix
   ];
 
