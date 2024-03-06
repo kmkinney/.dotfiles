@@ -21,12 +21,14 @@
     homeConfigurations.macOs = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${macOs};
 
+      homeDirectory = "/Users/kevin/";
       modules = [./home.nix];
     };
 
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${linux};
 
+      homeDirectory = "/home/kevin/";
       modules = [./home.nix];
     };
   };

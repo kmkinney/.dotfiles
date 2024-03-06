@@ -1,12 +1,13 @@
 {
   pkgs,
   config,
+  homeDirectory,
   ...
 }: let
   configDir = "${config.home.homeDirectory}/.dotfiles/nixos/home-manager";
 in {
   home.username = "kevin";
-  home.homeDirectory = "/home/kevin";
+  home.homeDirectory = homeDirectory;
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
