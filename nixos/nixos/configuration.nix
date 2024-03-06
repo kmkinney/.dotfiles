@@ -51,6 +51,7 @@
     git
     home-manager
     htop
+    killall
     rustc
     tmux
     tree
