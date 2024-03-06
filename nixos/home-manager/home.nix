@@ -8,7 +8,7 @@
 in {
   home.username = "kevin";
   home.homeDirectory =
-    if system == "x84_64-linus"
+    if system == "x84_64-linux"
     then "/home/kevin/"
     else "/Users/kevin";
 
