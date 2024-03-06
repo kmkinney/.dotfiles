@@ -21,7 +21,7 @@
     homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${macOs};
 
-      extraSpeicalArgs = {system = macOs;};
+      extraSpecialArgs = {system = macOs;};
       modules = [./home.nix];
     };
 
@@ -29,7 +29,7 @@
       pkgs = nixpkgs.legacyPackages.${linux};
 
       # homeDirectory = "/home/kevin/";
-      extraSpeicalArgs = {system = linux;};
+      extraSpecialArgs = {system = linux;};
       modules = [./home.nix];
     };
   };
