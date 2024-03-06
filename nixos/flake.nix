@@ -7,9 +7,9 @@
 
     # Home manager
     home-manager = {
-url = "github:nix-community/home-manager";
-inputs.nixpkgs.follows = "nixpkgs";
-      };
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
@@ -26,8 +26,8 @@ inputs.nixpkgs.follows = "nixpkgs";
     ...
   } @ inputs: let
     inherit (self) outputs;
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    # system = "x86_64-linux";
+    # pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
       kmkinney-nixos = nixpkgs.lib.nixosSystem {
@@ -36,12 +36,12 @@ inputs.nixpkgs.follows = "nixpkgs";
       };
     };
 
-    homeConfigurations = {
-      "kevin@kmkinney-nixos" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/home.nix];
-      };
-    };
+    # homeConfigurations = {
+    #   "kevin@kmkinney-nixos" = home-manager.lib.homeManagerConfiguration {
+    #     inherit pkgs;
+    #     extraSpecialArgs = {inherit inputs outputs;};
+    #     modules = [./home-manager/home.nix];
+    #   };
+    # };
   };
 }
