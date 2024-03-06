@@ -37,7 +37,7 @@
     ".config/hypr/hyprland.conf".source = ./dotfiles/hyprland.conf;
     ".config/hypr/hyprpaper.conf".source = ./dotfiles/hyprpaper.conf;
     ".config/dunst/dunstrc".source = ./dotfiles/dunstrc.cfg;
-    ".config/waybar/dotfiles".source = ./config/waybar.jsonc;
+    ".config/waybar/dotfiles".source = ./dotfiles/waybar.jsonc;
     ".config/waybar/style.css".source = ./dotfiles/waybar.css;
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/nixos/home-manager/dotfiles/nvim";
   };
