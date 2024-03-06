@@ -1,6 +1,7 @@
 {
   pkgs,
   system,
+  config,
   ...
 }: {
   home.username = "kevin";
@@ -24,9 +25,8 @@
   ];
   programs.home-manager.enable = true;
 
-  imports = [
-    ./neovim.nix
-  ];
+  programs.neovim.enable = true;
+  programs.neovim.defaultEditor = true;
 
   # Dotfiles using their own files
   home.file = {
@@ -39,5 +39,6 @@
     ".config/dunst/dunstrc".source = ./dotfiles/dunstrc.cfg;
     ".config/waybar/dotfiles".source = ./config/waybar.jsonc;
     ".config/waybar/style.css".source = ./dotfiles/waybar.css;
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/nixos/home-manager/dotfiles/nvim";
   };
 }
