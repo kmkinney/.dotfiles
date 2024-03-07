@@ -36,19 +36,20 @@
   environment.systemPackages = with pkgs; [
     cargo
     curl
+    discord
+    firefox
     gcc
     git
-    firefox
+    google-chrome
     home-manager
     htop
     killall
+    python3
     rustc
     tmux
     tree
     vim
     wget
-    discord
-    python3
 
     # Custom packages
     (import ../scripts/nixconfig.nix {inherit pkgs;})
