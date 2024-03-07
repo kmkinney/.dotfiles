@@ -48,6 +48,7 @@
     vim
     wget
     discord
+    python3
 
     # Custom packages
     (import ../scripts/nixconfig.nix {inherit pkgs;})
