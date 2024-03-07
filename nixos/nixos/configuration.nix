@@ -47,6 +47,7 @@
     tree
     vim
     wget
+    discord
 
     # Custom packages
     (import ../scripts/nixconfig.nix {inherit pkgs;})
