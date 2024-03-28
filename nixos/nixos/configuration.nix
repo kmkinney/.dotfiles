@@ -6,6 +6,7 @@
     ./modules/bluetooth.nix
     ./modules/hyprland.nix
     ./modules/networking.nix
+    ./modules/pipewire.nix
     ./hardware-configuration.nix
   ];
 
