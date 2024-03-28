@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   services = {
     pipewire = {
       enable = true;
@@ -11,4 +11,8 @@
       jack.enable = true;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+  ];
 }
