@@ -21,6 +21,8 @@
     btop
     gh
 
+    nodejs_20
+
     # Custom scripts
     (import ../scripts/dotfiles.nix {inherit pkgs;})
   ];
