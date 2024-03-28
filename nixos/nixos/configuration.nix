@@ -50,6 +50,7 @@
     tree
     vim
     wget
+    unzip
 
     # Custom packages
     (import ../scripts/nixconfig.nix {inherit pkgs;})
