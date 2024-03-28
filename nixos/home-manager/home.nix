@@ -32,6 +32,7 @@
 
   # Dotfiles using their own files
   home.file = {
+    ".bash_aliases".source = ./dotfiles/bash_aliases.sh;
     ".gitconfig".source = ./dotfiles/gitconfig.conf;
     ".zshrc".source = ./dotfiles/zshrc.zsh;
     ".tmux.conf".source = ./dotfiles/tmux.conf;
