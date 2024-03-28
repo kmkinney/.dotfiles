@@ -25,7 +25,7 @@ return {
         "json-lsp",
         "tailwindcss-language-server",
         "css-lsp",
-        "rust-analyzer",
+        -- "rust-analyzer",
         "prettierd",
         "black",
       },
