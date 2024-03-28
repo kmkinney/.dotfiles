@@ -23,6 +23,7 @@
 
     nodejs_20
     nodePackages.pnpm
+    rust-analyzer
 
     # Custom scripts
     (import ../scripts/dotfiles.nix {inherit pkgs;})
