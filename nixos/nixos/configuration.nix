@@ -7,6 +7,7 @@
     ./modules/hyprland.nix
     ./modules/networking.nix
     ./modules/pipewire.nix
+    ./modules/steam.nix
     ./hardware-configuration.nix
   ];
 
@@ -47,7 +48,6 @@
     killall
     python3
     rustc
-    steam
     tmux
     tree
     unzip
