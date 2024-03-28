@@ -19,6 +19,7 @@
     lazygit
     ranger
     btop
+    gh
 
     # Custom scripts
     (import ../scripts/dotfiles.nix {inherit pkgs;})
