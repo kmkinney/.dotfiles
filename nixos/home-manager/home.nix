@@ -22,6 +22,7 @@
     gh
 
     nodejs_20
+    nodePackages.pnpm
 
     # Custom scripts
     (import ../scripts/dotfiles.nix {inherit pkgs;})
