@@ -12,6 +12,9 @@ return {
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
         },
+        rust_analyzer = {
+          mason = false
+        }
       },
     },
   },
