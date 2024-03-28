@@ -46,11 +46,12 @@
     killall
     python3
     rustc
+    steam
     tmux
     tree
+    unzip
     vim
     wget
-    unzip
 
     # Custom packages
     (import ../scripts/nixconfig.nix {inherit pkgs;})
