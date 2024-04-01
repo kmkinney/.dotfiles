@@ -38,6 +38,7 @@
   home.file = {
     ".bash_aliases".source = ./dotfiles/bash_aliases.sh;
     ".bashrc".source = ./dotfiles/bashrc.sh;
+    ".bash_profile".text = "[ -f ~/.bashrc ] && . ~/.bashrc";
     ".gitconfig".source = ./dotfiles/gitconfig.conf;
     ".zshrc".source = ./dotfiles/zshrc.zsh;
     ".tmux.conf".source = ./dotfiles/tmux.conf;
