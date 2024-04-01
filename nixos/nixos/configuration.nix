@@ -56,6 +56,7 @@
 
     # Custom packages
     (import ../scripts/nixconfig.nix {inherit pkgs;})
+    (import ../scripts/nixosbuild.nix {inherit pkgs;})
   ];
 
   # Fonts
