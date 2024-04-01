@@ -32,6 +32,8 @@
 
   imports = [
     (import ./modules/neovim.nix {inherit config;})
+    ./modules/hyprland
+    ./modules/terminal
   ];
 
   # Dotfiles using their own files
@@ -43,11 +45,5 @@
     ".zshrc".source = ./dotfiles/zshrc.zsh;
     ".tmux.conf".source = ./dotfiles/tmux.conf;
     ".p10k.zsh".source = ./dotfiles/p10k.zsh;
-    ".config/hypr/hyprland.conf".source = ./dotfiles/hyprland.conf;
-    ".config/hypr/hyprpaper.conf".source = ./dotfiles/hyprpaper.conf;
-    ".config/kitty/kitty.conf".source = ./dotfiles/kitty.conf;
-    ".config/dunst/dunstrc".source = ./dotfiles/dunstrc.cfg;
-    ".config/waybar/config".source = ./dotfiles/waybar.jsonc;
-    ".config/waybar/style.css".source = ./dotfiles/waybar.css;
   };
 }
