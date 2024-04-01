@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     dunst
     hyprpaper
+    hyprlock
     xdg-desktop-portal-hyprland
     waybar
     wofi
