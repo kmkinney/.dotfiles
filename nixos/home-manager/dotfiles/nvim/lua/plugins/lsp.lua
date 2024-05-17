@@ -18,6 +18,14 @@ return {
       },
     },
   },
+  -- This stops copilot from breaking
+  {
+    "L3MON4D3/LuaSnip",
+    ---@class PluginLspOpts
+    keys = function()
+      return {}
+    end,
+  },
   {
     "williamboman/mason.nvim",
     ---@class PluginLspOpts
