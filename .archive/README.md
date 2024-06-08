@@ -1,3 +1,28 @@
-# Dotfiles Archive
+# Kevin Kinney Dotfiles Configuration
 
-Because I'm a hoarder and think I might find something useful in these old configs
+This repo is still a work in progress, so use at your own risk
+
+## Included Configurations
+
+- neovim
+- vim
+- tmux
+- git
+- bash
+
+## Installation process
+
+run the `ubuntu-setup.sh` bash file
+
+## NVIM Kickstart
+
+https://github.com/nvim-lua/kickstart.nvim
+
+## Everforest Theme
+
+Everforest [Wiki](https://github.com/sainnhe/everforest/wiki)
+Pallete [Link](https://github.com/sainnhe/everforest/blob/master/palette.md)
+
+Wallpapers [wallpapers](https://gitlab.com/dwt1/wallpapers)
+
+Grimblast [grimblast](https://github.com/hyprwm/contrib)
