@@ -29,6 +29,7 @@
     (import ../scripts/dotfiles.nix {inherit pkgs;})
   ];
   programs.home-manager.enable = true;
+  programs.vscode.enable = true;
 
   imports = [
     (import ./modules/neovim.nix {inherit config;})
