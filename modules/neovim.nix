@@ -1,5 +1,5 @@
 {config, ...}: let
-  configDir = "${config.home.homeDirectory}/.dotfiles/nixos/home-manager";
+  configDir = "${config.home.homeDirectory}/.dotfiles";
 in {
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
