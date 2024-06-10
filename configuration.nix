@@ -30,6 +30,7 @@
   system.defaults.finder = {
     AppleShowAllFiles = true;
   };
+  system.defaults.universalaccess.reduceMotion = true;
   system.defaults.NSGlobalDomain = {
     AppleShowAllFiles = true;
     # InitialKeyRepeat = 0;
