@@ -25,7 +25,7 @@
     enableKeyMapping = true;
     remapCapsLockToEscape = true;
   };
-  system.starup.chime = false;
+  system.startup.chime = false;
   system.defaults.dock.autohide = true;
   system.defaults.NSGlobalDomain = {
     AppleShowAllFiles = true;
