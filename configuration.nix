@@ -21,5 +21,8 @@
   nixpkgs.config.allowUnfree = true;
 
   # System settings
-  system.keyboard.remapCapsLockToEscape = true;
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+  };
 }
