@@ -27,6 +27,9 @@
   };
   system.startup.chime = false;
   system.defaults.dock.autohide = true;
+  system.defaults.finder = {
+    AppleShowAllFiles = true;
+  };
   system.defaults.NSGlobalDomain = {
     AppleShowAllFiles = true;
     # InitialKeyRepeat = 0;
