@@ -7,6 +7,8 @@
     vim
     tmux
     kitty
+    slack
+    google-chrome
   ];
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";

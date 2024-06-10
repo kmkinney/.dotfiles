@@ -12,7 +12,6 @@
   home.packages = with pkgs; [
     git
     gh
-    kitty
     lazygit
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
