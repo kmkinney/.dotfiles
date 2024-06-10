@@ -19,6 +19,6 @@
   '';
   programs.zsh.enable = true;
   system.stateVersion = 4;
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = "x86_64-darwin";
   nixpkgs.config.allowUnfree = true;
 }
