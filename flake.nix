@@ -17,7 +17,7 @@
     ...
   }: {
     darwinConfigurations = {
-      "Kevins-Macbook" = nix-darwin.lib.darwinSystem {
+      "Kevins-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./configuration.nix
@@ -33,4 +33,5 @@
         ];
       };
     };
+  };
 }
