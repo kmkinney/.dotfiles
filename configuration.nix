@@ -19,4 +19,7 @@
   system.stateVersion = 4;
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
+
+  # System settings
+  system.keyboard.remapCapsLockToEscape = true;
 }

@@ -13,6 +13,7 @@
     git
     gh
     lazygit
+    ripgrep
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     nodejs_20
