@@ -25,4 +25,11 @@
     enableKeyMapping = true;
     remapCapsLockToEscape = true;
   };
+  system.starup.chime = false;
+  system.defaults.dock.autohide = true;
+  system.defaults.NSGlobalDomain = {
+    AppleShowAllFiles = true;
+    # InitialKeyRepeat = 0;
+    # KeyRepeat = 0;
+  };
 }
