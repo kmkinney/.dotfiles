@@ -12,9 +12,25 @@ return {
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
         },
+        vtsls = {
+          typescript = {
+            updateImportsOnFileMove = { enabled = "always" },
+            suggest = {
+              completeFunctionCalls = true,
+            },
+            inlayHints = {
+              enumMemberValues = { enabled = true },
+              functionLikeReturnTypes = { enabled = false },
+              parameterNames = { enabled = "literals" },
+              parameterTypes = { enabled = false },
+              propertyDeclarationTypes = { enabled = false },
+              variableTypes = { enabled = false },
+            },
+          },
+        },
         rust_analyzer = {
-          mason = false
-        }
+          mason = false,
+        },
       },
     },
   },
