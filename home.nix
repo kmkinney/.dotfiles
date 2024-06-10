@@ -16,6 +16,7 @@
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     nodejs_20
+    nodePackages.pnpm
   ];
   programs.home-manager.enable = true;
   programs.vscode.enable = true;
