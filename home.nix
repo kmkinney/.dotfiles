@@ -12,6 +12,7 @@
   home.packages = with pkgs; [
     git
     gh
+    pscale
     lazygit
     ripgrep
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
