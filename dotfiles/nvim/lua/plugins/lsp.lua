@@ -1,11 +1,11 @@
 -- NOTE: LSP Plugins
 
 return {
-  { "github/copilot.vim" },
   { "simrat39/rust-tools.nvim" },
   {
     "neovim/nvim-lspconfig",
     opts = {
+      inlay_hints = { enabled = false },
       servers = {
         tsserver = {
           root_dir = function(...)
@@ -13,19 +13,25 @@ return {
           end,
         },
         vtsls = {
+          root_dir = function(...)
+            return require("lspconfig.util").root_pattern(".git")(...)
+          end,
           typescript = {
             updateImportsOnFileMove = { enabled = "always" },
             suggest = {
               completeFunctionCalls = true,
             },
             inlayHints = {
-              enumMemberValues = { enabled = true },
-              functionLikeReturnTypes = { enabled = false },
-              parameterNames = { enabled = "literals" },
-              parameterTypes = { enabled = false },
-              propertyDeclarationTypes = { enabled = false },
-              variableTypes = { enabled = false },
+              enabled = false,
             },
+            -- inlayHints = {
+            --   enumMemberValues = { enabled = false },
+            --   functionLikeReturnTypes = { enabled = false },
+            --   parameterNames = { enabled = false },
+            --   parameterTypes = { enabled = false },
+            --   propertyDeclarationTypes = { enabled = false },
+            --   variableTypes = { enabled = false },
+            -- },
           },
         },
         rust_analyzer = {
