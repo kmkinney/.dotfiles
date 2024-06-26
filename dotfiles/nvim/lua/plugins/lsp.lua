@@ -24,14 +24,6 @@ return {
             inlayHints = {
               enabled = false,
             },
-            -- inlayHints = {
-            --   enumMemberValues = { enabled = false },
-            --   functionLikeReturnTypes = { enabled = false },
-            --   parameterNames = { enabled = false },
-            --   parameterTypes = { enabled = false },
-            --   propertyDeclarationTypes = { enabled = false },
-            --   variableTypes = { enabled = false },
-            -- },
           },
         },
         rust_analyzer = {
