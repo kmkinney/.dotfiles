@@ -37,4 +37,11 @@
     # InitialKeyRepeat = 0;
     # KeyRepeat = 0;
   };
+
+  homebrew = {
+    enable = true;
+    brews = [
+      "gnu-sed"
+    ];
+  };
 }
