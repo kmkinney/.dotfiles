@@ -87,3 +87,6 @@ export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+
+export PATH=$PATH:/opt/homebrew/bin
