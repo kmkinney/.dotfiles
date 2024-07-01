@@ -50,3 +50,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 [ -f "$HOME"/.cargo/env ] && . "$HOME/.cargo/env"
+
+export PATH=$PATH:/opt/homebrew/bin
