@@ -17,8 +17,8 @@
     ripgrep
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
-    nodejs_20
-    nodePackages.pnpm
+    nodejs-20_x
+    nodejs-20_x.pkgs.pnpm
   ];
   programs.home-manager.enable = true;
   programs.vscode.enable = true;
