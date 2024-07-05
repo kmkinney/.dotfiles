@@ -43,5 +43,8 @@
     brews = [
       "gnu-sed"
     ];
+    casks = [
+      "nordpass"
+    ];
   };
 }
