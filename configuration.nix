@@ -41,11 +41,11 @@
   homebrew = {
     enable = true;
     brews = [
-      gnu-sed
-      nixpacks
+      "gnu-sed"
+      "nixpacks"
     ];
     casks = [
-      nordpass
+      "nordpass"
     ];
   };
 }
