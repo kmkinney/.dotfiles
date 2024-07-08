@@ -19,7 +19,6 @@
 
     nodejs_20
     nodejs_20.pkgs.pnpm
-    nodejs_20.pkgs.turbo
   ];
   programs.home-manager.enable = true;
   programs.vscode.enable = true;
