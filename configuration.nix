@@ -11,7 +11,6 @@
     ./modules/networking.nix
     ./modules/pipewire.nix
     ./modules/steam.nix
-    ./modules/zsh.nix
     ./hardware-configuration.nix
   ];
 
