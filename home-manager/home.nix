@@ -43,8 +43,8 @@
     ".bashrc".source = ./dotfiles/bashrc.sh;
     ".bash_profile".text = "[ -f ~/.bashrc ] && . ~/.bashrc";
     ".gitconfig".source = ./dotfiles/gitconfig.conf;
-    ".zshrc".source = ./dotfiles/zshrc.zsh;
+    # ".zshrc".source = ./dotfiles/zshrc.zsh;
     ".tmux.conf".source = ./dotfiles/tmux.conf;
-    ".p10k.zsh".source = ./dotfiles/p10k.zsh;
+    # ".p10k.zsh".source = ./dotfiles/p10k.zsh;
   };
 }
