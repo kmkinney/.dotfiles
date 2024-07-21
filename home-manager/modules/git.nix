@@ -1,5 +1,6 @@
 {...}: {
   programs = {
+    lazygit.enable = true;
     gh.enable = true;
     git = {
       enable = true;

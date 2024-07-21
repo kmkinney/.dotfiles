@@ -15,12 +15,9 @@
 
   home.packages = with pkgs; [
     alejandra
-    git
     kitty
-    lazygit
     ranger
     btop
-    gh
 
     nodejs_20
     nodePackages.pnpm
@@ -36,7 +33,7 @@
     (import ./modules/neovim.nix {inherit config;})
     ./modules/hyprland
     ./modules/terminal
-    # ./modules/git
+    ./modules/git.nix
   ];
 
   # Dotfiles using their own files
