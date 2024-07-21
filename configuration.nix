@@ -35,7 +35,7 @@
     description = "kevin";
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel"];
-    # shell = pkgs.zsh;
+    shell = pkgs.zsh;
   };
 
   # NixOS System Packages
