@@ -31,18 +31,17 @@
       theme "everforest-dark-medium"
       themes {
         everforest-dark-medium {
-          fg "#d3c6aa"
-          bg "#2f383e"
-          // black "#4a555b"
-          black "#272e33"
-          red "#d6494d"
-          green "#a7c080"
-          yellow "#dbbc7f"
-          blue "#7fbbb3"
-          magenta "#d699b6"
-          cyan "#83c092"
-          white "#a7c080"
-          orange "#e69875"
+	    fg "#d3c6aa"
+	    bg "#2f383e"
+	    black "#272e33"
+	    red "#d6494d"
+	    green "#a7c080"
+	    yellow "#dbbc7f"
+	    blue "#7fbbb3"
+	    magenta "#d699b6"
+	    cyan "#83c092"
+	    white "#d3c6aa"
+	    orange "#e69875"
         }
       }
     '';
