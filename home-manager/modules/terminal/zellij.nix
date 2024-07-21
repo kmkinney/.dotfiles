@@ -34,11 +34,12 @@
       keybinds {
         unbind "Ctrl s"
         unbind "Ctrl h"
-        unbind "Ctrl H"
+        // unbind "Ctrl H"
         shared {
-          unbind "Ctrl h"
-          unbind "Ctrl H"
-          bind "Ctrl m" { SwitchToMode "move"; }
+          // unbind "Ctrl h"
+          // unbind "Ctrl H"
+          bind "Ctrl a" { SwitchToMode "move"; }
+          bind "Ctrl f" { SwitchToMode "scroll"; }
         }
       }
       theme "everforest-dark-medium"
