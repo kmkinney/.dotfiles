@@ -8,6 +8,7 @@
     ./modules/networking.nix
     ./modules/pipewire.nix
     ./modules/steam.nix
+    ./modules/zsh.nix
     ./hardware-configuration.nix
   ];
 
@@ -63,12 +64,6 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
-
-  # Programs
-  programs.zsh = {
-    enable = true;
-    ohMyZsh.enable = true;
-  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

@@ -16,6 +16,7 @@
     dunst
     hyprpaper
     hyprlock
+    hyprpicker
     xdg-desktop-portal-hyprland
     waybar
     wofi
