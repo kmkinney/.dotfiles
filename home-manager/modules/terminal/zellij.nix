@@ -33,8 +33,11 @@
       copy_on_select true
       keybinds {
         unbind "Ctrl s"
+        unbind "Ctrl h"
+        unbind "Ctrl H"
         shared {
           unbind "Ctrl h"
+          unbind "Ctrl H"
           bind "Ctrl m" { SwitchToMode "move"; }
         }
       }
