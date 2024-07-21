@@ -4,6 +4,7 @@
   config,
   ...
 }: {
+  nixpkgs.config.allowUnfree = true;
   home.username = "kevin";
   home.homeDirectory =
     if system == "x86_64-linux"
@@ -43,8 +44,6 @@
     ".bashrc".source = ./dotfiles/bashrc.sh;
     ".bash_profile".text = "[ -f ~/.bashrc ] && . ~/.bashrc";
     ".gitconfig".source = ./dotfiles/gitconfig.conf;
-    # ".zshrc".source = ./dotfiles/zshrc.zsh;
     ".tmux.conf".source = ./dotfiles/tmux.conf;
-    # ".p10k.zsh".source = ./dotfiles/p10k.zsh;
   };
 }
