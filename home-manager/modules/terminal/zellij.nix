@@ -28,9 +28,15 @@
     # }
     # ''
     text = ''
+      simplified_ui true
+      pane_frames false
+      copy_on_select true
       keybinds {
         unbind "Ctrl s"
-        unbind "Ctrl h"
+        shared {
+          unbind "Ctrl h"
+          bind "Ctrl m" { SwitchToMode "move"; }
+        }
       }
       theme "everforest-dark-medium"
       themes {

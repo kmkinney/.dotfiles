@@ -10,6 +10,7 @@
       lg = "lazygit";
       py = "python3";
       zj = "zellij";
+      hms = "home-manager switch --flake ~/.dotfiles/home-manager#linux";
     };
     oh-my-zsh = {
       enable = true;
