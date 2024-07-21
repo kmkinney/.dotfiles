@@ -4,7 +4,7 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    ohMyZsh = {
+    oh-my-zsh = {
       enable = true;
       theme = "awesomepanda";
       plugins = [
