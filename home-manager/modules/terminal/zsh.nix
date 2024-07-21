@@ -9,6 +9,7 @@
       ll = "ls -alF";
       lg = "lazygit";
       py = "python3";
+      zj = "zellij";
     };
     oh-my-zsh = {
       enable = true;
