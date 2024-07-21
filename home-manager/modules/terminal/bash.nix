@@ -14,8 +14,8 @@
       MOZ_ENABLE_WAYLAND = 1;
       ANDROID_HOME = "~/Android/Sdk/";
     };
-    bashrcExtra = ''
-      stty -ixon
-    '';
+    # bashrcExtra = ''
+    #   stty -ixon
+    # '';
   };
 }
