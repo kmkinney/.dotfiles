@@ -36,6 +36,7 @@
     (import ./modules/neovim.nix {inherit config;})
     ./modules/hyprland
     ./modules/terminal
+    ./modules/git
   ];
 
   # Dotfiles using their own files
@@ -43,7 +44,7 @@
     ".bash_aliases".source = ./dotfiles/bash_aliases.sh;
     ".bashrc".source = ./dotfiles/bashrc.sh;
     ".bash_profile".text = "[ -f ~/.bashrc ] && . ~/.bashrc";
-    ".gitconfig".source = ./dotfiles/gitconfig.conf;
+    # ".gitconfig".source = ./dotfiles/gitconfig.conf;
     ".tmux.conf".source = ./dotfiles/tmux.conf;
   };
 }
