@@ -34,7 +34,7 @@
           fg "#d3c6aa"
           bg "#2f383e"
           // black "#4a555b"
-          black "#000000"
+          black "#272e33"
           red "#d6494d"
           green "#a7c080"
           yellow "#dbbc7f"
