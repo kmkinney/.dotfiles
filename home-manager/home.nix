@@ -36,7 +36,7 @@
     (import ./modules/neovim.nix {inherit config;})
     ./modules/hyprland
     ./modules/terminal
-    ./modules/git
+    # ./modules/git
   ];
 
   # Dotfiles using their own files
