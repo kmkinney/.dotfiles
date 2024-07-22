@@ -12,6 +12,7 @@
   # Standalone packages
   home.packages = with pkgs; [
     alejandra
+    ripgrep
     btop
 
     nodejs_20
