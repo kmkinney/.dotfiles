@@ -1,3 +1,4 @@
+# https://www.youtube.com/watch?v=m_6eqpKrtxk
 {pkgs, ...}: {
   gtk.enable = true;
   gtk.theme = {
