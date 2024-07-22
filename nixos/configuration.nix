@@ -36,6 +36,7 @@
     extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
   };
+  programs.zsh.enable = true;
 
   # NixOS System Packages
   environment.systemPackages = with pkgs; [
