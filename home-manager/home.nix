@@ -14,7 +14,6 @@
 
   home.packages = with pkgs; [
     alejandra
-    kitty
     ranger
     btop
 
@@ -26,18 +25,12 @@
     (import ../scripts/dotfiles.nix {inherit pkgs;})
   ];
   programs.home-manager.enable = true;
-  programs.vscode.enable = true;
 
   imports = [
-    # (import ./modules/neovim.nix {inherit config;})
     ./modules/neovim.nix
     ./modules/hyprland
     ./modules/terminal
     ./modules/git.nix
+    ./modules/vscode.nix
   ];
-
-  # Dotfiles using their own files
-  home.file = {
-    ".tmux.conf".source = ./dotfiles/tmux.conf;
-  };
 }
