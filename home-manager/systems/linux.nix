@@ -6,7 +6,7 @@
   ...
 }:
 with lib; let
-  cfg = config.systems.linux;
+  cfg = config.services.linux;
 in {
   config = mkIf cfg.enable {
     imports = [

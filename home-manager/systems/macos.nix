@@ -6,7 +6,7 @@
   ...
 }:
 with lib; let
-  cfg = config.systems.macos;
+  cfg = config.services.macos;
 in {
   config = mkIf cfg.enable {
     imports = [
