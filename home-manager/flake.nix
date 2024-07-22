@@ -4,13 +4,18 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = {
+  outputs = inputs @ {
     nixpkgs,
     home-manager,
     ...
@@ -21,14 +26,20 @@
     homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${macOs};
 
-      extraSpecialArgs = {system = macOs;};
+      extraSpecialArgs = {
+        system = macOs;
+        inherit inputs;
+      };
       modules = [./home.nix];
     };
 
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${linux};
 
-      extraSpecialArgs = {system = linux;};
+      extraSpecialArgs = {
+        system = linux;
+        inherit inputs;
+      };
       modules = [./home.nix];
     };
   };
