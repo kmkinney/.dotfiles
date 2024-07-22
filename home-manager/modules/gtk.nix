@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   gtk.enable = true;
   gtk.theme = {
-    name = "Matcha";
+    name = "Matcha-dark-sea";
     package = pkgs.matcha-gtk-theme;
   };
 }
