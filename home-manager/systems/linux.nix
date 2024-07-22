@@ -1,5 +1,5 @@
 # Which modules to use for the linux system
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./modules/neovim.nix
     ./modules/hyprland
