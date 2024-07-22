@@ -15,6 +15,8 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./systems/linux.nix
+    if system == "x86_64-linux"
+    then ./systems/linux.nix
+    else ./systems/macos.nix
   ];
 }
