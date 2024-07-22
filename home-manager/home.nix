@@ -19,6 +19,8 @@
     ./systems/linux.nix
   ];
 
-  systems.linux.enable = system == "x86_64-linux";
-  systems.macos.enable = system == "aarch64-darwin";
+  # systems.linux.enable = system == "x86_64-linux";
+  systems.linux.enable = false;
+  # systems.macos.enable = system == "aarch64-darwin";
+  systems.macos.enable = true;
 }
