@@ -1,3 +1,4 @@
+# Linux only for now
 {
   pkgs,
   system,
@@ -20,7 +21,9 @@ in {
 
   programs.home-manager.enable = true;
 
-  imports = [] ++ (systemsModule.${system} or []);
+  imports = [
+    ./systems/linux.nix
+  ];
 
   # TODO: figure this out with mkEnable
   # systems.linux.enable = system == "x86_64-linux";
