@@ -4,6 +4,7 @@
     home = "/Users/kevin";
   };
   environment.systemPackages = with pkgs; [
+    fzf
     vim
     tmux
     kitty
