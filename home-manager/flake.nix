@@ -28,7 +28,6 @@
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${linux};
 
-      # homeDirectory = "/home/kevin/";
       extraSpecialArgs = {system = linux;};
       modules = [./home.nix];
     };

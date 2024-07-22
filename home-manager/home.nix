@@ -1,9 +1,5 @@
 # Linux only for now
-{
-  pkgs,
-  system,
-  ...
-}: let
+{system, ...}: let
   systemsModule = {
     "x86_64-linux" = [./systems/linux.nix];
     "aarch64-darwin" = [./systems/macos.nix];
