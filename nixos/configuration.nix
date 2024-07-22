@@ -10,7 +10,7 @@
     ./modules/hyprland.nix
     ./modules/networking.nix
     ./modules/pipewire.nix
-    ./modules/steam.nix
+    ./modules/gaming.nix
     ./hardware-configuration.nix
   ];
 
