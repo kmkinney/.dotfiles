@@ -4,7 +4,8 @@ pkgs.stdenv.mkDerivation {
 
   src = pkgs.fetchurl {
     url = "https://github.com/kmkinney/.dotfiles/blob/9a74f998f5a5b7fc10fdde1962cf37b414b14d68/home-manager/modules/gtk/Everforest-Dark-BL.zip";
-    sha256 = pkgs.lib.fakeSha256;
+    sha256 = "sha256-V5426nC7f66AiQXgityYddyuvQa4mPdyBkKsH1PAUJM=";
+    # sha256 = pkgs.lib.fakeSha256;
   };
 
   dontUnpack = true;
