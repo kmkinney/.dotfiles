@@ -2,7 +2,7 @@
 {pkgs, ...}: {
   imports = [
     ../modules/git.nix
-    ../modules/gtk.nix
+    ../modules/gtk
     ../modules/hyprland
     ../modules/neovim.nix
     ../modules/ranger.nix
