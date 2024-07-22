@@ -2,15 +2,15 @@
 pkgs.stdenv.mkDerivation {
   name = "everforest-dark";
 
-  src = pkgs.fetchFromGitHub {
-    owner = "Fausto-Korpsvart";
-    repo = "Everforest-GTK-Theme";
-    rev = "b3af23bc47ce7a15487eb273b12a5dc2a3566621";
+  src = pkgs.fetchurl {
+    url = "https://github.com/kmkinney/.dotfiles/blob/9a74f998f5a5b7fc10fdde1962cf37b414b14d68/home-manager/modules/gtk/Everforest-Dark-BL.zip";
     sha256 = pkgs.lib.fakeSha256;
   };
 
+  dontUnpack = true;
+
   installPhase = ''
     mkdir -p $out
-    cp -r $src $out
+    ${pkgs.unzip}/bin/unzip $src -d $out/
   '';
 }
