@@ -1,11 +1,11 @@
 # Which modules to use for the linux system
 {pkgs, ...}: {
   imports = [
-    ../modules/neovim.nix
-    ../modules/hyprland
-    ../modules/terminal
     ../modules/git.nix
+    ../modules/hyprland
+    ../modules/neovim.nix
     ../modules/ranger.nix
+    ../modules/terminal
   ];
 
   # Standalone packages
