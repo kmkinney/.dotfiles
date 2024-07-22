@@ -7,4 +7,14 @@
     ./modules/git.nix
     ./modules/ranger.nix
   ];
+
+  # Standalone packages
+  home.packages = with pkgs; [
+    alejandra
+    btop
+
+    nodejs_20
+    nodePackages.pnpm
+    rust-analyzer
+  ];
 }
