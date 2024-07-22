@@ -19,6 +19,6 @@
     ./systems/linux.nix
   ];
 
-  services.linux.enable = system == "x86_64-linux";
-  services.macos.enable = system == "aarch64-darwin";
+  systems.linux.enable = system == "x86_64-linux";
+  systems.macos.enable = system == "aarch64-darwin";
 }

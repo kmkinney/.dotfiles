@@ -6,8 +6,9 @@
   ...
 }:
 with lib; let
-  cfg = config.services.macos;
+  cfg = config.systems.macos;
 in {
+  options.systems.macos.enable = mkEnableOption "Enable macos system";
   config = mkIf cfg.enable {
     imports = [
       ../modules/neovim.nix

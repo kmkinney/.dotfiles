@@ -6,8 +6,9 @@
   ...
 }:
 with lib; let
-  cfg = config.services.linux;
+  cfg = config.systems.linux;
 in {
+  options.systems.linux.enable = mkEnableOption "Enable macos system";
   config = mkIf cfg.enable {
     imports = [
       ../modules/git.nix
