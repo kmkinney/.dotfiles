@@ -32,5 +32,6 @@
     ./modules/terminal
     ./modules/git.nix
     ./modules/vscode.nix
+    ./modules/ranger.nix
   ];
 }
