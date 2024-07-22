@@ -27,7 +27,7 @@
     nixosConfigurations = {
       kmkinney-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./nixos/configuration.nix];
+        modules = [./configuration.nix];
       };
     };
   };
