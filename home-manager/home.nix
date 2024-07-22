@@ -20,7 +20,7 @@ in {
 
   programs.home-manager.enable = true;
 
-  imports = systemsModule.${system} or [];
+  imports = [] ++ (systemsModule.${system} or []);
 
   # TODO: figure this out with mkEnable
   # systems.linux.enable = system == "x86_64-linux";
