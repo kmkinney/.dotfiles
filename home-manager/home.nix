@@ -1,7 +1,6 @@
 {
   pkgs,
   system,
-  config,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -30,7 +29,8 @@
   programs.vscode.enable = true;
 
   imports = [
-    (import ./modules/neovim.nix {inherit config;})
+    # (import ./modules/neovim.nix {inherit config;})
+    ./modules/neovim.nix
     ./modules/hyprland
     ./modules/terminal
     ./modules/git.nix
