@@ -15,8 +15,10 @@
   programs.home-manager.enable = true;
 
   imports = [
-    if system == "x86_64-linux"
-    then ./systems/linux.nix
-    else ./systems/macos.nix
+    ./systems/macos.nix
+    ./systems/linux.nix
   ];
+
+  systems.linux.enable = system == "x86_64-linux";
+  systems.macos.enable = system == "aarch64-darwin";
 }
