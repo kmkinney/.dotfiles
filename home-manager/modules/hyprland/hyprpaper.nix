@@ -2,7 +2,7 @@
   wallpaperDir = "${config.home.homeDirectory}/.dotfiles/wallpapers";
   cabin = "${wallpaperDir}/cabin.jpg";
 in {
-  programs.hyprpaper = {
+  services.hyprpaper = {
     enable = true;
     settings = {
       splash = false;
