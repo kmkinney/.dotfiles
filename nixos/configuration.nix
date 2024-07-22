@@ -51,7 +51,6 @@
     killall
     python3
     rustc
-    tmux
     tree
     unzip
     vim
