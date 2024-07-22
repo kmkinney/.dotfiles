@@ -1,3 +1,5 @@
+# Simple way to host the built theme myself
+# For a better way, try this patter https://github.com/NixOS/nixpkgs/blob/63d37ccd2d178d54e7fb691d7ec76000740ea24a/pkgs/data/themes/matcha/default.nix#L69
 {pkgs}:
 pkgs.stdenv.mkDerivation {
   name = "everforest-dark";
