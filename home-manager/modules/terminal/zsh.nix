@@ -3,7 +3,10 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestion.enable = true;
+    autosuggestion = {
+      enable = true;
+      highlight = "fg=4";
+    };
     shellAliases = {
       v = "nvim";
       ll = "ls -alF";
