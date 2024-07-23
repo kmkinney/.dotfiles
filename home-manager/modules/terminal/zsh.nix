@@ -14,7 +14,7 @@
       py = "python3";
       zj = "zellij";
       hms = "home-manager switch --flake ~/.dotfiles/home-manager#linux";
-      dr = "darwin-rebuild switch --flake ~/.dotfiles/nix-darwin"
+      dr = "darwin-rebuild switch --flake ~/.dotfiles/nix-darwin";
     };
     oh-my-zsh = {
       enable = true;
