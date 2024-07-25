@@ -7,6 +7,7 @@
     ../modules/neovim.nix
     ../modules/ranger.nix
     ../modules/terminal
+    ../modules/gnome.nix
   ];
 
   # Standalone packages
