@@ -43,7 +43,6 @@
   environment.systemPackages = with pkgs; [
     cargo
     curl
-    # discord
     firefox
     gcc
     git
@@ -52,7 +51,6 @@
     htop
     killall
     python3
-    # rustc
     tree
     unzip
     vim

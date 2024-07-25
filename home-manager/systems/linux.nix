@@ -3,7 +3,7 @@
   imports = [
     ../modules/git.nix
     ../modules/gtk
-    ../modules/hyprland
+    # ../modules/hyprland
     ../modules/neovim.nix
     ../modules/ranger.nix
     ../modules/terminal
@@ -15,8 +15,8 @@
     ripgrep
     btop
 
-    nodejs_20
-    nodePackages.pnpm
-    rust-analyzer
+    # nodejs_20
+    # nodePackages.pnpm
+    # rust-analyzer
   ];
 }
