@@ -48,6 +48,7 @@
     casks = [
       "nordpass"
       "steam"
+      "firefox"
     ];
   };
 }
