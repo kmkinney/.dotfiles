@@ -7,11 +7,12 @@
   # Nixos configuration
   imports = [
     ./modules/bluetooth.nix
-    ./modules/hyprland.nix
+    # ./modules/hyprland.nix
+    ./modules/gnome.nix
     ./modules/networking.nix
     ./modules/pipewire.nix
     ./modules/gaming.nix
-    ./hardware-configuration.nix
+    ./pc-hardware-configuration.nix
   ];
 
   nixpkgs = {
@@ -30,8 +31,8 @@
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users.kevin = {
-    initialPassword = "nix";
-    description = "kevin";
+    # initialPassword = "nix";
+    description = "Kevin";
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
@@ -42,7 +43,7 @@
   environment.systemPackages = with pkgs; [
     cargo
     curl
-    discord
+    # discord
     firefox
     gcc
     git
@@ -51,17 +52,34 @@
     htop
     killall
     python3
-    rustc
+    # rustc
     tree
     unzip
     vim
     wget
 
     # Custom packages
-    (import ./scripts/nixconfig.nix {inherit pkgs;})
-    (import ./scripts/nixosbuild.nix {inherit pkgs;})
+    # (import ./scripts/nixconfig.nix {inherit pkgs;})
+    # (import ./scripts/nixosbuild.nix {inherit pkgs;})
   ];
 
+  # Set your time zone.
+  time.timeZone = "America/Denver";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
   # Fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
