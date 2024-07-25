@@ -18,6 +18,8 @@
   environment.systemPackages = with pkgs; [
     mangohud
     protonup
+    # lutris
+    # heroic
   ];
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
