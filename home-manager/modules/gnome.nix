@@ -1,10 +1,7 @@
 {pkgs, ...}: {
-  # home.packages = with pkgs; [
-  #   gnomeExtensions.dash-to-dock
-  # ];
-  home.file.".local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com".source = builtins.fetchGit {
-    url = "https://github.com/micheleg/dash-to-dock.git";
-  };
+  home.packages = with pkgs.gnomeExtensions; [
+    dash-to-dock
+  ];
   dconf = {
     enable = true;
     settings."org/gnome/shell" = {
