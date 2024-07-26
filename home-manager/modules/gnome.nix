@@ -7,8 +7,14 @@
     settings."org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = with pkgs.gnomeExtensions; [
-        dash-to-dock.extensionUuid
+        "dash-to-dock@micxgx.gmail.com"
       ];
     };
+    # settings."org/gnome/shell" = {
+    #   disable-user-extensions = false;
+    #   enabled-extensions = with pkgs.gnomeExtensions; [
+    #     dash-to-dock.extensionUuid
+    #   ];
+    # };
   };
 }
