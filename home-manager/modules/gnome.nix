@@ -1,4 +1,7 @@
 {pkgs, ...}: {
+  home.systemPackages = with pkgs.gnomeExtensions; [
+    dash-to-dock
+  ]
   dconf = {
     enable = true;
     settings."org/gnome/shell" = {
