@@ -55,6 +55,8 @@
     unzip
     vim
     wget
+    nodejs
+    lm_sensors
 
     # Custom packages
     # (import ./scripts/nixconfig.nix {inherit pkgs;})

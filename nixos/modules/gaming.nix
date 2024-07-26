@@ -7,10 +7,10 @@
   };
   programs.gamemode.enable = true;
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    #driSupport = true;
+    enable32Bit = true;
   };
 
   services.xserver.videoDrivers = ["amdgpu"];

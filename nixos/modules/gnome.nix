@@ -6,6 +6,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.dock-from-dash
+    gnomeExtensions.dash-to-dock
+    gnome-tweaks
   ];
 }
