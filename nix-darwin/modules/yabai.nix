@@ -14,6 +14,8 @@
       cmd - k : yabai -m window --focus north
       cmd - h : yabai -m window --focus west
       cmd - l : yabai -m window --focus east
+
+      cmd - return: /etc/profiles/per-user/kevin/bin/kitty
     '';
   };
 }
