@@ -1,4 +1,7 @@
 {pkgs, ...}: {
+  imports = [
+    ./modules/yabai.nix
+  ];
   users.users.kevin = {
     name = "kevin";
     home = "/Users/kevin";
