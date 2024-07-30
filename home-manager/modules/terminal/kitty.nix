@@ -49,5 +49,6 @@
     # Annoying bell be gone
     enable_audio_bell = false;
     hide_window_decorations = true;
+    macos_option_as_alt = true;
   };
 }
