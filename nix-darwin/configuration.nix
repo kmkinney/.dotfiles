@@ -52,6 +52,7 @@
       "nordpass"
       "steam"
       "firefox"
+      "notion-calendar"
     ];
   };
 }
