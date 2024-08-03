@@ -13,7 +13,7 @@ in {
     ];
 
     # Eventually replace this with nix
-    extraConfig = ''
+    extraConfig = /* hypr */ ''
       $mainMod  = SUPER
 
       $green    = rgba(A7C080ff)
