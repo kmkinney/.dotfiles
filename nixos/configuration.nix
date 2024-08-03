@@ -7,7 +7,7 @@
   # Nixos configuration
   imports = [
     ./modules/bluetooth.nix
-    # ./modules/hyprland.nix
+    ./modules/hyprland.nix
     ./modules/gnome.nix
     ./modules/networking.nix
     ./modules/pipewire.nix

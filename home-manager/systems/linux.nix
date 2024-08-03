@@ -3,7 +3,7 @@
   imports = [
     ../modules/git.nix
     ../modules/gtk
-    # ../modules/hyprland
+    ../modules/hyprland
     ../modules/neovim.nix
     ../modules/ranger.nix
     ../modules/terminal
