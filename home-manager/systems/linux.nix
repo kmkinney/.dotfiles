@@ -4,6 +4,7 @@
     ../modules/git.nix
     ../modules/gtk
     ../modules/hyprland
+    ../modules/eww
     ../modules/neovim.nix
     ../modules/ranger.nix
     ../modules/terminal
