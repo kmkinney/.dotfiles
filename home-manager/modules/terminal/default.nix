@@ -5,5 +5,7 @@
     ./bash.nix
     ./zellij.nix
     ./tmux.nix
+    ./yazi.nix
+    ./wezterm.nix
   ];
 }

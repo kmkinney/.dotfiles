@@ -7,7 +7,7 @@
     };
     fd.enable = true;
     fzf.enable = true;
-    rg.enable = true;
+    ripgrep.enable = true;
     jq.enable = true;
   };
 }
