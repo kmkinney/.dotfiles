@@ -26,18 +26,21 @@
 
 (defwidget battery []
 	(button 
-		:tooltip "${EWW_BATTERY.BAT0.capacity}%"
+		:tooltip "${EWW_BATTERY}%"
+		; (label
+		; :style "background-image: url('images/${
+		; 	EWW_BATTERY.BAT0.capacity > 88 ? 7
+		; 	: EWW_BATTERY.BAT0.capacity > 75 ? 6
+		; 	: EWW_BATTERY.BAT0.capacity > 62 ? 5
+		; 	: EWW_BATTERY.BAT0.capacity > 50 ? 4
+		; 	: EWW_BATTERY.BAT0.capacity > 38 ? 3
+		; 	: EWW_BATTERY.BAT0.capacity > 25 ? 2
+		; 	: EWW_BATTERY.BAT0.capacity > 12 ? 1
+		; 	: 0
+		; }${EWW_BATTERY.BAT0.status == "Charging" ? "-c.svg" : ".svg"}');"
+		; :class "wlabel")
 		(label
-		:style "background-image: url('images/${
-			EWW_BATTERY.BAT0.capacity > 88 ? 7
-			: EWW_BATTERY.BAT0.capacity > 75 ? 6
-			: EWW_BATTERY.BAT0.capacity > 62 ? 5
-			: EWW_BATTERY.BAT0.capacity > 50 ? 4
-			: EWW_BATTERY.BAT0.capacity > 38 ? 3
-			: EWW_BATTERY.BAT0.capacity > 25 ? 2
-			: EWW_BATTERY.BAT0.capacity > 12 ? 1
-			: 0
-		}${EWW_BATTERY.BAT0.status == "Charging" ? "-c.svg" : ".svg"}');"
+		:style "background-image: url('images/7.svg');"
 		:class "wlabel")
 	)
 )
