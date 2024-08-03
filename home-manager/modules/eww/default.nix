@@ -1,9 +1,10 @@
-{config, ...}: let
-  # configDir = "${config.home.homeDirectory}/.dotfiles/home-manager/modules/eww";
-  configDir = "./modules/eww";
-in {
+{pkgs, ...}: {
   programs.eww = {
     enable = true;
     configDir = ./config;
   };
+
+  home.packages = with pkgs; [
+    pamixer
+  ];
 }
