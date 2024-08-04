@@ -7,5 +7,6 @@
   home.packages = with pkgs; [
     pamixer
     (import ./scripts/simple.nix {inherit pkgs;})
+    (import ./scripts/keybinds.nix {inherit pkgs;})
   ];
 }

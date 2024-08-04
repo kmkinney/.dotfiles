@@ -1,5 +1,14 @@
 {pkgs, ...}:
-pkgs.writers.writePython3Bin "show-keybinds" {}
+pkgs.writers.writePython3Bin "show-keybinds" {
+  makeWrapperArgs = [
+    "--prefix"
+    "PATH"
+    ":"
+    "${pkgs.hyprland}/bin"
+    ":"
+    "${pkgs.libnotify}/bin"
+  ];
+}
 /*
 python
 */
@@ -15,7 +24,7 @@ python
       65: "SUPER+SHIFT"
   }
 
-  output = check_output(["${pkgs.hyprland}/bin/hyprctl", "binds", "-j"])
+  output = check_output(["hyprctl", "binds", "-j"])
   data = json.loads(output)
 
   text = ""
@@ -26,5 +35,5 @@ python
       desc = k['description']
       if has_desc:
           text += f"{mod_mask[mod]}+{key}:\t\t{desc}\n"
-  run(["${pkgs.libnotify}/bin/notify-send", text])
+  run(["notify-send", text])
 ''
