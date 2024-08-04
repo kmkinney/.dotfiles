@@ -4,14 +4,9 @@ pkgs.writers.writePython3Bin "show-keybinds" {
     "--prefix"
     "PATH"
     ":"
-    "${pkgs.hyprland}/bin"
-    ":"
-    "${pkgs.libnotify}/bin"
+    "${pkgs.hyprland}/bin:${pkgs.libnotify}/bin"
   ];
 }
-/*
-python
-*/
 ''
   from subprocess import check_output, run
   import json

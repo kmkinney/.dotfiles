@@ -2,6 +2,7 @@
 
 return {
   { "github/copilot.vim" },
+  { "jmbuhr/otter.nvim" },
   { "simrat39/rust-tools.nvim" },
   {
     "neovim/nvim-lspconfig",
