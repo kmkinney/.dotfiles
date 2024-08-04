@@ -6,6 +6,6 @@
 
   home.packages = with pkgs; [
     pamixer
-    (import ./scripts/simple.nix)
+    (import ./scripts/simple.nix {inherit pkgs;})
   ];
 }
