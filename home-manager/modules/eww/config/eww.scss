@@ -25,6 +25,12 @@ $statusline1: "#a7c080";
 $statusline2: "#d3c6aa";
 $statusline3: "#e67e80";
 
+$vertical: 4px;
+$edge: 4px;
+$separation: 4px;
+$transparent: rgba(0, 0, 0, 0);
+$opacity: 0.1;
+
 * {
   font-family: "JetBrainsMono Nerd Font";
   color: $fg;
@@ -32,6 +38,7 @@ $statusline3: "#e67e80";
 
 .bar {
   background-color: $bg_dim;
+  opacity: $opacity;
 }
 
 scale {
@@ -109,11 +116,6 @@ tooltip {
   margin-left: $edge;
 }
 
-.used {
-}
-
-.unused {
-}
 .active {
   background-image: linear-gradient(to right, $orange 5%, $red 95%);
 }

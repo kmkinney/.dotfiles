@@ -1,8 +1,9 @@
 (defvar vol_rev false)
 (defpoll volume_percent :interval "3s" "pamixer --get-volume")
 (defpoll volume_mute :interval "3s" "pamixer --get-mute")
+(defpoll hour :interval "10s" "date +'%-l:%M'")
+(defpoll dateVar :interval "60s" "date '+%B %-e, %Y'")
 
-(defvar eww "eww -c ~/.config/eww")
 (defwidget bar []
   (box :orientation "h" :hexpand true
     (box :halign "start" :hexpand true :vexpand false :orientation "h" :space-evenly false
@@ -18,46 +19,35 @@
 
 (defwidget right[]
   (box :orientation "h" :hexpand false :space-evenly false
-    (volume)
-    (battery)
+    (cpu)
     (time)
   )
 )
 
-(defwidget battery []
-	(button 
-		:tooltip "${EWW_BATTERY}%"
-		; (label
-		; :style "background-image: url('images/${
-		; 	EWW_BATTERY.BAT0.capacity > 88 ? 7
-		; 	: EWW_BATTERY.BAT0.capacity > 75 ? 6
-		; 	: EWW_BATTERY.BAT0.capacity > 62 ? 5
-		; 	: EWW_BATTERY.BAT0.capacity > 50 ? 4
-		; 	: EWW_BATTERY.BAT0.capacity > 38 ? 3
-		; 	: EWW_BATTERY.BAT0.capacity > 25 ? 2
-		; 	: EWW_BATTERY.BAT0.capacity > 12 ? 1
-		; 	: 0
-		; }${EWW_BATTERY.BAT0.status == "Charging" ? "-c.svg" : ".svg"}');"
-		; :class "wlabel")
-		(label
-		:style "background-image: url('images/7.svg');"
-		:class "wlabel")
-	)
+(defwidget cpu []
+  (label
+    :text "CPU ${round(EWW_CPU.avg * 100, 0)}%"
+  )
 )
 
 
-;;  TIME
-
-(defpoll hour :interval "10s" "date +'%-l:%M'")
-(defpoll dateVar :interval "60s" "date '+%B %-e, %Y'")
-
 (defwidget time []
-  (eventbox :cursor "hand"  :hexpand false :vexpand false
-                :tooltip "${dateVar}"
-    (box :orientation "h" :hexpand false :vexpand false :space-evenly false :class "clock"
-      (button		:class "date"
-                :onclick ""	"${hour}")
-    )
+  (eventbox 
+    :cursor "hand"
+    :hexpand false 
+    :vexpand false
+    :tooltip "${dateVar}"
+      (box 
+        :orientation "h" 
+        :hexpand false 
+        :vexpand false 
+        :space-evenly false 
+        :class "clock"
+          (button
+            :class "date"
+            :onclick "" "${hour}"
+          )
+      )
   )
 )
 
