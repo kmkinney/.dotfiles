@@ -12,6 +12,7 @@
     ./modules/networking.nix
     ./modules/pipewire.nix
     ./modules/gaming.nix
+    ./modules/stylix.nix
     ./pc-hardware-configuration.nix
   ];
 

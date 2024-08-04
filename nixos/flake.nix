@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:danth/stylix";
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
@@ -27,11 +28,17 @@
     nixosConfigurations = {
       kmkinney-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./configuration.nix];
+        modules = [
+          ./configuration.nix
+          inputs.stylix.nixosModules.stylix
+        ];
       };
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./configuration.nix];
+        modules = [
+          ./configuration.nix
+          inputs.stylix.nixosModules.stylix
+        ];
       };
     };
   };
