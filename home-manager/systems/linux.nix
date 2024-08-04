@@ -5,6 +5,7 @@
     ../modules/gtk
     ../modules/hyprland
     ../modules/eww
+    ../modules/ags
     ../modules/neovim.nix
     ../modules/ranger.nix
     ../modules/terminal
