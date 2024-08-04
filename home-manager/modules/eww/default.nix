@@ -6,5 +6,6 @@
 
   home.packages = with pkgs; [
     pamixer
+    (import ./scripts/simple.nix)
   ];
 }

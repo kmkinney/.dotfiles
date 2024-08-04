@@ -1,13 +1,10 @@
 (defvar vol_rev false)
-(defpoll volume_percent :interval "3s" "pamixer --get-volume")
-(defpoll volume_mute :interval "3s" "pamixer --get-mute")
 (defpoll hour :interval "10s" "date +'%-l:%M'")
 (defpoll dateVar :interval "60s" "date '+%B %-e, %Y'")
 
 (defwidget bar []
   (box :orientation "h" :hexpand true
     (box :halign "start" :hexpand true :vexpand false :orientation "h" :space-evenly false
-      (workspaces)
     )
     (box :halign "center" :hexpand true :vexpand false :orientation "h" :space-evenly false
     )
@@ -19,16 +16,52 @@
 
 (defwidget right[]
   (box :orientation "h" :hexpand false :space-evenly false
-    (cpu)
+    (audio)
+    (mem_graph)
+    (cpu_graph)
     (time)
   )
 )
 
-(defwidget cpu []
-  (label
-    :text "CPU ${round(EWW_CPU.avg * 100, 0)}%"
+(defwidget cpu_graph []
+  (box :orientation "h" :hexpand false :space-evenly false
+    (label
+      :text "CPU"
+    )
+    (scale
+      :value {round(EWW_CPU.avg * 100, 0)}
+      :min 0
+      :orientation "h"
+      :max 100
+    )
   )
 )
+
+(defwidget mem_graph []
+  (box :orientation "h" :hexpand false :space-evenly false
+    (label
+      :text "MEM"
+    )
+    (scale
+      :value {round(EWW_RAM.used_mem_perc, 0)}
+      :min 0
+      :orientation "h"
+      :max 100
+    )
+  )
+)
+
+(defwidget audio []
+  (button 
+    :tooltip "Audio"
+    :onclick "pkill pavucontrol || pavucontrol&"
+    (label
+      :text ""
+      :style "font-size: 18;"
+    )
+  )
+)
+
 
 
 (defwidget time []
@@ -50,32 +83,6 @@
       )
   )
 )
-
-(defwidget volume []
- (eventbox :onhover "${eww} update vol_rev=true"
-			  :onhoverlost "${eww} update vol_rev=false"
-			  :tooltip "${volume_percent}%"
-  (box :space-evenly "false" :orientation "h" :spacing "3" 
-	(button :onclick "pamixer -t; ${eww} update volume_mute=$(pamixer --get-mute)"  (label :class {volume_mute ? "vol mute" : volume_percent>80 ? "vol high" : volume_percent>50 ? "vol med" : volume_percent>5 ? "vol low" : "vol off"} :text ""))
-	(revealer :transition "slideright"
-			  :reveal vol_rev
-			  :duration "150ms"
-	(scale    :class "volbar"
-			  :value volume_percent
-			  :orientation "h"
-			  :tooltip "${volume_percent}%"
-			  :max 150
-			  :min 0
-			  :onchange "pulseaudio-ctl set {} && ${eww} update volume_percent={}" )))))
-
-
-
-;; WORKSPACES
-
-(deflisten workspaces_listen "./scripts/workspaces.sh")
-(defwidget workspaces []
-  (literal :content workspaces_listen :class "workspace-container"))
-    
 
 (defwindow bar
   :monitor 0
