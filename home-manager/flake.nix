@@ -13,6 +13,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ags.url = "github:Aylur/ags";
   };
 
   outputs = inputs @ {
@@ -30,7 +31,10 @@
         system = macOs;
         inherit inputs;
       };
-      modules = [./home.nix];
+      modules = [
+        ./home.nix
+        inputs.ags.homeManagerModules.default
+      ];
     };
 
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
@@ -40,7 +44,10 @@
         system = linux;
         inherit inputs;
       };
-      modules = [./home.nix];
+      modules = [
+        ./home.nix
+        inputs.ags.homeManagerModules.default
+      ];
     };
   };
 }
