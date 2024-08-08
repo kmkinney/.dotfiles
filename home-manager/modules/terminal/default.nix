@@ -7,5 +7,6 @@
     ./tmux.nix
     ./yazi.nix
     ./wezterm.nix
+    ./zoxide.nix
   ];
 }
