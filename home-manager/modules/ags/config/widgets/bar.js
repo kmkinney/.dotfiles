@@ -22,7 +22,7 @@ const getIcon = (
 };
 
 const date = Variable("", {
-  poll: [1000, 'date "+%H:%M %b %e"'],
+  poll: [1000, 'date "+%I:%M %p %b %e"'],
 });
 
 const hostname = Variable(Utils.exec(["uname", "-n"]), {
