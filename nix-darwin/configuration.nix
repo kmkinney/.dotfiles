@@ -10,8 +10,6 @@
     fzf
     vim
     tmux
-    kitty
-    slack
   ];
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
@@ -53,6 +51,7 @@
       "steam"
       "firefox"
       "notion-calendar"
+      "slack"
     ];
   };
 }
