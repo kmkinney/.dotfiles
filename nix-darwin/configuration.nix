@@ -52,6 +52,7 @@
       "firefox"
       "notion-calendar"
       "slack"
+      "obsidian"
     ];
   };
 }
