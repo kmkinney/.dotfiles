@@ -22,6 +22,7 @@
         core = {
           editor = "nvim";
           autocrlf = "input";
+          ignorecase = false;
         };
         pull = {
           rebase = true;
