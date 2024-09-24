@@ -53,6 +53,7 @@
       "notion-calendar"
       "slack"
       "obsidian"
+      "visual-studio-code"
     ];
   };
 }
