@@ -20,7 +20,8 @@
     protonup
     lutris
     heroic
-    minecraft
+    discord
+    prismlauncher
   ];
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
