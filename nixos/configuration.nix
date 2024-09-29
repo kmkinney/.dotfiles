@@ -7,11 +7,12 @@
   # Nixos configuration
   imports = [
     ./modules/bluetooth.nix
-    ./modules/hyprland.nix
+    ./modules/gaming.nix
     ./modules/gnome.nix
+    ./modules/hyprland.nix
     ./modules/networking.nix
     ./modules/pipewire.nix
-    ./modules/gaming.nix
+    ./modules/printers.nix
     ./modules/stylix.nix
     ./pc-hardware-configuration.nix
   ];
@@ -39,7 +40,6 @@
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
-  services.printing.enable = true;
 
   # NixOS System Packages
   environment.systemPackages = with pkgs; [
