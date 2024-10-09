@@ -116,10 +116,15 @@ const Clock = () =>
   });
 
 const Network = () =>
-  Widget.Icon({
-    class_name: "icon network",
-    icon: network.wired.bind("icon_name"),
-  });
+  network.primary === "wifi"
+    ? Widget.Icon({
+        class_name: "icon network",
+        icon: network.wifi.bind("icon_name"),
+      })
+    : Widget.Icon({
+        class_name: "icon network",
+        icon: network.wired.bind("icon_name"),
+      });
 
 const Right = () =>
   Widget.Box({
