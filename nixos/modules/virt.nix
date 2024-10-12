@@ -18,6 +18,7 @@
     spice
     spice-gtk
     spice-protocol
+    transmission-gtk
     virt-viewer
     #virtio-win
     #win-spice
