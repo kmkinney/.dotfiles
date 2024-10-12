@@ -14,6 +14,7 @@
     ./modules/pipewire.nix
     ./modules/printers.nix
     ./modules/stylix.nix
+    ./modules/virt.nix
     ./pc-hardware-configuration.nix
   ];
 
