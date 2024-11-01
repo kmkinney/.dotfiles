@@ -55,6 +55,7 @@
     killall
     python3
     tree
+    tldr
     unzip
     vim
     wget
