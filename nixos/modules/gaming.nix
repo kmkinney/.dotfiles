@@ -15,6 +15,8 @@
 
   services.xserver.videoDrivers = ["amdgpu"];
 
+  virtualisation.waydroid.enable = true;
+
   environment.systemPackages = with pkgs; [
     mangohud
     protonup
