@@ -24,6 +24,8 @@
     heroic
     discord
     prismlauncher
+    fuse
+    fuse3
   ];
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
