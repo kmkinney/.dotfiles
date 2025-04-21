@@ -9,10 +9,12 @@
   environment.systemPackages = with pkgs; [
     fzf
     vim
+    kitty
+    raycast
     tmux
     ngrok
   ];
-  # services.nix-daemon.enable = true;
+  nix.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
 
   nix.extraOptions = ''
@@ -21,6 +23,7 @@
   '';
   programs.zsh.enable = true;
   system.stateVersion = 4;
+  ids.gids.nixbld = 350;
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
 
@@ -41,21 +44,21 @@
     # KeyRepeat = 0;
   };
 
-  homebrew = {
-    enable = true;
-    brews = [
-      "gnu-sed"
-      "nixpacks"
-    ];
-    casks = [
-      "nordpass"
-      "steam"
-      "firefox"
-      "kitty"
-      "notion-calendar"
-      "slack"
-      "obsidian"
-      "visual-studio-code"
-    ];
-  };
+  # homebrew = {
+  #   enable = true;
+  #   brews = [
+  #     "gnu-sed"
+  #     "nixpacks"
+  #   ];
+  #   casks = [
+  #     "nordpass"
+  #     "steam"
+  #     "firefox"
+  #     "kitty"
+  #     "notion-calendar"
+  #     "slack"
+  #     "obsidian"
+  #     "visual-studio-code"
+  #   ];
+  # };
 }

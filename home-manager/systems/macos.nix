@@ -11,7 +11,7 @@
     alejandra
     pscale
     ripgrep
-    # (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+    nerd-fonts.jetbrains-mono
 
     nodejs_20
     corepack
