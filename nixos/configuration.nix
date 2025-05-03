@@ -48,6 +48,7 @@
     curl
     firefox
     gcc
+    gparted
     git
     google-chrome
     home-manager
