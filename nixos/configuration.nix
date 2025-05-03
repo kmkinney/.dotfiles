@@ -68,6 +68,9 @@
     # (import ./scripts/nixosbuild.nix {inherit pkgs;})
   ];
 
+  # Security
+  security.polkit.enable = true;
+
   # Set your time zone.
   time.timeZone = "America/Denver";
 
