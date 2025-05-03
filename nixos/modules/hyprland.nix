@@ -14,6 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     dunst
+    grimblast
     hyprpaper
     hyprlock
     hyprpicker
