@@ -5,8 +5,11 @@
   system,
   ...
 }: let
-  cfg = config.nixos.kevin.scripts;
+  # Util function
   importScript = path: import path {inherit pkgs system;};
+
+  # Config
+  cfg = config.nixos.kevin.scripts;
   scripts = [
     ./nixosbuild.nix
   ];
