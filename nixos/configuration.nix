@@ -33,6 +33,7 @@
   nixos.kevin = {
     pc.enable = system == "pc";
     laptop.enable = system == "laptop";
+    gaming.enable = system == "pc";
     scripts.enable = true;
   };
 

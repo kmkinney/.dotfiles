@@ -1,3 +1,4 @@
+# NOT SUPPORTED ATM
 {pkgs, ...}:
 pkgs.writeShellScriptBin "nixconfig" ''
   echo "Rebuilding nixos and home-manager configurations..."

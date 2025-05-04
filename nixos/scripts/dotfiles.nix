@@ -1,3 +1,4 @@
+# NOT SUPPORTED ATM
 {pkgs, ...}:
 pkgs.writeShellScriptBin "dotfiles" ''
   echo "Rebuilding..."
