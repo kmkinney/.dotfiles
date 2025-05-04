@@ -22,7 +22,7 @@
     ./modules/virt.nix
 
     # Nixos scripts
-    (import ./scripts/nixosbuild.nix system)
+    ./scripts
 
     # Hardware configs
     ./hardware/lenovo-laptop.nix
@@ -33,6 +33,7 @@
   nixos.kevin = {
     pc.enable = system == "pc";
     laptop.enable = system == "laptop";
+    scripts.enable = true;
   };
 
   nixpkgs = {
@@ -87,6 +88,7 @@
     nodejs
     lm_sensors
 
+    # Custom scripts
     # Custom packages
     # (import ./scripts/nixconfig.nix {inherit pkgs;})
     # (import ./scripts/nixosbuild.nix {inherit pkgs;})
