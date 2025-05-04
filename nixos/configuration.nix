@@ -20,7 +20,7 @@
   ];
 
   # Custom options for hardware
-  nixos = {
+  nixos.hardware = {
     pc.enable = false;
     laptop.enable = true;
   };
