@@ -31,9 +31,9 @@
 
   # Custom options for hardware
   nixos.kevin = {
-    inherit system;
     pc.enable = system == "pc";
     laptop.enable = system == "laptop";
+
     gaming.enable = system == "pc";
     scripts.enable = true;
   };
