@@ -10,6 +10,7 @@
 
   # Nixos configuration
   imports = [
+    # Kevin's modules
     ./modules/bluetooth.nix
     ./modules/gaming.nix
     ./modules/gnome.nix
@@ -19,20 +20,16 @@
     ./modules/printers.nix
     ./modules/stylix.nix
     ./modules/virt.nix
-    ./laptop-hardware-configuration.nix
-    ./pc-hardware-configuration.nix
+
+    # Hardware configs
+    ./hardware/lenovo-laptop.nix
+    ./hardware/pc.nix
   ];
 
   # Custom options for hardware
   nixos.kevin = {
-    pc.enable =
-      if system == "pc"
-      then true
-      else false;
-    laptop.enable =
-      if system == "laptop"
-      then true
-      else false;
+    pc.enable = system == "pc";
+    laptop.enable = system == "laptop";
   };
 
   nixpkgs = {
