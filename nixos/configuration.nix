@@ -15,8 +15,15 @@
     ./modules/printers.nix
     ./modules/stylix.nix
     ./modules/virt.nix
+    ./laptop-hardware-configuration.nix
     ./pc-hardware-configuration.nix
   ];
+
+  # Custom options for hardware
+  nixos = {
+    pc.enable = false;
+    laptop.enable = true;
+  };
 
   nixpkgs = {
     config = {

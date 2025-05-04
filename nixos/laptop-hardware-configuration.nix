@@ -7,30 +7,31 @@
   modulesPath,
   ...
 }: let
-  cfg = config.nixos.hardware.pc;
+  cfg = config.nixos.hardware.laptop;
 in {
-  options.nixos.hardware.pc = {
-    enable = lib.mkEnableOption "PC Hardware Config";
+  options = {
+    nixos.hardware.laptop = {
+      enable = lib.mkEnableOption "Laptop Hardware";
+    };
   };
   config = lib.mkIf cfg.enable {
     imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-    boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
+    boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usbhid" "uas" "sd_mod"];
     boot.initrd.kernelModules = [];
-    boot.kernelModules = ["kvm-amd"];
+    boot.kernelModules = ["kvm-intel"];
     boot.extraModulePackages = [];
 
     fileSystems."/" = {
-      device = "/dev/disk/by-uuid/3b0f0b3b-edc7-4838-b548-aab91da8efc9";
+      device = "/dev/disk/by-uuid/a7e93290-0681-499b-ae05-3eb204d25856";
       fsType = "ext4";
     };
 
     fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/0CED-5839";
+      device = "/dev/disk/by-uuid/992A-023D";
       fsType = "vfat";
-      options = ["fmask=0022" "dmask=0022"];
     };
 
     swapDevices = [];
@@ -40,10 +41,9 @@ in {
     # still possible to use this option, but it's recommended to use it in conjunction
     # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
     networking.useDHCP = lib.mkDefault true;
-    # networking.interfaces.enp8s0.useDHCP = lib.mkDefault true;
-    # networking.interfaces.wlp9s0.useDHCP = lib.mkDefault true;
+    # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 }
