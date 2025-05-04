@@ -7,18 +7,15 @@
   modulesPath,
   ...
 }: let
-  cfg = config.nixos.hardware.laptop;
+  cfg = config.nixos.kevin.laptop;
 in {
-  options = {
-    nixos.hardware.laptop = {
-      enable = lib.mkEnableOption "Laptop Hardware";
-    };
+  options.nixos.kevin.laptop = {
+    enable = lib.mkEnableOption "Laptop Hardware";
   };
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
   config = lib.mkIf cfg.enable {
-    imports = [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
-
     boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usbhid" "uas" "sd_mod"];
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel"];

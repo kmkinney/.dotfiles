@@ -7,16 +7,15 @@
   modulesPath,
   ...
 }: let
-  cfg = config.nixos.hardware.pc;
+  cfg = config.nixos.kevin.pc;
 in {
-  options.nixos.hardware.pc = {
+  options.nixos.kevin.pc = {
     enable = lib.mkEnableOption "PC Hardware Config";
   };
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
   config = lib.mkIf cfg.enable {
-    imports = [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
-
     boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-amd"];

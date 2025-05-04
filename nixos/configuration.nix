@@ -1,6 +1,10 @@
 # Started from https://github.com/Misterio77/nix-starter-configs/blob/main/minimal/nixos/configuration.nix
 # NIXOS Root Config
-{pkgs, ...}: {
+{
+  pkgs,
+  system,
+  ...
+}: {
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
 
@@ -20,9 +24,15 @@
   ];
 
   # Custom options for hardware
-  nixos.hardware = {
-    pc.enable = false;
-    laptop.enable = true;
+  nixos.kevin = {
+    pc.enable =
+      if system == "pc"
+      then true
+      else false;
+    laptop.enable =
+      if system == "laptop"
+      then true
+      else false;
   };
 
   nixpkgs = {
