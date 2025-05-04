@@ -21,6 +21,9 @@
     ./modules/stylix.nix
     ./modules/virt.nix
 
+    # Nixos scripts
+    (import ./scripts/nixosbuild.nix system)
+
     # Hardware configs
     ./hardware/lenovo-laptop.nix
     ./hardware/pc.nix
