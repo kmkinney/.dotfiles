@@ -34,7 +34,7 @@
     pc.enable = system == "pc";
     laptop.enable = system == "laptop";
 
-    gaming.enable = system == "pc";
+    gaming.enable = true;
     scripts.enable = true;
   };
 
