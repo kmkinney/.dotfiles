@@ -20,6 +20,7 @@
     ./modules/printers.nix
     ./modules/stylix.nix
     ./modules/virt.nix
+    ./modules/webdev.nix
 
     # Nixos scripts
     ./scripts
@@ -89,6 +90,7 @@
     wget
     nodejs
     lm_sensors
+    openssl
 
     # Custom scripts
     # Custom packages
