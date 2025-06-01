@@ -88,9 +88,7 @@
     unzip
     vim
     wget
-    nodejs
     lm_sensors
-    openssl
 
     # Custom scripts
     # Custom packages

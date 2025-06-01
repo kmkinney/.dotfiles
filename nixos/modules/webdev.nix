@@ -1,12 +1,14 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     # For Prisma:
+    nodejs
     nodePackages_latest.pnpm
     nodePackages_latest.vercel
     nodePackages_latest.prisma
     openssl
-    nodejs_21
-    # Also dont forget to add install postgresql with configuration in some other config file
+
+    # general
+    docker
   ];
 
   # Prisma:
