@@ -14,8 +14,7 @@
       py = "python3";
       zj = "zellij";
       yz = "yazi";
-      hms = "home-manager switch --flake ~/.dotfiles/home-manager#linux";
-      nr = "sudo nixos-rebuild switch --flake ~/.dotfiles/nixos";
+      nr = "nixosbuild";
       dr = "darwin-rebuild switch --flake ~/.dotfiles/nix-darwin";
     };
     oh-my-zsh = {
