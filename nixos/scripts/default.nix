@@ -13,6 +13,7 @@
   scripts = [
     ./nixosbuild.nix
     ./ssh.nix
+    ./home-manager.nix
   ];
 in {
   options.nixos.kevin.scripts = {
