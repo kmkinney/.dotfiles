@@ -11,7 +11,6 @@
       brightnessctl
       gtksourceview
       libdbusmenu-gtk3
-      webkitgtk
     ];
   };
 }
