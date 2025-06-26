@@ -94,16 +94,14 @@ in {
 
 
       # Window Rules
-      windowrule = center,pavucontrol
-      windowrule = float,pavucontrol
-      windowrule = float,blueman
-      windowrule = center,blueman
-      windowrule = center,NordPass
-      # windowrule = center,LariLauncher
-      windowrule = fullscreen,LariLauncher
+      windowrule = center,title:pavucontrol
+      windowrule = float,title:pavucontrol
+      windowrule = float,title:blueman
+      windowrule = center,title:blueman
+      windowrule = center,title:NordPass
 
       #windowrule = maxsize 500 800,title:^(Android Emulator)(.*)$
-      windowrule = float,title:^(Emulator)(.*)$
+      #windowrule = float,title:^(Emulator)(.*)$
       #windowrule = size 10% 10%,title:^(Android Emulator)(.*)$
 
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
