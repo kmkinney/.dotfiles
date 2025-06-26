@@ -17,8 +17,6 @@
     ripgrep
     btop
 
-    nodejs_20
-    nodePackages.pnpm
     # rust-analyzer
   ];
 }
