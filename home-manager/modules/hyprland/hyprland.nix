@@ -4,22 +4,22 @@
   ...
 }: let
   hyprland-pkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+  green = "rgba(A7C080ff)";
+  gray = "rgba(343F44ff)";
 in {
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
     portalPackage = null;
 
-    plugins = [
-      hyprland-pkgs.hyprbars
-    ];
+    # plugins = [
+    #   hyprland-pkgs.hyprbars
+    # ];
 
     settings = {
       # Variables
       "$mod" = "SUPER";
       "$modshift" = "SUPERSHIFT";
-      "$green" = "rgba(A7C080ff)";
-      "$gray" = "rgba(343F44ff)";
       "$terminal" = "kitty";
 
       # Monitors
@@ -88,8 +88,8 @@ in {
         gaps_in = 3;
         gaps_out = 5;
         border_size = 2;
-        col.active_border = "$green";
-        col.inactive_border = "$gray";
+        "col.active_border" = green;
+        "col.inactive_border" = gray;
 
         layout = "dwindle";
       };
@@ -175,7 +175,7 @@ in {
         ",Print, exec, grimblast --notify copysave screen"
         "SUPER, P, exec, grimblast --notify copysave area"
         "$mod, Print, exec, grimblast --notify copysave area"
-        "SUPER SHIFT, P, exec, hyprpicker | tr -d '\n' | wl-copy"
+        "SUPER SHIFT, P, exec, hyprpicker | tr -d '\\n' | wl-copy"
         ",XF86MonBrightnessUp,exec,brightnessctl s +20%"
         ",XF86MonBrightnessDown,exec,brightnessctl s 20%-"
         ",XF86AudioRaiseVolume,exec,pamixer -i 5"
