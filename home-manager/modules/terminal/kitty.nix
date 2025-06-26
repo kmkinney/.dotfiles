@@ -50,5 +50,6 @@
     enable_audio_bell = false;
     hide_window_decorations = true;
     macos_option_as_alt = true;
+    confirm_os_window_close = 0;
   };
 }
