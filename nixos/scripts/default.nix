@@ -12,6 +12,7 @@
   cfg = config.nixos.kevin.scripts;
   scripts = [
     ./nixosbuild.nix
+    ./ssh.nix
   ];
 in {
   options.nixos.kevin.scripts = {
