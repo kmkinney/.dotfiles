@@ -6,6 +6,7 @@
     nodePackages_latest.vercel
     nodePackages_latest.prisma
     openssl
+    claude-code
   ];
 
   # Prisma:
