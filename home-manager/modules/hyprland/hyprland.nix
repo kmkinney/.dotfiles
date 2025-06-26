@@ -3,296 +3,219 @@
   pkgs,
   ...
 }: let
-  hyprland-pkgs = inputs.hyprland-plugins.packages.${pkgs.system};
+  hyprland-pkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   wayland.windowManager.hyprland = {
     enable = true;
+    package = null;
+    portalPackage = null;
 
     plugins = [
       hyprland-pkgs.hyprbars
     ];
 
-    # Eventually replace this with nix
-    extraConfig = /* hypr */ ''
-      $mainMod  = SUPER
+    settings = {
+      # Variables
+      "$mod" = "SUPER";
+      "$modshift" = "SUPERSHIFT";
+      "$green" = "rgba(A7C080ff)";
+      "$gray" = "rgba(343F44ff)";
+      "$terminal" = "kitty";
 
-      $green    = rgba(A7C080ff)
-      $gray     = rgba(343F44ff)
+      # Monitors
+      monitor = [
+        "desc:HP Inc. HP 24mh 3CM2050HPH,1920x1080,0x0,1"
+        "desc:LG Electronics LG TV SSCR2 0x01010101,4096x2160,0x0,2"
+        "desc:LG Electronics LG Ultra HD 0x00027BFE,1920x1080,0x0,1"
+      ];
 
-      $laptop       = eDP-1
-      $adapterLeftTop  = DP-4
-      $adapterLeftBottom  = DP-3
+      # Startup
+      exec-once = [
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "dunst"
+      ];
 
-      $terminal = kitty
+      exec = [
+        "nm-applet --indicator"
+        "blueman-applet"
+        "hyprpaper"
+        "dunstify \"Config reloaded\""
+        # "ags -q; ags"
+      ];
 
-      # See https://wiki.hyprland.org/Configuring/Monitors/
+      # Env
+      env = [
+        "XCURSOR_SIZE,24"
+        "XDG_SCREENSHOTS_DIR,/home/kevin/Pictures/screenshots"
+        "QT_QPA_PLATFORM,wayland;xcb"
+        "MOZ_ENABLE_WAYLAND,1"
+        "OBSIDIAN_USE_WAYLAND,1"
+        "GDK_SCALE,1"
+        "XCURSOR_SIZE,24"
+      ];
 
-      # Laptop
-      monitor=$laptop,2256x1504,1920x0,2
-      # Desk setup
-      monitor=desc:HP Inc. HP 24mh 3CM2050HPH,1920x1080,0x0,1
+      windowrule = [
+        "center,title:pavucontrol"
+        "float,title:pavucontrol"
+        "float,title:blueman"
+        "center,title:blueman"
+        "center,title:NordPass"
+      ];
 
-      # Work Monitors
-      monitor=desc:LG Electronics LG HDR 4K 305NTPCE1384,preferred,0x0,2
-      monitor=desc:LG Electronics LG HDR 4K 301NTXR71394,preferred,0x0,2
-      monitor=desc:LG Electronics LG HDR 4K 305NTXRE1378,preferred,1920x0,2
+      input = {
+        kb_layout = "us";
+        kb_options = "caps:escape";
 
-      # TVs
-      # monitor=desc:XXX Beyond TV 0x00010000,preferred,0x0,2
-      # monitor=desc:LG Electronics LG TV 0x01010101,preferred,0x0,2
+        repeat_rate = 50;
+        repeat_delay = 250;
 
-      # Lab Monitors
-      monitor=desc:LG Electronics LG Ultra HD 0x00027C03,preferred,0x0,2
+        follow_mouse = 1;
 
+        touchpad = {
+          natural_scroll = true;
+        };
+        natural_scroll = true;
+        # -1.0 - 1.0, 0 means no modification.
+        sensitivity = -0.2;
+        numlock_by_default = true;
+      };
 
-      # Default
-      monitor=DP-1,preferred,0x0,1
-      monitor=DP-4,preferred,0x0,1
-      monitor=DP-2,preferred,0x0,2
-      monitor=DP-3,preferred,0x0,2
-      # monitor=DP-3,preferred,0x0,1,mirror,eDP-1
+      cursor = {
+        inactive_timeout = 30;
+      };
 
-      # workspace=1,monitor:DP-3
-      # workspace=3,monitor:DP-3
-      # workspace=5,monitor:DP-3
-      # workspace=7,monitor:DP-3
+      general = {
+        gaps_in = 3;
+        gaps_out = 5;
+        border_size = 2;
+        col.active_border = "$green";
+        col.inactive_border = "$gray";
 
-      # workspace=2,monitor:DP-4
-      # workspace=4,monitor:DP-4
-      # workspace=6,monitor:DP-4
-      # workspace=8,monitor:DP-4
+        layout = "dwindle";
+      };
 
-      # See https://wiki.hyprland.org/Configuring/Keywords/ for more
+      decoration = {
+        rounding = 3;
 
-      # Execute your favorite apps at launch
-      # exec-once = waybar & hyprpaper & firefox
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+        };
 
-      # Essentials
-      exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-      exec-once=waybar & dunst
-      # exec-once = kitty
+        # drop_shadow = "yes";
+        # shadow_range = 4;
+        # shadow_render_power = 3;
+        # col.shadow = "rgba(1a1a1aee)";
+      };
 
-      # exec-once = [workspace 1 silent] google-chrome-stable
-      # exec-once = [workspace 2 silent] kitty
-      # exec-once = [workspace 3 silent] slack
+      animations = {
+        enabled = "yes";
 
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 
-      # System tray icons
-      exec = nm-applet --indicator
-      exec = blueman-applet
-      exec = hyprpaper
+        animation = [
+          "windows, 1, 7, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
+        ];
+      };
 
-      # Source a file (multi-file configs)
-      # source = ~/.config/hypr/myColors.conf
+      dwindle = {
+        pseudotile = "no";
+        preserve_split = "yes";
+      };
 
-      # Some default env vars.
-      env = XCURSOR_SIZE,24
-      env = XDG_SCREENSHOTS_DIR,/home/kevin/Pictures/screenshots
-      env = QT_QPA_PLATFORM,wayland;xcb
-      env = MOZ_ENABLE_WAYLAND,1
-      env = OBSIDIAN_USE_WAYLAND,1
+      master = {
+        new_status = "master";
+      };
 
+      gestures = {
+        workspace_swipe = true;
+      };
 
-      # Window Rules
-      windowrule = center,title:pavucontrol
-      windowrule = float,title:pavucontrol
-      windowrule = float,title:blueman
-      windowrule = center,title:blueman
-      windowrule = center,title:NordPass
+      misc = {
+        disable_hyprland_logo = true;
+      };
 
-      #windowrule = maxsize 500 800,title:^(Android Emulator)(.*)$
-      #windowrule = float,title:^(Emulator)(.*)$
-      #windowrule = size 10% 10%,title:^(Android Emulator)(.*)$
+      xwayland = {
+        force_zero_scaling = true;
+      };
 
-      # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
-      input {
-          kb_layout = us
-          kb_variant =
-          kb_model =
-          kb_options = caps:escape
-          kb_rules =
+      bindt = [
+        "$mod, h, movefocus, l"
+        "$mod, l, movefocus, r"
+        "$mod, j, movefocus, u"
+        "$mod, k, movefocus, d"
+      ];
 
-          repeat_rate = 50
-          repeat_delay = 250
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "ALT, mouse:272, resizewindow"
+      ];
 
-          follow_mouse = 1
-          # scroll_factor = 0.1
+      bindd = [
+        "$mod, Return,Open kitty, exec, kitty"
+        "$mod, C,Close window, killactive, "
+        "$mod, M,Logout, exit, "
+        "$mod, V,Toggle floating, togglefloating, "
+        "$mod, R,Application runner, exec, wofi --show drun"
+      ];
 
-          touchpad {
-              natural_scroll = true
-          }
-          natural_scroll = true
-          sensitivity = -0.2 # -1.0 - 1.0, 0 means no modification.
-          numlock_by_default = true
-      }
-
-      general {
-          gaps_in = 0
-          gaps_out = 0
-          border_size = 0
-          col.active_border = $green
-          col.inactive_border = $gray
-
-          layout = dwindle
-          # cursor_inactive_timeout = 5
-      }
-
-      decoration {
-          rounding = 0
-
-          blur {
-            enabled = true
-            size = 3
-            passes = 1
-          }
-
-    #drop_shadow = yes
-    #shadow_range = 4
-    #shadow_render_power = 3
-    #col.shadow = rgba(1a1a1aee)
-      }
-
-      animations {
-          enabled = no
-          # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
-
-          bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-
-          animation = windows, 1, 7, myBezier
-          animation = windowsOut, 1, 7, default, popin 80%
-          animation = border, 1, 10, default
-          animation = borderangle, 1, 8, default
-          animation = fade, 1, 7, default
-          animation = workspaces, 1, 6, default
-      }
-
-      dwindle {
-          # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-          pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-          preserve_split = yes # you probably want this
-      }
-
-      master {
-          # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-    #new_is_master = true
-      }
-
-      gestures {
-          workspace_swipe = true
-      }
-
-      misc {
-          disable_hyprland_logo = true
-      }
-
-      xwayland {
-        force_zero_scaling = true
-      }
-      env = GDK_SCALE,1
-      env = XCURSOR_SIZE,24
-
-      # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-
-      # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      bind = $mainMod, Return, exec, kitty
-      bind = $mainMod, C, killactive,
-      bind = $mainMod, M, exit,
-      bind = SUPER, Delete, exec, swaylock -i /home/kevin/.local/share/backgrounds/0005.jpg
-      bind = $mainMod, E, exec, nautilus
-      bind = $mainMod, V, togglefloating,
-      bind = $mainMod, R, exec, wofi --show drun
-      bind = $mainMod, P, pseudo
-      bind = $mainMod, J, togglesplit
-      bind = $mainMod, B, exec, firefox
-      bind = $mainMod, G, exec, google-chrome-stable
-      bind = $mainMod, F, fullscreen
-      #bind = SUPER, SUPER_L, exec, wofi --show drun
-
-      # Extras
-      bind = SUPER SHIFT, Delete, exec, shutdown now
-      bind = ,Print, exec, grimblast --notify copysave screen
-      bind = SUPER, S, exec, grimblast --notify copysave area
-      bind = $mainMod, Print, exec, grimblast --notify copysave area
-      bind = SUPER SHIFT, P, exec, hyprpicker | tr -d '\n' | wl-copy
-      # bind = SUPE SHIFT, A, exec, grimblast --notify copysave area
-
-      # Brightness
-      bind = ,XF86MonBrightnessUp,exec,brightnessctl s +20%
-      bind = ,XF86MonBrightnessDown,exec,brightnessctl s 20%-
-      bind = ,XF86AudioRaiseVolume,exec,pamixer -i 5
-      bind = ,XF86AudioLowerVolume,exec,pamixer -d 5
-      bind = ,XF86AudioMute,exec,pamixer -t
-
-      bind = ,XF86AudioPlay,exec,playerctl play-pause
-      bind = ,XF86AudioNext,exec,playerctl play-pause
-      bind = ,XF86AudioMute,exec,pamixer -t
-
-      # bind=,switch:off:Lid Switch,exit
-      bindl=,switch:off:Lid Switch,exec,hyprctl keyword monitor "eDP-1,2256x1504,1920x0,2"
-      bindl=,switch:on:Lid Switch,exec,hyprctl keyword monitor "eDP-1, disable"
-
-
-      # Move focus with mainMod + arrow keys
-      # bind = $mainMod, left, movefocus , l
-      # bind = $mainMod, right, movefocus, r
-      # bind = $mainMod, up, movefocus, u
-      # bind = $mainMod, down, movefocus, d
-
-      # Vim navigation
-      bind = $mainMod, h, movefocus, l
-      bind = $mainMod, l, movefocus, r
-      bind = $mainMod, j, movefocus, u
-      bind = $mainMod, k, movefocus, d
-
-      bind = $mainMod SHIFT, h, workspace, e-1
-      bind = $mainMod SHIFT, l, workspace, e+1
-      bind = CONTROL SHIFT, h, workspace, e-1
-      bind = CONTROL SHIFT, l, workspace, e+1
-      bind = $mainMod, left, workspace, e-1
-      bind = $mainMod, right, workspace, e+1
-      # bind = $mainMod SHIFT, j, resizeactive, 0 40
-      # bind = $mainMod SHIFT, k, resizeactive, 0 -40
-
-      # Switch workspaces with mainMod + [0-9]
-      bind = $mainMod, 1, workspace, 1
-      bind = $mainMod, 2, workspace, 2
-      bind = $mainMod, 3, workspace, 3
-      bind = $mainMod, 4, workspace, 4
-      bind = $mainMod, 5, workspace, 5
-      bind = $mainMod, 6, workspace, 6
-      bind = $mainMod, 7, workspace, 7
-      bind = $mainMod, 8, workspace, 8
-      bind = $mainMod, 9, workspace, 9
-      bind = $mainMod, 0, workspace, 10
-
-      # Move active window to a workspace with mainMod + SHIFT + [0-9]
-      bind = $mainMod SHIFT, 1, movetoworkspace, 1
-      bind = $mainMod SHIFT, 2, movetoworkspace, 2
-      bind = $mainMod SHIFT, 3, movetoworkspace, 3
-      bind = $mainMod SHIFT, 4, movetoworkspace, 4
-      bind = $mainMod SHIFT, 5, movetoworkspace, 5
-      bind = $mainMod SHIFT, 6, movetoworkspace, 6
-      bind = $mainMod SHIFT, 7, movetoworkspace, 7
-      bind = $mainMod SHIFT, 8, movetoworkspace, 8
-      bind = $mainMod SHIFT, 9, movetoworkspace, 9
-      bind = $mainMod SHIFT, 0, movetoworkspace, 10
-
-      # Scroll through existing workspaces with mainMod + scroll
-      # bind = $mainMod, mouse_down, workspace, e+1
-      # bind = $mainMod, mouse_up, workspace, e-1
-
-      bind = SUPER , right, workspace, e+1
-      bind = SUPER SHIFT, left, workspace, e+1
-
-      # Move/resize windows with mainMod + LMB/RMB and dragging
-      bindm = $mainMod, mouse:272, movewindow
-      bindm = ALT, mouse:272, resizewindow
-
-      # Hot reload waybar
-      bind = SUPER SHIFT, W, exec, killall waybar; waybar &
-      bind = SUPER SHIFT, B, exec, killall hyprpaper; hyprpaper &
-
-      # vim: ft=hyprlang
-    '';
+      bind = [
+        "$mod, E, exec, nautilus"
+        "$mod, B, exec, firefox"
+        "$mod, S, exec, steam"
+        "$mod, G, exec, google-chrome-stable"
+        "$mod, F, fullscreen"
+        "SUPER SHIFT, Delete, exec, shutdown now"
+        ",Print, exec, grimblast --notify copysave screen"
+        "SUPER, P, exec, grimblast --notify copysave area"
+        "$mod, Print, exec, grimblast --notify copysave area"
+        "SUPER SHIFT, P, exec, hyprpicker | tr -d '\n' | wl-copy"
+        ",XF86MonBrightnessUp,exec,brightnessctl s +20%"
+        ",XF86MonBrightnessDown,exec,brightnessctl s 20%-"
+        ",XF86AudioRaiseVolume,exec,pamixer -i 5"
+        ",XF86AudioLowerVolume,exec,pamixer -d 5"
+        ",XF86AudioMute,exec,pamixer -t"
+        ",XF86AudioPlay,exec,playerctl play-pause"
+        ",XF86AudioNext,exec,playerctl play-pause"
+        ",XF86AudioMute,exec,pamixer -t"
+        "$mod SHIFT, j, togglesplit"
+        "$mod SHIFT, k, swapsplit"
+        "$mod SHIFT, h, workspace, e-1"
+        "$mod SHIFT, l, workspace, e+1"
+        "CONTROL SHIFT, h, workspace, e-1"
+        "CONTROL SHIFT, l, workspace, e+1"
+        "$mod, left, workspace, e-1"
+        "$mod, right, workspace, e+1"
+        "$mod, 1, workspace, 1"
+        "$mod, 2, workspace, 2"
+        "$mod, 3, workspace, 3"
+        "$mod, 4, workspace, 4"
+        "$mod, 5, workspace, 5"
+        "$mod, 6, workspace, 6"
+        "$mod, 7, workspace, 7"
+        "$mod, 8, workspace, 8"
+        "$mod, 9, workspace, 9"
+        "$mod, 0, workspace, 10"
+        "$mod SHIFT, 1, movetoworkspace, 1"
+        "$mod SHIFT, 2, movetoworkspace, 2"
+        "$mod SHIFT, 3, movetoworkspace, 3"
+        "$mod SHIFT, 4, movetoworkspace, 4"
+        "$mod SHIFT, 5, movetoworkspace, 5"
+        "$mod SHIFT, 6, movetoworkspace, 6"
+        "$mod SHIFT, 7, movetoworkspace, 7"
+        "$mod SHIFT, 8, movetoworkspace, 8"
+        "$mod SHIFT, 9, movetoworkspace, 9"
+        "$mod SHIFT, 0, movetoworkspace, 10"
+        "SUPER SHIFT, B, exec, ags -q; ags"
+        "SUPER SHIFT, W, exec, pkill hyprpaper; hyprpaper &"
+        "SUPER SHIFT, R, exec, hyprctl reload"
+      ];
+    };
   };
 }
