@@ -1,5 +1,6 @@
 {
   pkgs,
+  ...
 }:
 pkgs.writeShellScriptBin "ssh-init" ''
   echo "Generating ssh keys and adding to agent"
