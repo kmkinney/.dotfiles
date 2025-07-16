@@ -14,7 +14,6 @@
     nerd-fonts.jetbrains-mono
 
     nodejs_20
-    claude-code
     corepack
   ];
 }
