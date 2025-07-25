@@ -5,6 +5,7 @@
     ../modules/terminal
     ../modules/git.nix
     ../modules/vscode.nix
+    ../modules/ai.nix
   ];
 
   home.packages = with pkgs; [

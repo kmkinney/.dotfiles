@@ -2,5 +2,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     claude-code
+    code-cursor
   ];
 }

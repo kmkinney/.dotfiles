@@ -15,7 +15,11 @@
       zj = "zellij";
       yz = "yazi";
       nr = "nixosbuild";
-      dr = "darwin-rebuild switch --flake ~/.dotfiles/nix-darwin";
+      dr = "sudo darwin-rebuild switch --flake ~/.dotfiles/nix-darwin";
+
+      # Work aliases
+      dev = "pnpm dev";
+      clean = "pnpm clean:all";
     };
     oh-my-zsh = {
       enable = true;
