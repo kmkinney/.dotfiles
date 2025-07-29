@@ -41,6 +41,7 @@ in {
         "blueman-applet"
         "hyprpaper"
         "dunstify \"Config reloaded\""
+        "pkill waybar; waybar"
         # "ags -q; ags"
       ];
 
