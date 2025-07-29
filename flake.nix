@@ -21,7 +21,7 @@
         modules = [
           nixos-hardware.nixosModules.framework-amd-ai-300-series
           ./nixos/hardware/remi-laptop.nix
-          ./nixos/remi.nixframework-amd-ai-300-series
+          ./nixos/remi.nix
           inputs.stylix.nixosModules.stylix
         ];
       };
