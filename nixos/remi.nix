@@ -62,22 +62,28 @@
 
   # NixOS System Packages
   environment.systemPackages = with pkgs; [
-    cargo
-    curl
-    firefox
-    gcc
-    gparted
+    # Basic
     git
-    google-chrome
-    home-manager
-    htop
-    killall
-    python3
-    tree
-    tldr
-    unzip
     vim
     wget
+    tldr
+    htop
+
+    # Lang
+    cargo
+    curl
+    gcc
+    python3
+
+    # Browsers
+    firefox
+    google-chrome
+
+    gparted
+    home-manager
+    killall
+    tree
+    unzip
     lm_sensors
   ];
 
