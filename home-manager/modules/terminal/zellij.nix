@@ -31,6 +31,7 @@
       simplified_ui true
       pane_frames false
       copy_on_select true
+      show_startup_tips false
       keybinds {
         unbind "Ctrl s"
         unbind "Ctrl h"
