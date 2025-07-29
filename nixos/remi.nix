@@ -87,6 +87,7 @@
     # Work
     slack
     code-cursor
+    vscode
 
     home-manager
   ];
