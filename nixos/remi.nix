@@ -86,6 +86,7 @@
 
     # Work
     slack
+    cursor-code
 
     home-manager
   ];
