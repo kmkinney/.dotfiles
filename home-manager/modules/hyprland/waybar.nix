@@ -61,6 +61,7 @@
         clock = {
           timezone = "America/Denver";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          format = "{:%H:%M}";
           format-alt = "{:%B %d, %Y}";
         };
         cpu = {
