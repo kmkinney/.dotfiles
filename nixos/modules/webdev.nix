@@ -7,6 +7,7 @@
     nodePackages_latest.prisma
     openssl
     claude-code
+    pscale
   ];
 
   # Prisma:
