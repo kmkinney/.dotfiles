@@ -1,8 +1,12 @@
-{inputs, pkgs, ...}: let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   hyprland-pkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   programs.hyprland = {
-    enable = true; 
+    enable = true;
     # set the flake package
     package = hyprland-pkgs.hyprland;
     # make sure to also set the portal package, so that they are in sync
