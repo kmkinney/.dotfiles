@@ -12,6 +12,17 @@
   in {
     # Nixos
     nixosConfigurations = {
+      kevin-remi-framework = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs outputs;
+          system = "laptop";
+        };
+        modules = [
+          ./nixos/hardware/remi-laptop.nix
+          ./nixos/remi.nix
+          inputs.stylix.nixosModules.stylix
+        ];
+      };
       nixos-pc = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs outputs;
