@@ -89,6 +89,7 @@
     slack
     code-cursor
     vscode
+    mysql-client
 
     home-manager
   ];
