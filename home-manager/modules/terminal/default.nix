@@ -8,5 +8,6 @@
     ./yazi.nix
     ./wezterm.nix
     ./zoxide.nix
+    ./lazydocker.nix
   ];
 }
