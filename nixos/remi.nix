@@ -17,6 +17,7 @@
     ./modules/stylix.nix
     ./modules/virt.nix
     ./modules/webdev.nix
+    ./modules/obs.nix
 
     # Nixos scripts
     ./scripts
