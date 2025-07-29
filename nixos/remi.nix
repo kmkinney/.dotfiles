@@ -18,6 +18,7 @@
     ./modules/virt.nix
     ./modules/webdev.nix
     ./modules/obs.nix
+    ./modules/boot.nix
 
     # Nixos scripts
     ./scripts
