@@ -17,7 +17,7 @@
     ./modules/pipewire.nix
     ./modules/stylix.nix
     ./modules/virt.nix
-    ./modules/webdev.nix
+    # ./modules/webdev.nix
 
     # Nixos scripts
     ./scripts
