@@ -16,7 +16,7 @@
     ./modules/pipewire.nix
     ./modules/stylix.nix
     ./modules/virt.nix
-    # ./modules/webdev.nix
+    ./modules/webdev.nix
 
     # Nixos scripts
     ./scripts
@@ -64,10 +64,15 @@
   environment.systemPackages = with pkgs; [
     # Basic
     git
+    gparted
+    htop
+    killall
+    lm_sensors
+    tldr
+    tree
+    unzip
     vim
     wget
-    tldr
-    htop
 
     # Lang
     cargo
@@ -79,12 +84,10 @@
     firefox
     google-chrome
 
-    gparted
+    # Work
+    slack
+
     home-manager
-    killall
-    tree
-    unzip
-    lm_sensors
   ];
 
   # Security
