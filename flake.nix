@@ -19,11 +19,13 @@
           system = "laptop";
         };
         modules = [
-          nixos-hardware.nixosModules.framework-amd-ai-300-series
+          # Standard modules
           ./nixos/hardware/remi-laptop.nix
           ./nixos/remi.nix
-          inputs.stylix.nixosModules.stylix
+
           {networking.hostName = "kevin-remi-framework";}
+          inputs.stylix.nixosModules.stylix
+          # nixos-hardware.nixosModules.framework-amd-ai-300-series
         ];
       };
       nixos-pc = nixpkgs.lib.nixosSystem {

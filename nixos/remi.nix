@@ -1,12 +1,11 @@
 # Started from https://github.com/Misterio77/nix-starter-configs/blob/main/minimal/nixos/configuration.nix
 # NIXOS Root Config
-{
-  pkgs,
-  system,
-  ...
-}: {
+{pkgs, ...}: {
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.11";
+
+  # Firmware update
+  services.fwupd.enable = true;
 
   # Nixos configuration
   imports = [
