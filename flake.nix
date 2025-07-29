@@ -23,6 +23,7 @@
           ./nixos/hardware/remi-laptop.nix
           ./nixos/remi.nix
           inputs.stylix.nixosModules.stylix
+          {networking.hostName = "kevin-remi-framework";}
         ];
       };
       nixos-pc = nixpkgs.lib.nixosSystem {
