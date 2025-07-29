@@ -52,6 +52,7 @@ in {
         "OBSIDIAN_USE_WAYLAND,1"
         "GDK_SCALE,1"
         "XCURSOR_SIZE,24"
+        "ELECTRON_OZONE_PLATFORM_HINT,auto"
       ];
 
       windowrule = [
