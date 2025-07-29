@@ -1,9 +1,10 @@
 {
-  inputs,
-  pkgs,
+  # inputs,
+  # pkgs,
   ...
 }: let
-  hyprland-pkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+  # hyprland-pkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+  # dark_green = "rgba(3c4841ff)";
   green = "rgba(A7C080ff)";
   gray = "rgba(343F44ff)";
 in {
