@@ -163,6 +163,7 @@ in {
         "$mod, M,Logout, exit, "
         "$mod, V,Toggle floating, togglefloating, "
         "$mod, R,Application runner, exec, wofi --show drun"
+        "$mod, Space,Application runner, exec, wofi --show drun"
       ];
 
       bind = [
