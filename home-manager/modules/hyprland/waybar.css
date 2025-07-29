@@ -96,9 +96,18 @@ button:hover {
   margin: 0 -4px;
 }
 
-#window,
+#window {
+  margin: 0 4px;
+}
+
 #workspaces {
   margin: 0 4px;
+  margin-bottom: 3px;
+}
+
+#workspaces button.active {
+  color: #d3c6aa;
+  background-color: #3c4841;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -119,16 +128,15 @@ button:hover {
 }
 
 #battery {
-  /* background-color: #d3c6aa; */
-  /* color: #000000; */
-  color: #d3c6aa;
+  color: #a7c080;
   background-color: transparent;
+  margin-bottom: 3px;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #d3c6aa;
-  background-color: #26a65b;
+  color: #a7c080;
+  background-color: #3c4841;
 }
 
 @keyframes blink {
