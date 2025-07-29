@@ -6,6 +6,7 @@
     self,
     nixpkgs,
     home-manager,
+    nixos-hardware,
     ...
   }: let
     inherit (self) outputs;
@@ -18,8 +19,9 @@
           system = "laptop";
         };
         modules = [
+          nixos-hardware.nixosModules.framework-amd-ai-300-series
           ./nixos/hardware/remi-laptop.nix
-          ./nixos/remi.nix
+          ./nixos/remi.nixframework-amd-ai-300-series
           inputs.stylix.nixosModules.stylix
         ];
       };
@@ -61,5 +63,6 @@
       inputs.hyprland.follows = "hyprland";
     };
     stylix.url = "github:danth/stylix";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 }

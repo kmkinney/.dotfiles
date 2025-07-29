@@ -1,4 +1,4 @@
 {...}: {
-  networking.hostName = "kmkinney-nixos";
+  # networking.hostName = "kmkinney-nixos";
   networking.networkmanager.enable = true;
 }
