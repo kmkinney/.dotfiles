@@ -84,7 +84,6 @@
 
     # Browsers
     firefox
-    google-chrome
 
     # Work
     slack

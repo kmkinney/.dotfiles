@@ -8,6 +8,7 @@
     ../modules/ranger.nix
     ../modules/terminal
     ../modules/gnome.nix
+    ../modules/chrome.nix
   ];
 
   # Standalone packages
