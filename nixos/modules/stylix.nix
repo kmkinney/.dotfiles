@@ -6,7 +6,7 @@
     image = ../../wallpapers/cabin.jpg;
 
     targets = {
-      chromium.enable = true;
+      chromium.enable = false;
     };
   };
 }

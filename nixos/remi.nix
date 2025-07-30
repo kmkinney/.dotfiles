@@ -10,20 +10,16 @@
   # Nixos configuration
   imports = [
     # Kevin's modules
-    ./modules/bluetooth.nix
+    ./modules/core
+
     ./modules/hyprland.nix
-    ./modules/networking.nix
-    ./modules/pipewire.nix
     ./modules/stylix.nix
     ./modules/virt.nix
     ./modules/webdev.nix
     ./modules/obs.nix
-    ./modules/boot.nix
 
     # Nixos scripts
     ./scripts
-
-    # Hardware configs
   ];
 
   # Custom options for hardware

@@ -32,7 +32,6 @@
       kevin-remi-framework = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs outputs;
-          system = "laptop";
         };
         modules = [
           # Standard modules
@@ -50,8 +49,10 @@
           system = "pc";
         };
         modules = [
+          ./nixos/hardware/pc.nix
           ./nixos/configuration.nix
-          # home-manager.nixosModules.home-manager
+
+          {networking.hostName = "kevin-remi-framework";}
           inputs.stylix.nixosModules.stylix
         ];
       };
