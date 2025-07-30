@@ -5,7 +5,7 @@
 }: let
   cfg = config.nixos.kevin.gnome;
 in {
-  options.nixos.kevin.gnome = lib.mkEnableOption "GNOME Desktop Environment";
+  options.nixos.kevin.gnome.enable = lib.mkEnableOption "GNOME Desktop Environment";
 
   config = lib.mkIf cfg.enable {
     services = {
