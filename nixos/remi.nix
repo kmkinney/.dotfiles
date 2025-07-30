@@ -23,32 +23,6 @@
   ];
 
   # Custom options for hardware
-  nixos.kevin = {
-    scripts.enable = true;
-  };
-
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
-
-  nix = {
-    settings = {
-      experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 14d";
-    };
-  };
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users.kevin = {
     # initialPassword = "nix";
     description = "Kevin";
@@ -82,7 +56,6 @@
     firefox
 
     # Work
-    slack
     code-cursor
     vscode
     mysql-client
@@ -110,8 +83,4 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  # Fonts
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
 }
