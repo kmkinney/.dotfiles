@@ -13,6 +13,7 @@
     ./modules/core
 
     ./modules/hyprland.nix
+    ./modules/gnome.nix
     ./modules/stylix.nix
     ./modules/virt.nix
     ./modules/webdev.nix
