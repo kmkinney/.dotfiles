@@ -5,6 +5,7 @@
   system.stateVersion = "24.11";
 
   # Firmware update
+  # fwupdmgr update
   services.fwupd.enable = true;
 
   # Nixos configuration

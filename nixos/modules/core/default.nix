@@ -4,6 +4,7 @@
   imports = [
     ./bluetooth.nix
     ./boot.nix
+    ./font.nix
     ./networking.nix
     ./nix-settings.nix
     ./pipewire.nix
