@@ -2,11 +2,10 @@
   pkgs,
   config,
   lib,
-  system,
   ...
 }: let
   # Util function
-  importScript = path: import path {inherit pkgs system;};
+  importScript = path: import path {inherit pkgs;};
 
   # Config
   cfg = config.nixos.kevin.scripts;
