@@ -1,5 +1,9 @@
 # Settings specific to Remi Framework 13 AMD
 {pkgs, ...}: {
+  # Hardware config
+  imports = [
+    ../hardware/remi-laptop.nix
+  ];
   # Need to set this so that nixos builds the correct config
   networking.hostName = "kevin-remi-framework";
 
