@@ -8,6 +8,7 @@
   green = "rgba(A7C080ff)";
   gray = "rgba(343F44ff)";
 
+  # This way we can avoid using a command that is not installed
   cmd = pkgName: "${pkgs.${pkgName}}/bin/${pkgName}";
 in {
   wayland.windowManager.hyprland = {
@@ -190,10 +191,10 @@ in {
         "$modshift, Delete, exec, shutdown now"
 
         # Screenshots
-        ",Print, exec, grimblast --notify copysave screen"
-        "$mod, P, exec, grimblast --notify copysave area"
-        "$mod, Print, exec, grimblast --notify copysave area"
-        "$modshift, P, exec, hyprpicker | tr -d '\\n' | wl-copy"
+        ",Print, exec, ${cmd "grimblast"} --notify copysave screen"
+        "$mod, P, exec, ${cmd "grimblast"} --notify copysave area"
+        "$mod, Print, exec, ${cmd "grimblast"} --notify copysave area"
+        "$modshift, P, exec, ${cmd "hyprpicker"} | tr -d '\\n' | wl-copy"
 
         # Brightness and volume
         ",XF86MonBrightnessUp,exec,${cmd "brightnessctl"} s +20%"
