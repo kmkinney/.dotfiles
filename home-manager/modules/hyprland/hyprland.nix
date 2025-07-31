@@ -172,17 +172,28 @@ in {
       ];
 
       bind = [
+        # Config management
+        "$modshift, B, exec, ags -q; ags"
+        "$modshift, W, exec, pkill hyprpaper; hyprpaper &"
+        "$modshift, R, exec, hyprctl reload"
+
+        # Applications
         "$mod, E, exec, ${pkgs.nautilus}/bin/nautilus"
         "$mod, B, exec, firefox"
         "$mod, S, exec, steam"
         "$mod, G, exec, google-chrome-stable"
-        "$mod, F, fullscreen"
-        "SUPER, Delete, exec, ${pkgs.swaylock-fancy}/bin/swaylock-fancy"
-        "SUPER SHIFT, Delete, exec, shutdown now"
+
+        # Session management
+        "$mod, Delete, exec, ${pkgs.swaylock-fancy}/bin/swaylock-fancy"
+        "$modshift, Delete, exec, shutdown now"
+
+        # Screenshots
         ",Print, exec, grimblast --notify copysave screen"
-        "SUPER, P, exec, grimblast --notify copysave area"
+        "$mod, P, exec, grimblast --notify copysave area"
         "$mod, Print, exec, grimblast --notify copysave area"
-        "SUPER SHIFT, P, exec, hyprpicker | tr -d '\\n' | wl-copy"
+        "$modshift, P, exec, hyprpicker | tr -d '\\n' | wl-copy"
+
+        # Brightness and volume
         ",XF86MonBrightnessUp,exec,brightnessctl s +20%"
         ",XF86MonBrightnessDown,exec,brightnessctl s 20%-"
         ",XF86AudioRaiseVolume,exec,pamixer -i 5"
@@ -191,10 +202,15 @@ in {
         ",XF86AudioPlay,exec,playerctl play-pause"
         ",XF86AudioNext,exec,playerctl play-pause"
         ",XF86AudioMute,exec,pamixer -t"
-        "$mod SHIFT, j, togglesplit"
-        "$mod SHIFT, k, swapsplit"
-        "$mod SHIFT, h, workspace, e-1"
-        "$mod SHIFT, l, workspace, e+1"
+
+        # Window management
+        "$mod, F, fullscreen"
+        "$modshift, j, togglesplit"
+        "$modshift, k, swapsplit"
+
+        # Workspaces
+        "$modshift , h, workspace, e-1"
+        "$modshift, l, workspace, e+1"
         "CONTROL SHIFT, h, workspace, e-1"
         "CONTROL SHIFT, l, workspace, e+1"
         "$mod, left, workspace, e-1"
@@ -209,19 +225,16 @@ in {
         "$mod, 8, workspace, 8"
         "$mod, 9, workspace, 9"
         "$mod, 0, workspace, 10"
-        "$mod SHIFT, 1, movetoworkspace, 1"
-        "$mod SHIFT, 2, movetoworkspace, 2"
-        "$mod SHIFT, 3, movetoworkspace, 3"
-        "$mod SHIFT, 4, movetoworkspace, 4"
-        "$mod SHIFT, 5, movetoworkspace, 5"
-        "$mod SHIFT, 6, movetoworkspace, 6"
-        "$mod SHIFT, 7, movetoworkspace, 7"
-        "$mod SHIFT, 8, movetoworkspace, 8"
-        "$mod SHIFT, 9, movetoworkspace, 9"
-        "$mod SHIFT, 0, movetoworkspace, 10"
-        "SUPER SHIFT, B, exec, ags -q; ags"
-        "SUPER SHIFT, W, exec, pkill hyprpaper; hyprpaper &"
-        "SUPER SHIFT, R, exec, hyprctl reload"
+        "$modshift, 1, movetoworkspace, 1"
+        "$modshift, 2, movetoworkspace, 2"
+        "$modshift, 3, movetoworkspace, 3"
+        "$modshift, 4, movetoworkspace, 4"
+        "$modshift, 5, movetoworkspace, 5"
+        "$modshift, 6, movetoworkspace, 6"
+        "$modshift, 7, movetoworkspace, 7"
+        "$modshift, 8, movetoworkspace, 8"
+        "$modshift, 9, movetoworkspace, 9"
+        "$modshift, 0, movetoworkspace, 10"
       ];
     };
   };
