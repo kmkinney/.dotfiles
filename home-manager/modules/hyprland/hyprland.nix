@@ -181,8 +181,8 @@ in {
 
         # Applications
         "$mod, E, exec, ${cmd "nautilus"}"
-        "$mod, B, exec, firefox"
-        "$mod, S, exec, steam"
+        "$mod, B, exec, ${cmd "firefox"}"
+        "$mod, S, exec, ${cmd "steam"}"
         "$mod, G, exec, google-chrome-stable"
 
         # Session management
@@ -196,14 +196,13 @@ in {
         "$modshift, P, exec, hyprpicker | tr -d '\\n' | wl-copy"
 
         # Brightness and volume
-        ",XF86MonBrightnessUp,exec,${pkgs.brightnessctl}/bin/brightnessctl s +20%"
-        ",XF86MonBrightnessDown,exec,${pkgs.brightnessctl}/bin/brightnessctl s 20%-"
-        ",XF86AudioRaiseVolume,exec,pamixer -i 5"
-        ",XF86AudioLowerVolume,exec,pamixer -d 5"
-        ",XF86AudioMute,exec,pamixer -t"
+        ",XF86MonBrightnessUp,exec,${cmd "brightnessctl"} s +20%"
+        ",XF86MonBrightnessDown,exec,${cmd "brightnessctl"} s 20%-"
+        ",XF86AudioRaiseVolume,exec,${cmd "pamixer"} -i 5"
+        ",XF86AudioLowerVolume,exec,${cmd "pamixer"} -d 5"
+        ",XF86AudioMute,exec,${cmd "pamixer"} -t"
         ",XF86AudioPlay,exec,playerctl play-pause"
         ",XF86AudioNext,exec,playerctl play-pause"
-        ",XF86AudioMute,exec,pamixer -t"
 
         # Window management
         "$mod, F, fullscreen"
