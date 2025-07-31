@@ -177,6 +177,7 @@ in {
         "$mod, S, exec, steam"
         "$mod, G, exec, google-chrome-stable"
         "$mod, F, fullscreen"
+        "SUPER, Delete, exec, ${pkgs.swaylock-fancy}/bin/swaylock-fancy"
         "SUPER SHIFT, Delete, exec, shutdown now"
         ",Print, exec, grimblast --notify copysave screen"
         "SUPER, P, exec, grimblast --notify copysave area"
