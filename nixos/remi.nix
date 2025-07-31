@@ -38,7 +38,6 @@
   environment.systemPackages = with pkgs; [
     # Basic
     git
-    gparted
     htop
     killall
     lm_sensors
