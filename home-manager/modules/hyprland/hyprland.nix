@@ -7,6 +7,8 @@
   # dark_green = "rgba(3c4841ff)";
   green = "rgba(A7C080ff)";
   gray = "rgba(343F44ff)";
+
+  cmd = pkgName: "${pkgs.${pkgName}}/bin/${pkgName}";
 in {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -178,13 +180,13 @@ in {
         "$modshift, R, exec, hyprctl reload"
 
         # Applications
-        "$mod, E, exec, ${pkgs.nautilus}/bin/nautilus"
+        "$mod, E, exec, ${cmd "nautilus"}"
         "$mod, B, exec, firefox"
         "$mod, S, exec, steam"
         "$mod, G, exec, google-chrome-stable"
 
         # Session management
-        "$mod, Delete, exec, ${pkgs.swaylock-fancy}/bin/swaylock-fancy"
+        "$mod, Delete, exec, ${cmd "swaylock-fancy"}"
         "$modshift, Delete, exec, shutdown now"
 
         # Screenshots
@@ -194,8 +196,8 @@ in {
         "$modshift, P, exec, hyprpicker | tr -d '\\n' | wl-copy"
 
         # Brightness and volume
-        ",XF86MonBrightnessUp,exec,brightnessctl s +20%"
-        ",XF86MonBrightnessDown,exec,brightnessctl s 20%-"
+        ",XF86MonBrightnessUp,exec,${pkgs.brightnessctl}/bin/brightnessctl s +20%"
+        ",XF86MonBrightnessDown,exec,${pkgs.brightnessctl}/bin/brightnessctl s 20%-"
         ",XF86AudioRaiseVolume,exec,pamixer -i 5"
         ",XF86AudioLowerVolume,exec,pamixer -d 5"
         ",XF86AudioMute,exec,pamixer -t"
