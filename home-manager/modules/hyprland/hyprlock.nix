@@ -1,6 +1,8 @@
 {...}: let
   font = "JetBrainsMono Nerd Font Mono";
   green = "rgba(A7C080ff)";
+  blue = "rgba(7FBBB3ff)";
+  red = "rgba(E67E80ff)";
 in {
   programs.hyprlock = {
     enable = true;
@@ -34,8 +36,8 @@ in {
         inner_color = "rgba(0, 0, 0, 0.0)";
 
         outer_color = "${green}";
-        check_color = "rgba(00ff99ee) rgba(ff6633ee) 120deg";
-        fail_color = "rgba(ff6633ee) rgba(ff0066ee) 40deg";
+        check_color = "${blue}";
+        fail_color = "${red}";
 
         font_color = "rgb(143, 143, 143)";
         fade_on_empty = false;
