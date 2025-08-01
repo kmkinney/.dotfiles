@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # Ensure packages are available in the system environment
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     hypridle
     swaylock-fancy
     brightnessctl
