@@ -188,7 +188,7 @@ in {
         "$mod, G, exec, google-chrome-stable"
 
         # Session management
-        "$mod, Delete, exec, ${cmd "swaylock-fancy"}"
+        "$mod, Delete, exec, ${cmd "hyprlock"}"
         "$modshift, Delete, exec, shutdown now"
 
         # Screenshots

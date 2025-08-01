@@ -2,7 +2,8 @@
   # Ensure packages are available in the system environment
   home.packages = with pkgs; [
     hypridle
-    swaylock-fancy
+    hyprlock
+    # swaylock-fancy
     brightnessctl
   ];
 
@@ -12,7 +13,7 @@
     settings = {
       general = {
         # Lock comand to use
-        lock_cmd = "pidof swaylock-fancy || swaylock-fancy";
+        lock_cmd = "pidof hyprlock || hyprlock";
         # Wake up the screen
         after_sleep_cmd = "hyprctl dispatch dpms on";
         before_sleep_cmd = "loginctl lock-session";
