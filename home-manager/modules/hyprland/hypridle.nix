@@ -15,6 +15,7 @@
         lock_cmd = "pidof swaylock-fancy || swaylock-fancy";
         # Wake up the screen
         after_sleep_cmd = "hyprctl dispatch dpms on";
+        before_sleep_cmd = "loginctl lock-session";
       };
 
       listener = [
