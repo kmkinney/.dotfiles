@@ -6,9 +6,9 @@
     ./hyprpaper.nix
     ./hyprland.nix
     ./hypridle.nix
+    ./hyprlock.nix
   ];
   # Dotfiles for hyprland and related configs
-  # home.file.".config/hypr/hyprlock.conf".source = ./hyprlock.conf;
   home.file.".config/dunst/dunstrc".source = ./dunstrc.cfg;
   home.file.".config/waybar/style.css".source = ./waybar.css;
 }
