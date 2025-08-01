@@ -14,6 +14,10 @@
 
       listener = [
         {
+          timeout = 10;
+          on-timeout = "notify-send 'Test (10 seconds)'";
+        }
+        {
           timeout = 300;
           on-timeout = "loginctl lock-session";
         }
