@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     hypridle
     hyprlock
-    # swaylock-fancy
     brightnessctl
   ];
 
