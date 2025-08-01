@@ -26,7 +26,7 @@
       enable = true;
       plugins = [
         #  "jeffreytse/zsh-vi-mode"
-        #  "MichaelAquilina/zsh-you-should-use"
+        "MichaelAquilina/zsh-you-should-use"
         #  "fdellwing/zsh-bat"
         #  "MichaelAquilina/zsh-auto-notify"
       ];
