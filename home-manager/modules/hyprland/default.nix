@@ -2,9 +2,10 @@
 # This module requires hyprland module to be installed with nixos
 {...}: {
   imports = [
-    ./waybar.nix 
-    ./hyprpaper.nix 
+    ./waybar.nix
+    ./hyprpaper.nix
     ./hyprland.nix
+    ./hypridle.nix
   ];
   # Dotfiles for hyprland and related configs
   home.file.".config/hypr/hyprlock.conf".source = ./hyprlock.conf;

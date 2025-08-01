@@ -20,6 +20,8 @@ in {
       enable = true;
       wayland = true;
     };
+
+    hypridle.enable = true;
   };
 
   environment.systemPackages = with pkgs; [

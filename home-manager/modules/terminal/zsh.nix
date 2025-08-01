@@ -18,6 +18,7 @@
       dr = "sudo darwin-rebuild switch --flake ~/.dotfiles/nix-darwin";
 
       # Work aliases
+      p = "pnpm";
       dev = "pnpm dev";
       clean = "pnpm clean:all";
     };
