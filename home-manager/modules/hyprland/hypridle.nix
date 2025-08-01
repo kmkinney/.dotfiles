@@ -12,8 +12,8 @@
 
       listener = [
         {
-          timeout = 10;
-          on-timeout = "notify-send 'Test (10 seconds)'";
+          timeout = 1;
+          on-timeout = "dunstify 'Test (1 seconds)'";
         }
         {
           timeout = 300;
