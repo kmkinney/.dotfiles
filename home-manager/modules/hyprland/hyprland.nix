@@ -16,6 +16,8 @@ in {
     package = null;
     portalPackage = null;
 
+    # TODO: https://bobbys.zone/guides/hyprland-clamshell
+
     # plugins = [
     #   hyprland-pkgs.hyprbars
     # ];

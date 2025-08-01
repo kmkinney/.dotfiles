@@ -22,6 +22,15 @@
       dev = "pnpm dev";
       clean = "pnpm clean:all";
     };
+    zplug = {
+      enable = true;
+      plugins = [
+        #  "jeffreytse/zsh-vi-mode"
+        #  "MichaelAquilina/zsh-you-should-use"
+        #  "fdellwing/zsh-bat"
+        #  "MichaelAquilina/zsh-auto-notify"
+      ];
+    };
     oh-my-zsh = {
       enable = true;
       theme = "awesomepanda";
