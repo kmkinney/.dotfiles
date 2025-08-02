@@ -17,5 +17,6 @@
   # These should probably be modules so think carefully
   environment.systemPackages = with pkgs; [
     slack
+    discord
   ];
 }
