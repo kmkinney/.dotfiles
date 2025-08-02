@@ -1,7 +1,7 @@
 # My favorite graphical apps
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    # Disk management
+    # Disk / file management
     gparted
     gnome-disk-utility
     gnome-usage
@@ -9,5 +9,8 @@
 
     # systm monitoring
     gnome-system-monitor
+
+    # Productivity
+    obsidian
   ];
 }
