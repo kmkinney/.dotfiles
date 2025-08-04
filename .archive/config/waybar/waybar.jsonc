@@ -10,13 +10,13 @@
     "tray",
     "pulseaudio",
     "network",
-    // "cpu",
-    // "memory",
+    "cpu",
+    "memory",
     // "temperature",
     // "backlight",
     // "keyboard-state",
     "battery",
-    "clock"
+    "clock",
     // "battery#bat2"
   ],
   "keyboard-state": {
@@ -25,8 +25,8 @@
     "format": "{name} {icon}",
     "format-icons": {
       "locked": "",
-      "unlocked": ""
-    }
+      "unlocked": "",
+    },
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -43,61 +43,61 @@
       "5": "",
       "urgent": "",
       "focused": "",
-      "default": ""
-    }
+      "default": "",
+    },
   },
   "hyprland/window": {
-    "separate-outputs": true
+    "separate-outputs": true,
   },
   "hyprland/submap": {
     "max-length": 8,
-    "tooltip": false
+    "tooltip": false,
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": "",
-      "deactivated": ""
-    }
+      "deactivated": "",
+    },
   },
   "tray": {
-    "spacing": 0
+    "spacing": 0,
   },
   "clock": {
     "timezone": "America/Denver",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     // "format-alt": "{:%Y-%m-%d}"
-    "format-alt": "{:%B %d, %Y}"
+    "format-alt": "{:%B %d, %Y}",
   },
   "cpu": {
     "format": "{usage}% ",
-    "tooltip": false
+    "tooltip": false,
   },
   "memory": {
-    "format": "{}% "
+    "format": "{}% ",
   },
   "temperature": {
     "critical-threshold": 80,
     "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""]
+    "format-icons": ["", "", ""],
   },
   "backlight": {
     "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{capacity}% {icon}",
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["", "", "", "", ""],
   },
   "battery#bat2": {
-    "bat": "BAT2"
+    "bat": "BAT2",
   },
   "network": {
     "format-wifi": "{essid} ({signalStrength}%) ",
@@ -105,7 +105,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
   "pulseaudio": {
     "format": "{volume}% {icon} {format_source}",
@@ -121,8 +121,8 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": ["", "", ""],
     },
-    "on-click": "killall pavucontrol || pavucontrol"
-  }
+    "on-click": "killall pavucontrol || pavucontrol",
+  },
 }
