@@ -5,7 +5,10 @@
     gparted
     gnome-disk-utility
     gnome-usage
+
+    # Files and media
     nautilus
+    vlc
 
     # systm monitoring
     gnome-system-monitor
