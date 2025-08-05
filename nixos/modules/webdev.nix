@@ -8,6 +8,7 @@
     openssl
     claude-code
     pscale
+    ngrok
   ];
 
   # Prisma:

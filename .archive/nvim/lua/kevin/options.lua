@@ -38,6 +38,7 @@ options.undofile = true                         -- enable persistent undo
 options.updatetime = 300                        -- faster completion (4000ms default)
 options.wrap = true                            -- display lines as one long line
 options.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+options.winborder = "rounded"                  -- set the window border style to rounded
 
 options.shortmess:append "c" -- not sure what this does
 
