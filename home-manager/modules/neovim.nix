@@ -13,6 +13,7 @@ in {
   home.packages = with pkgs; [
     # LSPs
     lua-language-server
+    nixd
   ];
 
   programs.zsh.shellAliases = {
