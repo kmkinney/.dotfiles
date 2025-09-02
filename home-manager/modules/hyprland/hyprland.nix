@@ -34,7 +34,7 @@ in {
         "desc:LG Electronics LG TV SSCR2 0x01010101,4096x2160,0x0,2"
         "desc:LG Electronics LG Ultra HD 0x00027BFE,1920x1080,0x0,1"
         # Work monitor
-        "desc:LG Electronics LG HDR 4K 305NTABE1376,preferred,0x0,1.666667"
+        "desc:LG Electronics LG HDR 4K,preferred,0x0,1.666667"
       ];
 
       # Startup
