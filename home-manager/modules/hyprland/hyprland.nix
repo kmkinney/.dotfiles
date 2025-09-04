@@ -156,6 +156,10 @@ in {
         force_zero_scaling = true;
       };
 
+      binds = {
+        allow_workspace_cycles = true;
+      };
+
       bindt = [
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"
@@ -220,6 +224,7 @@ in {
         "CONTROL SHIFT, l, workspace, e+1"
         "$mod, left, workspace, e-1"
         "$mod, right, workspace, e+1"
+        "$mod, TAB, workspace, previous"
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
