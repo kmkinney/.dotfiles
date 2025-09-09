@@ -36,8 +36,8 @@
         modules = [
           # Standard modules
           ./nixos/configuration.nix
-
           ./nixos/systems/kevin-remi-framework.nix
+
           inputs.stylix.nixosModules.stylix
           nixos-hardware.nixosModules.framework-amd-ai-300-series
         ];
@@ -51,6 +51,7 @@
           ./nixos/systems/kevin-gaming-pc.nix
 
           inputs.stylix.nixosModules.stylix
+          nixos-hardware.nixosModules.gigabyte-b650
         ];
       };
     };
