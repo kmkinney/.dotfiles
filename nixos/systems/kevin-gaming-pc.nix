@@ -2,16 +2,16 @@
 {pkgs, ...}: {
   # Hardware config
   imports = [
-    ../hardware/remi-laptop.nix
+    ../hardware/pc.nix
   ];
   # Need to set this so that nixos builds the correct config
-  networking.hostName = "kevin-remi-framework";
+  networking.hostName = "kmkinney-nixos";
 
   # Settings to enable / disable optional modules
   nixos.kevin = {
     scripts.enable = true;
     gnome.enable = false;
-    gaming.enable = false;
+    gaming.enable = true;
   };
 
   # Packages only installed to this system

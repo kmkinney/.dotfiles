@@ -9,5 +9,6 @@
     ./networking.nix
     ./nix-settings.nix
     ./pipewire.nix
+    ./printers.nix
   ];
 }

@@ -35,23 +35,21 @@
         };
         modules = [
           # Standard modules
-          ./nixos/remi.nix
+          ./nixos/configuration.nix
 
           ./nixos/systems/kevin-remi-framework.nix
           inputs.stylix.nixosModules.stylix
           nixos-hardware.nixosModules.framework-amd-ai-300-series
         ];
       };
-      nixos-pc = nixpkgs.lib.nixosSystem {
+      kmkinney-nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs outputs;
-          system = "pc";
         };
         modules = [
-          ./nixos/hardware/pc.nix
           ./nixos/configuration.nix
+          ./nixos/systems/kevin-gaming-pc.nix
 
-          {networking.hostName = "kevin-remi-framework";}
           inputs.stylix.nixosModules.stylix
         ];
       };
