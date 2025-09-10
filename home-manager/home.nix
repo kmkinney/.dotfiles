@@ -1,5 +1,5 @@
 # Linux only for now
-{...}: let
+{pkgs, ...}: let
 in {
   imports = [
     # AGS not working
@@ -15,13 +15,12 @@ in {
 
   nixpkgs.config.allowUnfree = true;
   home.username = "kevin";
-  home.homeDirectory = "/home/kevin"
+  home.homeDirectory = "/home/kevin";
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   programs.home-manager.enable = true;
 
-  
   # Standalone packages
   home.packages = with pkgs; [
     alejandra
