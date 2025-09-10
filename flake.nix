@@ -3,6 +3,7 @@
 
   # These are the inputs for our flake, we can pin specific versions here is we want
   inputs = {
+    # ags.url = "github:Aylur/ags";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
