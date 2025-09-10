@@ -20,23 +20,7 @@
     nixpkgs,
     home-manager,
     ...
-  }: let
-    macOs = "aarch64-darwin";
-    linux = "x86_64-linux";
-  in {
-    homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${macOs};
-
-      extraSpecialArgs = {
-        system = macOs;
-        inherit inputs;
-      };
-      modules = [
-        ./home.nix
-        inputs.ags.homeManagerModules.default
-      ];
-    };
-
+  }: {
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${linux};
 

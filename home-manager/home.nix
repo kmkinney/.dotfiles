@@ -1,29 +1,31 @@
 # Linux only for now
-{system, ...}: let
-  systemsModule = {
-    "x86_64-linux" = [./systems/linux.nix];
-    "aarch64-darwin" = [./systems/macos.nix];
-  };
-  homeDirectory = {
-    "x86_64-linux" = "/home/kevin";
-    "aarch64-darwin" = "/Users/kevin";
-  };
+{...}: let
 in {
+  imports = [
+    # AGS not working
+    # ./modules/ags
+    ./modules/chrome.nix
+    ./modules/git.nix
+    ./modules/gnome.nix
+    ./modules/gtk
+    ./modules/hyprland
+    ./modules/neovim.nix
+    ./modules/terminal
+  ];
+
   nixpkgs.config.allowUnfree = true;
   home.username = "kevin";
-  home.homeDirectory = homeDirectory.${system};
+  home.homeDirectory = "/home/kevin"
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   programs.home-manager.enable = true;
 
-  imports = [
-    ./systems/linux.nix
+  
+  # Standalone packages
+  home.packages = with pkgs; [
+    alejandra
+    ripgrep
+    btop
   ];
-
-  # TODO: figure this out with mkEnable
-  # systems.linux.enable = system == "x86_64-linux";
-  # systems.linux.enable = false;
-  # systems.macos.enable = system == "aarch64-darwin";
-  # systems.macos.enable = true;
 }

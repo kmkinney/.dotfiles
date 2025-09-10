@@ -5,7 +5,7 @@
     nodePackages_latest.pnpm
     nodePackages_latest.vercel
     nodePackages_latest.prisma
-    nodePackages_latest.playwright
+    # nodePackages_latest.playwright
     openssl
     claude-code
     pscale
