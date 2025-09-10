@@ -8,6 +8,7 @@
       highlight = "fg=4";
     };
     shellAliases = {
+      avante = "nvim -c \"lua vim.defer_fn(function()require(\\\"avante.api\\\").zen_mode()end, 100)\"";
       v = "nvim";
       ll = "ls -alF";
       lg = "lazygit";
