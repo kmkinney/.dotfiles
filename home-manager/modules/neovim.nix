@@ -14,6 +14,7 @@ in {
     # LSPs
     lua-language-server
     nixd
+    gnumake
   ];
 
   programs.zsh.shellAliases = {
