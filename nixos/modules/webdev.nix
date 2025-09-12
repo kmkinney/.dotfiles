@@ -10,6 +10,7 @@
     claude-code
     pscale
     ngrok
+    insomnia
   ];
 
   # Prisma:
