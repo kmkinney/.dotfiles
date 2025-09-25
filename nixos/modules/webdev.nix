@@ -5,6 +5,8 @@
     nodePackages_latest.pnpm
     nodePackages_latest.vercel
     nodePackages_latest.prisma
+    nodePackages_latest.sherif
+    nodePackages_latest.tsgo
     # nodePackages_latest.playwright
     openssl
     claude-code
