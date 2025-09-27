@@ -39,7 +39,7 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     ---@class PluginLspOpts
     opts = {
       ensure_installed = {
