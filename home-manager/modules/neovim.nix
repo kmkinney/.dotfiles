@@ -17,6 +17,7 @@ in {
     stylua
     typescript-go
     gnumake
+    tree-sitter
   ];
 
   programs.zsh.shellAliases = {
