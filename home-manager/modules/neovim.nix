@@ -15,6 +15,7 @@ in {
     lua-language-server
     nixd
     stylua
+    tsgo
     gnumake
   ];
 
