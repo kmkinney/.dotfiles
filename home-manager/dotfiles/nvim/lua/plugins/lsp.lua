@@ -24,6 +24,9 @@ return {
         --     },
         --   },
         -- },
+        tsgo = {
+          mason = false,
+        },
         rust_analyzer = {
           mason = false,
         },
@@ -48,7 +51,6 @@ return {
         "json-lsp",
         "tailwindcss-language-server",
         "css-lsp",
-        -- "rust-analyzer",
         "prettierd",
         "black",
       },
