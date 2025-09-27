@@ -149,7 +149,7 @@ in {
         # a couple of handy examples you can keep or delete:
         # "3, up, dispatcher, exec, wofi --show drun"
         # "3, down, dispatcher, exec, kitty"
-        "4, horizontal, special" # open/close special workspace with 4 fingers
+        # "4, horizontal, special" # open/close special workspace with 4 fingers
         # "3, left, dispatcher, movefocus, l"
         # "3, right, dispatcher, movefocus, r"
       ];
