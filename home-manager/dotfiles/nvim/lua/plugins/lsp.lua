@@ -9,25 +9,21 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       servers = {
-        -- tsserver = {
+        vtsls = false,
+        -- vtsls = {
         --   root_dir = function(...)
         --     return require("lspconfig.util").root_pattern(".git")(...)
         --   end,
+        --   typescript = {
+        --     updateImportsOnFileMove = { enabled = "always" },
+        --     suggest = {
+        --       completeFunctionCalls = true,
+        --     },
+        --     inlayHints = {
+        --       enabled = false,
+        --     },
+        --   },
         -- },
-        vtsls = {
-          root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
-          end,
-          typescript = {
-            updateImportsOnFileMove = { enabled = "always" },
-            suggest = {
-              completeFunctionCalls = true,
-            },
-            inlayHints = {
-              enabled = false,
-            },
-          },
-        },
         rust_analyzer = {
           mason = false,
         },
