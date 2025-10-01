@@ -35,6 +35,8 @@ in {
         "desc:LG Electronics LG Ultra HD 0x00027BFE,1920x1080,0x0,1"
         # Work monitor
         "desc:LG Electronics LG HDR 4K,preferred,0x0,1.666667"
+        "DP-3,preferred,auto,1.666667"
+        "DP-4,preferred,auto-left,1.666667"
       ];
 
       # Startup

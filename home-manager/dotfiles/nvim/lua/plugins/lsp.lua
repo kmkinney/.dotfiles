@@ -10,6 +10,7 @@ return {
       inlay_hints = { enabled = false },
       servers = {
         vtsls = false,
+
         -- vtsls = {
         --   typescript = {
         --     updateImportsOnFileMove = { enabled = "always" },
