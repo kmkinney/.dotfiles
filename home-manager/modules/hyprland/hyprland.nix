@@ -225,7 +225,7 @@ in {
         "$modshift, k, swapsplit"
 
         # Workspaces
-        "$modshift , h, workspace, e-1"
+        "$modshift, h, workspace, e-1"
         "$modshift, l, workspace, e+1"
         "CONTROL SHIFT, h, workspace, e-1"
         "CONTROL SHIFT, l, workspace, e+1"
@@ -252,6 +252,8 @@ in {
         "$modshift, 8, movetoworkspace, 8"
         "$modshift, 9, movetoworkspace, 9"
         "$modshift, 0, movetoworkspace, 10"
+        "$modshift, left, movecurrentworkspacetomonitor, l"
+        "$modshift, right, movecurrentworkspacetomonitor, r"
       ];
     };
   };

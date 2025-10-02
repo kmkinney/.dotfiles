@@ -1,7 +1,6 @@
 -- NOTE: LSP Plugins
 
 return {
-  { "github/copilot.vim" },
   { "jmbuhr/otter.nvim" },
   { "simrat39/rust-tools.nvim" },
   {
@@ -26,9 +25,10 @@ return {
         tsgo = {
           mason = false,
         },
-        rust_analyzer = {
-          mason = false,
-        },
+        rust_analyzer = false,
+        -- rust_analyzer = {
+        --   mason = false,
+        -- },
       },
     },
   },
