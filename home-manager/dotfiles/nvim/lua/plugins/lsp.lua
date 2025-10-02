@@ -25,6 +25,7 @@ return {
         tsgo = {
           mason = false,
         },
+        eslint = false,
         rust_analyzer = false,
         -- rust_analyzer = {
         --   mason = false,

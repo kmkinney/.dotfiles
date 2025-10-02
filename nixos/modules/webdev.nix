@@ -10,6 +10,7 @@
     pscale
     ngrok
     insomnia
+    biome
   ];
 
   # Prisma:
