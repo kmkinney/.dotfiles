@@ -190,7 +190,7 @@ in {
 
       bind = [
         # Config management
-        "$modshift, B, exec, ags -q; ags"
+        "$modshift, B, exec, pkill waybar; waybar &"
         "$modshift, W, exec, pkill hyprpaper; hyprpaper &"
         "$modshift, R, exec, hyprctl reload"
 
