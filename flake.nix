@@ -3,6 +3,7 @@
 
   # These are the inputs for our flake, we can pin specific versions here is we want
   inputs = {
+    nixpkgs-bleeding-edge.url = "github:nixos/nixpkgs/master";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -21,11 +22,15 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    nixpkgs-bleeding-edge,
     home-manager,
     nixos-hardware,
     ...
   }: let
     inherit (self) outputs;
+    pkgsBleedingEdge = import nixpkgs-bleeding-edge {
+      system = "x86_64-linux";
+    };
   in {
     # Nixos configurations
     nixosConfigurations = {
@@ -34,6 +39,9 @@
           inherit inputs outputs;
         };
         modules = [
+          ({pkgs, ...}: {
+            nixpkgs.overlays = [(final: prev: {biome = pkgsBleedingEdge.biome;})];
+          })
           # Standard modules
           ./nixos/configuration.nix
           ./nixos/systems/kevin-remi-framework.nix
