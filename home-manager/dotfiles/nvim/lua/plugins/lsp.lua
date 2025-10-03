@@ -25,6 +25,9 @@ return {
         tsgo = {
           mason = false,
         },
+        biome = {
+          mason = false,
+        },
         eslint = false,
         rust_analyzer = false,
         -- rust_analyzer = {
