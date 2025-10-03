@@ -18,6 +18,9 @@
   environment.variables.PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
   environment.variables.PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
 
+  # Biome:
+  environment.variables.BIOME_BINARY = "${pkgs.biome}/bin/biome";
+
   # Docker
   virtualisation.docker.enable = true;
   users.users.kevin.extraGroups = ["docker"];
