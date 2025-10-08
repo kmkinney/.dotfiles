@@ -63,6 +63,9 @@
     mysql-client
 
     home-manager
+
+    # Handy util
+    steam-run
   ];
 
   # Security
