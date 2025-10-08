@@ -41,6 +41,7 @@
         modules = [
           ({pkgs, ...}: {
             nixpkgs.overlays = [(final: prev: {biome = pkgsBleedingEdge.biome;})];
+            environment.variables.BIOME_BINARY = "${pkgsBleedingEdge.biome}/bin/biome";
           })
           # Standard modules
           ./nixos/configuration.nix
