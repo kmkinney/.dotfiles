@@ -11,6 +11,7 @@
     ngrok
     insomnia
     biome
+    chromium
   ];
 
   # Prisma:
@@ -18,7 +19,8 @@
   environment.variables.PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
   environment.variables.PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
 
-  # Biome:
+  # Puppeteer
+  environment.variables.PUPPETEER_EXECUTABLE_PATH = "${pkgs.chromium}/bin/chromium";
 
   # Docker
   virtualisation.docker.enable = true;
