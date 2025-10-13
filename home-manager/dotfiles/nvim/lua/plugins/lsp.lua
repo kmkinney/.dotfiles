@@ -18,8 +18,7 @@ return {
           })
         end,
       })
-      end,
-    },
+    end,
     opts = {
       inlay_hints = { enabled = false },
       servers = {
