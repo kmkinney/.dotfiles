@@ -5,6 +5,21 @@ return {
   { "simrat39/rust-tools.nvim" },
   {
     "neovim/nvim-lspconfig",
+    init = function()
+      local grp = vim.api.nvim_create_augroup("BiomeFixOnSave", { clear = true })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = grp,
+        pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.json", "*.jsonc" },
+        callback = function()
+          -- Apply Biome safe fixes (and organize imports) via LSP code actions
+          vim.lsp.buf.code_action({
+            context = { only = { "source.fixAll.biome", "source.organizeImports.biome" } },
+            apply = true,
+          })
+        end,
+      })
+      end,
+    },
     opts = {
       inlay_hints = { enabled = false },
       servers = {
