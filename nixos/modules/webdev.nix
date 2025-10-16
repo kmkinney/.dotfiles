@@ -24,7 +24,7 @@ in {
   environment.variables.PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
   environment.variables.PLAYWRIGHT_BROWSERS_PATH = pkgs.playwright-driver.browsers;
   environment.variables.PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS = "true";
-  environment.variables.PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH = "${pkgs.playwright-drvier.browsers}/chromium-${chromium-rev}/chrome-linux/chrome";
+  environment.variables.PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH = "${pkgs.playwright.browsers}/chromium-${chromium-rev}/chrome-linux/chrome";
 
   # Puppeteer
   environment.variables.PUPPETEER_EXECUTABLE_PATH = "${pkgs.chromium}/bin/chromium";
