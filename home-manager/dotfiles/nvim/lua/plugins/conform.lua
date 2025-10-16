@@ -7,7 +7,14 @@ return {
       ---@type table<string, conform.FormatterUnit[]>
       formatters_by_ft = {
         nix = { "alejandra" }
-      }
+      },
+      -- formatters = {
+      --   biome = {
+      --     command = "biome",
+      --     args = {"check", "--write", "$FILENAME"},
+      --     stdin = false
+      --   }
+      -- }
     },
   },
 }

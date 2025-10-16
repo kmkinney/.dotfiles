@@ -13,12 +13,16 @@ return {
         callback = function()
           -- Apply Biome safe fixes (and organize imports) via LSP code actions
           vim.lsp.buf.code_action({
-            context = { only = { "source.fixAll.biome", "source.organizeImports.biome" } },
+            context = { only = { "source.fixAll.biome", "source.organizeImports.biome", "source.action.useSortedKeys.biome" } },
             apply = true,
           })
         end,
       })
     end,
+    -- setup = {
+    --   biome = function()
+    --   end
+    -- },
     opts = {
       inlay_hints = { enabled = false },
       servers = {
@@ -36,9 +40,7 @@ return {
         --   },
         -- },
         tsserver = false,
-        tsgo = {
-          mason = false,
-        },
+        tsgo = { mason = false, },
         biome = {
           mason = false,
         },
