@@ -21,7 +21,6 @@
   outputs = inputs @ {
     self,
     nixpkgs,
-    nixpkgs-bleeding-edge,
     home-manager,
     nixos-hardware,
     ...
