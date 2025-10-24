@@ -18,6 +18,9 @@ in {
     playwright-driver.browsers
   ];
 
+  # Biome
+  environment.variables.BIOME_BINARY = "${pkgs.biome}/bin/biome";
+
   # Prisma:
   environment.variables.PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
   environment.variables.PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
