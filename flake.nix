@@ -34,7 +34,7 @@
           inherit inputs outputs;
         };
         modules = [
-          ./nixos/overlays.nix
+          # ./nixos/overlays.nix
           ./nixos/configuration.nix
           ./nixos/systems/kevin-remi-framework.nix
 
@@ -47,7 +47,7 @@
           inherit inputs outputs;
         };
         modules = [
-          ./nixos/overlays.nix
+          # ./nixos/overlays.nix
           ./nixos/configuration.nix
           ./nixos/systems/kevin-gaming-pc.nix
 

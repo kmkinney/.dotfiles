@@ -16,6 +16,7 @@ in {
     biome
     chromium
     playwright-driver.browsers
+    codex
   ];
 
   # Biome
