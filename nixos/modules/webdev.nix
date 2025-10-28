@@ -17,6 +17,7 @@ in {
     chromium
     playwright-driver.browsers
     codex
+    awscli2
   ];
 
   # Biome
