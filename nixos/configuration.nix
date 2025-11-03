@@ -60,7 +60,7 @@
     # Work
     code-cursor
     vscode
-    mysql-client
+    mariadb.client
 
     home-manager
 
