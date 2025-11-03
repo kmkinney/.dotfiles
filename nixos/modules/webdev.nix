@@ -5,6 +5,7 @@ in {
   environment.systemPackages = with pkgs; [
     # For Prisma:
     nodejs
+    cue
     nodePackages_latest.pnpm
     nodePackages_latest.vercel
     nodePackages_latest.prisma
