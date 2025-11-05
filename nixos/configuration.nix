@@ -20,6 +20,7 @@
     ./modules/stylix.nix
     ./modules/virt.nix
     ./modules/webdev.nix
+    ./modules/android.nix
 
     # Nixos scripts
     ./scripts
