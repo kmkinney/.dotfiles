@@ -15,5 +15,8 @@
 
     # Productivity
     obsidian
+
+    # Messaging
+    signal-desktop
   ];
 }
