@@ -4,6 +4,7 @@
 in {
   environment.systemPackages = with pkgs; [
     # For Prisma:
+    act
     awscli2
     biome
     chromium
