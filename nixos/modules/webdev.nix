@@ -4,21 +4,22 @@
 in {
   environment.systemPackages = with pkgs; [
     # For Prisma:
-    nodejs
-    cue
-    nodePackages_latest.pnpm
-    nodePackages_latest.vercel
-    nodePackages_latest.prisma
-    openssl
-    claude-code
-    pscale
-    ngrok
-    insomnia
+    awscli2
     biome
     chromium
-    playwright-driver.browsers
+    claude-code
     codex
-    awscli2
+    cue
+    doppler
+    insomnia
+    ngrok
+    nodePackages_latest.pnpm
+    nodePackages_latest.prisma
+    nodePackages_latest.vercel
+    nodejs
+    openssl
+    playwright-driver.browsers
+    pscale
   ];
 
   # Biome
