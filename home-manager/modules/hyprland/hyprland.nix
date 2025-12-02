@@ -66,13 +66,13 @@ in {
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
       ];
 
-      windowrule = [
-        "center on,title:pavucontrol"
-        "float on,title:pavucontrol"
-        "float on,title:blueman"
-        "center on,title:blueman"
-        "center on,title:NordPass"
-      ];
+      # windowrule = [
+      #   "center on,title:pavucontrol"
+      #   "float on,title:pavucontrol"
+      #   "float on,title:blueman"
+      #   "center on,title:blueman"
+      #   "center on,title:NordPass"
+      # ];
 
       input = {
         kb_layout = "us";
