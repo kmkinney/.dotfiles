@@ -6,7 +6,10 @@ return {
       -- This is where you can add custom formatters per file type
       ---@type table<string, conform.FormatterUnit[]>
       formatters_by_ft = {
-        nix = { "alejandra" }
+        nix = { "alejandra" },
+        javascript = { "biome-check" },
+        typescript = { "biome-check" },
+        json = { "biome" },
       },
       -- formatters = {
       --   biome = {
