@@ -4,21 +4,24 @@
     gh.enable = true;
     git = {
       enable = true;
-      userName = "kmkinney";
-      userEmail = "kevinmk712@gmail.com";
-      aliases = {
-        co = "checkout";
-        br = "branch";
-        st = "status -sb";
-        f = "fetch";
-        a = "add .";
-        c = "commit";
-        cm = "commit -m";
-        p = "push";
-        pu = "push -u";
-        root = "rev-parse --show-toplevel";
-      };
-      extraConfig = {
+      settings = {
+        alias = {
+          co = "checkout";
+          br = "branch";
+          st = "status -sb";
+          f = "fetch";
+          a = "add .";
+          c = "commit";
+          cm = "commit -m";
+          p = "push";
+          pu = "push -u";
+          root = "rev-parse --show-toplevel";
+        };
+        user = {
+          name = "kmkinney";
+          email = "kevinmk712@gmail.com";
+        };
+
         core = {
           editor = "nvim";
           autocrlf = "input";
