@@ -67,11 +67,11 @@ in {
       ];
 
       windowrule = [
-        "center,title:pavucontrol"
-        "float,title:pavucontrol"
-        "float,title:blueman"
-        "center,title:blueman"
-        "center,title:NordPass"
+        "center on,title:pavucontrol"
+        "float on,title:pavucontrol"
+        "float on,title:blueman"
+        "center on,title:blueman"
+        "center on,title:NordPass"
       ];
 
       input = {
