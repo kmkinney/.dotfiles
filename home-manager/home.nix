@@ -1,6 +1,5 @@
 # Linux only for now
-{pkgs, ...}: let
-in {
+{pkgs, ...}: {
   imports = [
     # AGS not working
     # ./modules/ags
@@ -23,8 +22,48 @@ in {
 
   # Standalone packages
   home.packages = with pkgs; [
+    # Packages needed from nixos
+    act
     alejandra
-    ripgrep
+    awscli2
+    biome
     btop
+    cargo
+    chromium
+    claude-code
+    code-cursor
+    codex
+    cue
+    curl
+    discord
+    doppler
+    firebase-tools
+    firefox
+    gcc
+    git
+    htop
+    insomnia
+    killall
+    lm_sensors
+    mariadb.client
+    ngrok
+    nodePackages_latest.pnpm
+    nodePackages_latest.prisma
+    nodePackages_latest.vercel
+    nodejs
+    obs-studio
+    openssl
+    playwright-driver.browsers
+    pscale
+    python3
+    ripgrep
+    slack
+    steam-run
+    tldr
+    tree
+    unzip
+    vim
+    vscode
+    wget
   ];
 }
