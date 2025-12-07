@@ -4,6 +4,7 @@
     # AGS not working
     # ./modules/ags
     ./modules/chrome.nix
+    ./modules/font.nix
     ./modules/git.nix
     ./modules/gnome.nix
     ./modules/gtk
@@ -23,47 +24,47 @@
   # Standalone packages
   home.packages = with pkgs; [
     # Packages needed from nixos
-    act
-    alejandra
-    awscli2
-    biome
-    btop
-    cargo
-    chromium
-    claude-code
-    code-cursor
-    codex
-    cue
+    # act
+    # alejandra
+    # awscli2
+    # biome
+    # btop
+    # cargo
+    # chromium
+    # claude-code
+    # code-cursor
+    # codex
+    # cue
     curl
     discord
-    doppler
-    firebase-tools
-    firefox
+    # doppler
+    # firebase-tools
+    # firefox
     gcc
     git
     htop
-    insomnia
-    killall
-    lm_sensors
-    mariadb.client
-    ngrok
-    nodePackages_latest.pnpm
-    nodePackages_latest.prisma
-    nodePackages_latest.vercel
-    nodejs
-    obs-studio
-    openssl
-    playwright-driver.browsers
-    pscale
-    python3
-    ripgrep
-    slack
-    steam-run
+    # insomnia
+    # killall
+    # lm_sensors
+    # mariadb.client
+    # ngrok
+    # nodePackages_latest.pnpm
+    # nodePackages_latest.prisma
+    # nodePackages_latest.vercel
+    # nodejs
+    # obs-studio
+    # openssl
+    # playwright-driver.browsers
+    # pscale
+    # python3
+    # ripgrep
+    # slack
+    # steam-run
     tldr
     tree
     unzip
     vim
-    vscode
-    wget
+    # vscode
+    # wget
   ];
 }

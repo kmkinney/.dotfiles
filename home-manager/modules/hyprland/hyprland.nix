@@ -11,6 +11,16 @@
   # This way we can avoid using a command that is not installed
   cmd = pkgName: "${pkgs.${pkgName}}/bin/${pkgName}";
 in {
+  home.packages = with pkgs; [
+    dunst
+    grimblast
+    hyprpicker
+    waybar
+    wl-clipboard
+    wofi
+    xdg-desktop-portal-hyprland
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
