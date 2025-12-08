@@ -10,6 +10,7 @@
 
   # This way we can avoid using a command that is not installed
   cmd = pkgName: "${pkgs.${pkgName}}/bin/${pkgName}";
+  cmd2 = pkgName: binary: "${pkgs.${pkgName}}/bin/${binary}"
 in {
   home.packages = with pkgs; [
     dunst
@@ -55,16 +56,16 @@ in {
       # Startup
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "dunst"
-        "hypridle"
+        "${cmd "dunst"}"
+        "${cmd "hypridle"}"
       ];
 
       exec = [
-        "nm-applet --indicator"
-        "blueman-applet"
-        "hyprpaper"
-        "dunstify \"Config reloaded\""
-        "pkill waybar; waybar 2&>1 >~/waybar.log"
+        "${cmd2 "network-manager-applet" "nm-applet"} --indicator"
+        "${cmd2 "blueman" "blueman-applet"}"
+        "${cmd "hyprpaper"}"
+        "${cmd2 "dunst" "dunstify"} \"Config reloaded\""
+        "pkill ${cmd "waybar"}; ${cmd "waybar"} 2&>1 >~/waybar.log"
       ];
 
       # Env
@@ -203,7 +204,7 @@ in {
 
       bind = [
         # Config management
-        "$modshift, B, exec, pkill waybar; waybar &"
+        "$modshift, B, exec, pkill ${cmd "waybar"}; ${cmd "waybar"} &"
         "$modshift, W, exec, pkill hyprpaper; hyprpaper &"
         "$modshift, R, exec, hyprctl reload"
 
@@ -211,7 +212,7 @@ in {
         "$mod, E, exec, ${cmd "nautilus"}"
         "$mod, B, exec, ${cmd "firefox"}"
         "$mod, S, exec, ${cmd "steam"}"
-        "$mod, G, exec, google-chrome-stable"
+        "$mod, G, exec, ${cmd2 "google-chrome" "google-chrome-stable"}"
 
         # Session management
         "$mod, Delete, exec, ${cmd "hyprlock"}"
@@ -229,8 +230,8 @@ in {
         ",XF86AudioRaiseVolume,exec,${cmd "pamixer"} -i 5"
         ",XF86AudioLowerVolume,exec,${cmd "pamixer"} -d 5"
         ",XF86AudioMute,exec,${cmd "pamixer"} -t"
-        ",XF86AudioPlay,exec,playerctl play-pause"
-        ",XF86AudioNext,exec,playerctl play-pause"
+        ",XF86AudioPlay,exec,${cmd "playerctl"} play-pause"
+        ",XF86AudioNext,exec,${cmd "playerctl"} play-pause"
 
         # Window management
         "$mod, F, fullscreen"
