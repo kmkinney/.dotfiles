@@ -61,7 +61,7 @@ in {
       ];
 
       exec = [
-        "${cmd2 "network-manager-applet" "nm-applet"} --indicator"
+        "${cmd2 "networkmanagerapplet" "nm-applet"} --indicator"
         "${cmd2 "blueman" "blueman-applet"}"
         "${cmd "hyprpaper"}"
         "${cmd2 "dunst" "dunstify"} \"Config reloaded\""
