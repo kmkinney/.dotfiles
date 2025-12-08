@@ -215,6 +215,7 @@ in {
         "$mod, S, exec, ${cmd "slack"}"
         "$mod, O, exec, ${cmd2 "obs-studio" "obs"}"
         "$mod, G, exec, ${cmd2 "google-chrome" "google-chrome-stable"}"
+        "$mod, A, exec, ${cmd2 "code-cursor" "cursor"}"
 
         # Session management
         "$mod, Delete, exec, ${cmd "hyprlock"}"

@@ -24,5 +24,4 @@
     unzip
     wget
   ];
-
 }
