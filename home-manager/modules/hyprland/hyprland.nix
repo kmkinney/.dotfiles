@@ -65,7 +65,7 @@ in {
         "${cmd2 "blueman" "blueman-applet"}"
         "${cmd "hyprpaper"}"
         "${cmd2 "dunst" "dunstify"} \"Config reloaded\""
-        "pkill ${cmd "waybar"}; ${cmd "waybar"} 2&>1 >~/waybar.log"
+        "pkill waybar; ${cmd "waybar"}"
       ];
 
       # Env
@@ -194,18 +194,18 @@ in {
       ];
 
       bindd = [
-        "$mod, Return,Open kitty, exec, kitty"
+        "$mod, Return,Open kitty, exec, ${cmd "kitty"}"
         "$mod, C,Close window, killactive, "
         "$mod, M,Logout, exit, "
         "$mod, V,Toggle floating, togglefloating, "
-        "$mod, R,Application runner, exec, wofi --show drun"
-        "$mod, Space,Application runner, exec, wofi --show drun"
+        "$mod, R,Application runner, exec, ${cmd "wofi"} --show drun"
+        "$mod, Space,Application runner, exec, ${cmd "wofi"} --show drun"
       ];
 
       bind = [
         # Config management
-        "$modshift, B, exec, pkill ${cmd "waybar"}; ${cmd "waybar"} &"
-        "$modshift, W, exec, pkill hyprpaper; hyprpaper &"
+        "$modshift, B, exec, pkill waybar; ${cmd "waybar"} &"
+        "$modshift, W, exec, pkill hyprpaper; ${cmd "hyprpaper"} &"
         "$modshift, R, exec, hyprctl reload"
 
         # Applications
