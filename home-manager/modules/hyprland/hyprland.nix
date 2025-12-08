@@ -13,7 +13,7 @@
   cmd = pkgName: "${pkgs.${pkgName}}/bin/${pkgName}";
   cmd2 = pkgName: binary: "${pkgs.${pkgName}}/bin/${binary}";
 
-  kittyCmd = "${inputs.nixgl.auto.nixGLDefault}/bin/nixGL} ${cmd "kitty"}";
+  kittyCmd = "${inputs.nixgl.nixGLDefault}/bin/nixGL} ${cmd "kitty"}";
 in {
   home.packages = with pkgs; [
     dunst
