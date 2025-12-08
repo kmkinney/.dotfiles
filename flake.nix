@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixGL = {
+    nixgl = {
       url = "github:guibou/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -30,6 +30,7 @@
     nixpkgs,
     home-manager,
     nixos-hardware,
+    nixgl,
     ...
   }: let
     inherit (self) outputs;
@@ -65,7 +66,11 @@
     };
     # Home manager configurations
     homeConfigurations.kevin = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      # pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = [nixgl.overlay];
+      };
 
       extraSpecialArgs = {
         inherit inputs;
