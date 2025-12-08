@@ -212,7 +212,8 @@ in {
         # Applications
         "$mod, E, exec, ${cmd "nautilus"}"
         "$mod, B, exec, ${cmd "firefox"}"
-        "$mod, S, exec, ${cmd "steam"}"
+        "$mod, S, exec, ${cmd "slack"}"
+        "$mod, O, exec, ${cmd2 "obs-studio" "obs"}"
         "$mod, G, exec, ${cmd2 "google-chrome" "google-chrome-stable"}"
 
         # Session management
