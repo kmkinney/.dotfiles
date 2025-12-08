@@ -64,7 +64,7 @@ in {
         "blueman-applet"
         "hyprpaper"
         "dunstify \"Config reloaded\""
-        "pkill waybar; waybar"
+        "pkill waybar; waybar 2&>1 >~/waybar.log"
       ];
 
       # Env
