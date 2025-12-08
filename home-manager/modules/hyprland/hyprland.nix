@@ -1,6 +1,7 @@
 {
   # inputs,
   pkgs,
+  nixgl,
   ...
 }: let
   # hyprland-pkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
@@ -12,7 +13,7 @@
   cmd = pkgName: "${pkgs.${pkgName}}/bin/${pkgName}";
   cmd2 = pkgName: binary: "${pkgs.${pkgName}}/bin/${binary}";
 
-  kittyCmd = "${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL} ${cmd "kitty"}";
+  kittyCmd = "${nixgl.auto.nixGLDefault}/bin/nixGL} ${cmd "kitty"}";
 in {
   home.packages = with pkgs; [
     dunst
