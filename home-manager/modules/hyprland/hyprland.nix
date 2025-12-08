@@ -11,6 +11,8 @@
   # This way we can avoid using a command that is not installed
   cmd = pkgName: "${pkgs.${pkgName}}/bin/${pkgName}";
   cmd2 = pkgName: binary: "${pkgs.${pkgName}}/bin/${binary}";
+
+  kittyCmd = "${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL} ${cmd "kitty"}";
 in {
   home.packages = with pkgs; [
     dunst
@@ -37,7 +39,6 @@ in {
       # Variables
       "$mod" = "SUPER";
       "$modshift" = "SUPERSHIFT";
-      "$terminal" = "kitty";
 
       debug = {
         disable_logs = false;
@@ -194,7 +195,7 @@ in {
       ];
 
       bindd = [
-        "$mod, Return,Open kitty, exec, ${cmd "kitty"}"
+        "$mod, Return,Open kitty, exec, ${kittyCmd}"
         "$mod, C,Close window, killactive, "
         "$mod, M,Logout, exit, "
         "$mod, V,Toggle floating, togglefloating, "
