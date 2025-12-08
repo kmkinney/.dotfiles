@@ -11,6 +11,7 @@
     ./modules/gtk
     ./modules/hyprland
     ./modules/neovim.nix
+    ./modules/productivity.nix
     ./modules/terminal
   ];
 
