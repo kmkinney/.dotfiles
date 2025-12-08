@@ -10,7 +10,7 @@
 
   # This way we can avoid using a command that is not installed
   cmd = pkgName: "${pkgs.${pkgName}}/bin/${pkgName}";
-  cmd2 = pkgName: binary: "${pkgs.${pkgName}}/bin/${binary}"
+  cmd2 = pkgName: binary: "${pkgs.${pkgName}}/bin/${binary}";
 in {
   home.packages = with pkgs; [
     dunst
