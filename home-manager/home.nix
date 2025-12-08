@@ -1,5 +1,5 @@
 # Linux only for now
-{pkgs, ...}: {
+{...}: {
   imports = [
     # AGS not working
     # ./modules/ags
