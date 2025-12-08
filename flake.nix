@@ -69,6 +69,7 @@
       # pkgs = nixpkgs.legacyPackages."x86_64-linux";
       pkgs = import nixpkgs {
         stdenv.hostPlatform.system = "x86_64-linux";
+        system = "x86_64-linux";
         overlays = [nixgl.overlay];
       };
 
