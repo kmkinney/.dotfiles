@@ -10,4 +10,19 @@
     ./zoxide.nix
     ./lazydocker.nix
   ];
+
+  # Default terminal tools
+  home.packages = with pkgs; [
+    btop
+    curl
+    gcc
+    htop
+    killall
+    net-tools
+    tldr
+    tree
+    unzip
+    wget
+  ];
+
 }
