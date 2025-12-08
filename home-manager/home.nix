@@ -25,16 +25,16 @@
   home.packages = with pkgs; [
     # Packages needed from nixos
     # act
-    # alejandra
+    alejandra
     # awscli2
     # biome
-    # btop
+    btop
     # cargo
-    # chromium
-    # claude-code
-    # code-cursor
-    # codex
-    # cue
+    chromium
+    claude-code
+    code-cursor
+    codex
+    cue
     curl
     discord
     # doppler
@@ -43,28 +43,26 @@
     gcc
     git
     htop
-    # insomnia
-    # killall
+    insomnia
+    killall
     # lm_sensors
-    # mariadb.client
-    # ngrok
-    # nodePackages_latest.pnpm
-    # nodePackages_latest.prisma
-    # nodePackages_latest.vercel
-    # nodejs
-    # obs-studio
-    # openssl
-    # playwright-driver.browsers
-    # pscale
-    # python3
-    # ripgrep
-    # slack
-    # steam-run
+    mariadb.client
+    ngrok
+    nodePackages_latest.pnpm
+    nodePackages_latest.prisma
+    nodePackages_latest.vercel
+    nodejs
+    obs-studio
+    openssl
+    pscale
+    python3
+    ripgrep
+    slack
     tldr
     tree
     unzip
     vim
-    # vscode
-    # wget
+    vscode
+    wget
   ];
 }
