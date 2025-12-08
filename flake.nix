@@ -68,7 +68,7 @@
     homeConfigurations.kevin = home-manager.lib.homeManagerConfiguration {
       # pkgs = nixpkgs.legacyPackages."x86_64-linux";
       pkgs = import nixpkgs {
-        system = "x86_64-linux";
+        stdenv.hostPlatform.system = "x86_64-linux";
         overlays = [nixgl.overlay];
       };
 
