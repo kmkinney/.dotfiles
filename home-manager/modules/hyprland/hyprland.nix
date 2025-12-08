@@ -23,8 +23,8 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = null;
-    portalPackage = null;
+    # package = null;
+    # portalPackage = null;
 
     # TODO: https://bobbys.zone/guides/hyprland-clamshell
 
@@ -38,6 +38,9 @@ in {
       "$modshift" = "SUPERSHIFT";
       "$terminal" = "kitty";
 
+      debug = {
+        disable_logs = false;
+      };
       # Monitors
       monitor = [
         "desc:HP Inc. HP 24mh 3CM2050HPH,1920x1080,0x0,1"

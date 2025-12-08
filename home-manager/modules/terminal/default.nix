@@ -2,7 +2,7 @@
   imports = [
     ./kitty.nix
     ./zsh.nix
-    ./bash.nix
+    # ./bash.nix
     ./zellij.nix
     ./tmux.nix
     ./yazi.nix
