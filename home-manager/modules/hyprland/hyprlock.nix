@@ -13,6 +13,12 @@ in {
         hide_cursor = false;
       };
 
+      auth = {
+        fingerprint = {
+          enabled = true;
+        };
+      };
+
       animations = {
         enabled = true;
         bezier = "linear, 1, 1, 0, 0";
