@@ -15,7 +15,7 @@ in {
     lua-language-server
     nixd
     stylua
-    typescript-go
+    # typescript-go
     gnumake
     tree-sitter
   ];

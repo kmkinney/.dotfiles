@@ -7,6 +7,11 @@
       enable = true;
       highlight = "fg=4";
     };
+    initContent = ''
+      #NVM stuff
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    '';
     shellAliases = {
       avante = "nvim -c \"lua vim.defer_fn(function()require(\\\"avante.api\\\").zen_mode()end, 100)\"";
       v = "nvim";

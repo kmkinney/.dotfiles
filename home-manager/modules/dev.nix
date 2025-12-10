@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-
   home.packages = with pkgs; [
     # Packages needed from nixos
     act
@@ -20,10 +19,10 @@
     # lm_sensors
     mariadb.client
     ngrok
-    nodePackages_latest.pnpm
-    nodePackages_latest.prisma
-    nodePackages_latest.vercel
-    nodejs
+    # nodePackages_latest.pnpm
+    # nodePackages_latest.prisma
+    # nodePackages_latest.vercel
+    # nodejs
     openssl
     pscale
     python3
