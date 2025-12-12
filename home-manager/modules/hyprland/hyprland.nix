@@ -12,7 +12,8 @@
   cmd = pkgName: "${pkgs.${pkgName}}/bin/${pkgName}";
   cmd2 = pkgName: binary: "${pkgs.${pkgName}}/bin/${binary}";
 
-  nixGL = command: "${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${command}";
+  nixGL = command: "${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${cmd command}";
+  nixGL2 = pkgName: command: "${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${cmd2 pkgName command}";
 in {
   home.packages = with pkgs; [
     dunst
@@ -195,7 +196,7 @@ in {
       ];
 
       bindd = [
-        "$mod, Return,Open kitty, exec, ${nixGL cmd "kitty"}"
+        "$mod, Return,Open kitty, exec, ${nixGL "kitty"}"
         "$mod, C,Close window, killactive, "
         "$mod, M,Logout, exit, "
         "$mod, V,Toggle floating, togglefloating, "
@@ -214,7 +215,7 @@ in {
         "$mod, B, exec, ${cmd "firefox"}"
         "$mod, S, exec, ${cmd "slack"}"
         "$mod, O, exec, ${cmd2 "obs-studio" "obs"}"
-        "$mod, G, exec, ${nixGL cmd2 "google-chrome" "google-chrome-stable"}"
+        "$mod, G, exec, ${nixGL2 "google-chrome" "google-chrome-stable"}"
         "$mod, A, exec, ${cmd2 "code-cursor" "cursor"}"
 
         # Session management
