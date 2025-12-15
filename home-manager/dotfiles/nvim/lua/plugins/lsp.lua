@@ -41,7 +41,7 @@ return {
         -- },
         cue = { mason = false },
         tsserver = false,
-        tsgo = { mason = false, },
+        tsgo = { mason = false },
         -- tsgo = false,
         biome = {
           mason = false,

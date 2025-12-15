@@ -219,7 +219,7 @@ in {
         "$mod, A, exec, ${cmd2 "code-cursor" "cursor"}"
 
         # Session management
-        "$mod, Delete, exec, ${cmd "hyprlock"}"
+        "$mod, Delete, exec, ${cmd "hyprlock"} 2&>1 >/home/kevin/lock.log"
         "$modshift, Delete, exec, shutdown now"
 
         # Screenshots
