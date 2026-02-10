@@ -59,7 +59,7 @@
     firefox
 
     # Work
-    code-cursor
+    # code-cursor
     vscode
     mariadb.client
 

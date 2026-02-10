@@ -8,7 +8,7 @@
     cargo
     chromium
     claude-code
-    code-cursor
+    # code-cursor
     codex
     cue
     doppler

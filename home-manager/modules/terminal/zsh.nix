@@ -11,6 +11,7 @@
       #NVM stuff
       export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      export PATH=/home/kevin/.opencode/bin:$PATH
     '';
     shellAliases = {
       avante = "nvim -c \"lua vim.defer_fn(function()require(\\\"avante.api\\\").zen_mode()end, 100)\"";
@@ -22,6 +23,7 @@
       yz = "yazi";
       nr = "nixosbuild";
       dr = "sudo darwin-rebuild switch --flake ~/.dotfiles/nix-darwin";
+      oc = "ocx oc";
 
       killport = "f() { kill -9 $(${pkgs.lsof}/bin/lsof -t -i:$1 2>/dev/null) && echo \"Killed process on port $1\" || echo \"No process found on port $1\"; }; f";
 

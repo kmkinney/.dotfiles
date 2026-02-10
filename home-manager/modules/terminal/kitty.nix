@@ -12,7 +12,7 @@
     selection_background = "#525c62";
     url_color = "#415c6d";
     cursor = "#7fbbb3";
-    background_opacity = "0.8";
+    background_opacity = "0.95";
 
     # black
     color0 = "#4a555b";
