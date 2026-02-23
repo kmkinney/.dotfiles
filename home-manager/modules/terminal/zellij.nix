@@ -34,6 +34,7 @@
       show_startup_tips false
       theme "everforest-dark-medium"
       // Auto generated from zellij unlock first preset
+      default_mode "locked"
       keybinds clear-defaults=true {
           locked {
               bind "Ctrl g" { SwitchToMode "normal"; }
