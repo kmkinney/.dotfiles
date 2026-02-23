@@ -3,15 +3,15 @@
   imports = [
     # AGS not working
     # ./modules/ags
-    ./modules/chrome.nix
+    # ./modules/chrome.nix
     ./modules/dev.nix
     ./modules/font.nix
     ./modules/git.nix
-    ./modules/gnome.nix
-    ./modules/gtk
-    ./modules/hyprland
+    # ./modules/gnome.nix
+    # ./modules/gtk
+    # ./modules/hyprland
     ./modules/neovim.nix
-    ./modules/productivity.nix
+    # ./modules/productivity.nix
     ./modules/terminal
   ];
 

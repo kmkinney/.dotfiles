@@ -1,5 +1,6 @@
-{...}: {
+{pkgs, ...}: {
   programs.kitty.enable = true;
+  programs.kitty.package = pkgs.emptyDirectory;
 
   programs.kitty.settings = {
     # FONTS
