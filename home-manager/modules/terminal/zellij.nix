@@ -32,8 +32,8 @@
       pane_frames false
       copy_on_select true
       show_startup_tips false
-      keybinds {
-        unlock-first {}
+      keybinds clear-defaults=true {
+        preset "unlock-first"
       }
       theme "everforest-dark-medium"
       themes {
