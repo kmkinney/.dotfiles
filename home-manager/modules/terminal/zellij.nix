@@ -33,13 +33,7 @@
       copy_on_select true
       show_startup_tips false
       keybinds {
-        unbind "Ctrl s"
-        unbind "Ctrl h"
-        shared {
-          unbind "Ctrl h"
-          bind "Ctrl a" { SwitchToMode "move"; }
-          bind "Ctrl f" { SwitchToMode "scroll"; }
-        }
+        unlock-first {}
       }
       theme "everforest-dark-medium"
       themes {
