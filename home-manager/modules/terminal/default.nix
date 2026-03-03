@@ -19,6 +19,7 @@
     htop
     killall
     net-tools
+    terraform
     tldr
     tree
     unzip
