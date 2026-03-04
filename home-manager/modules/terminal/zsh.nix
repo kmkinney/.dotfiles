@@ -11,6 +11,10 @@
       #NVM stuff
       export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      export BUN_INSTALL="$HOME/.bun"
+      export PATH="$BUN_INSTALL/bin:$PATH"
+      export PATH="$HOME/.opencode/bin:$HOME/.local/bin:$PATH"
+      export PATH="/home/kevin/.git-ai/bin:$PATH"
     '';
     shellAliases = {
       avante = "nvim -c \"lua vim.defer_fn(function()require(\\\"avante.api\\\").zen_mode()end, 100)\"";
