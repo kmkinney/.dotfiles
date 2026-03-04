@@ -25,7 +25,7 @@
     # nodejs
     openssl
     pscale
-    python3
+    # python3
     ripgrep
     vim
     vscode
