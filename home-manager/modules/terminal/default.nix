@@ -25,4 +25,15 @@
     unzip
     wget
   ];
+
+  home.sessionPath = [
+    "$HOME/.bun/bin"
+    "$HOME/.opencode/bin"
+    "$HOME/.local/bin"
+    "$HOME/.git-ai/bin"
+  ];
+
+  home.sessionVariables = {
+    BUN_INSTALL = "$HOME/.bun";
+  };
 }
