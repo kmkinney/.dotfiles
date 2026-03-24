@@ -7,7 +7,7 @@
     # biome
     cargo
     chromium
-    claude-code
+    # claude-code
     # code-cursor
     codex
     cue

@@ -8,7 +8,7 @@ in {
     awscli2
     biome
     chromium
-    claude-code
+    # claude-code
     codex
     cue
     doppler
