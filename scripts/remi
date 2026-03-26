@@ -1,0 +1,255 @@
+#!/usr/bin/env bash
+# remi — git worktree + zellij session manager
+# Install: chmod +x remi && mv remi ~/.local/bin/remi
+
+set -euo pipefail
+
+# ---------------------------------------------------------------------------
+# Config
+# ---------------------------------------------------------------------------
+WORKTREE_BASE="${XDG_DATA_HOME:-$HOME/.local/share}/remi"
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+die() {
+  echo "error: $*" >&2
+  exit 1
+}
+info() { echo "  → $*"; }
+
+# Sanitize branch name for use as a zellij session name (no slashes)
+session_name() { echo "${1//\//-}"; }
+
+# Root of the git repo we're currently inside (or die)
+git_root() {
+  git rev-parse --show-toplevel 2>/dev/null ||
+    die "not inside a git repository"
+}
+
+# Short repo name (last path component of the remote, minus .git)
+repo_name() {
+  local root
+  root=$(git_root)
+  basename "$(git -C "$root" remote get-url origin 2>/dev/null || echo "$root")" .git
+}
+
+# Full path where this worktree will live
+worktree_path() {
+  local repo branch
+  repo=$(repo_name)
+  branch=$(session_name "$1")
+  echo "$WORKTREE_BASE/$repo/$branch"
+}
+
+# ---------------------------------------------------------------------------
+# Zellij helpers
+# ---------------------------------------------------------------------------
+in_zellij() { [[ -n "${ZELLIJ:-}" ]]; }
+session_exists() { zellij list-sessions 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g' | awk '{print $1}' | grep -qx "$1"; }
+
+attach_or_create_session() {
+  local name="$1"
+  local path="$2"
+
+  if in_zellij; then
+    # Already inside zellij — switch to the target session (create if needed)
+    if session_exists "$name"; then
+      info "switching to existing zellij session '$name'"
+    else
+      info "creating zellij session '$name' in background"
+      # Start the session detached, then switch to it
+      zellij attach --create-background "$name" options --default-cwd "$path"
+      sleep 0.4 # give zellij a moment to register
+    fi
+    zellij action -- switch-session "$name"
+  else
+    # Plain terminal — attach (creating if needed)
+    if session_exists "$name"; then
+      info "attaching to existing zellij session '$name'"
+      zellij attach "$name"
+    else
+      info "starting new zellij session '$name'"
+      cd "$path"
+      exec zellij --session "$name"
+    fi
+  fi
+}
+
+# ---------------------------------------------------------------------------
+# Commands
+# ---------------------------------------------------------------------------
+cmd_new() {
+  local branch="${1:-}"
+  [[ -n "$branch" ]] || die "usage: remi new <branch>"
+
+  local root
+  root=$(git_root)
+  local path
+  path=$(worktree_path "$branch")
+  local session
+  session=$(session_name "$branch")
+
+  mkdir -p "$(dirname "$path")"
+
+  if [[ -d "$path" ]]; then
+    info "worktree already exists at $path"
+  else
+    info "creating worktree for '$branch' at $path"
+    # Create the branch if it doesn't exist yet
+    if git -C "$root" show-ref --verify --quiet "refs/heads/$branch" ||
+      git -C "$root" show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+      git -C "$root" worktree add "$path" "$branch"
+    else
+      info "branch '$branch' not found — creating it from HEAD"
+      git -C "$root" worktree add -b "$branch" "$path"
+    fi
+  fi
+
+  attach_or_create_session "$session" "$path"
+}
+
+cmd_delete() {
+  local repo
+  repo=$(repo_name 2>/dev/null || echo "")
+  local base="$WORKTREE_BASE${repo:+/$repo}"
+
+  [[ -d "$base" ]] || die "no worktrees found under $base"
+
+  # Build a list of worktree dirs managed by remi
+  local selection
+  selection=$(
+    find "$base" -mindepth 1 -maxdepth 1 -type d |
+      sed "s|$WORKTREE_BASE/||" |
+      fzf --prompt="delete worktree> " \
+        --header="select a worktree to remove (ESC to cancel)" \
+        --preview="echo 'path: $WORKTREE_BASE/{}'; echo ''; \
+                       git -C \"$WORKTREE_BASE/{}\" log --oneline -10 2>/dev/null || true" ||
+      true
+  )
+
+  [[ -n "$selection" ]] || {
+    echo "cancelled."
+    exit 0
+  }
+
+  local full_path="$WORKTREE_BASE/$selection"
+  local branch_guess
+  branch_guess=$(basename "$selection")
+  local session
+  session="$branch_guess"
+
+  echo ""
+  echo "  worktree : $full_path"
+  echo "  session  : $session (if running)"
+  echo ""
+  read -rp "  confirm delete? [y/N] " answer
+  [[ "${answer,,}" == "y" ]] || {
+    echo "cancelled."
+    exit 0
+  }
+
+  # 1. Remove the git worktree entry
+  local root
+  root=$(git rev-parse --show-toplevel 2>/dev/null || echo "")
+  if [[ -n "$root" ]]; then
+    info "pruning git worktree entry"
+    git -C "$root" worktree remove --force "$full_path" 2>/dev/null ||
+      git -C "$root" worktree prune 2>/dev/null || true
+  else
+    info "not inside a repo — manually removing directory"
+    rm -rf "$full_path"
+  fi
+
+  # Belt-and-suspenders: remove the directory if it somehow survived
+  [[ -d "$full_path" ]] && rm -rf "$full_path"
+
+  # 2. Kill zellij session if it exists
+  if session_exists "$session"; then
+    info "deleting zellij session '$session'"
+    zellij delete-session "$session" --force 2>/dev/null || true
+  else
+    info "no running zellij session named '$session'"
+  fi
+
+  info "done."
+}
+
+cmd_list() {
+  echo ""
+  echo "managed worktrees ($WORKTREE_BASE):"
+  echo "--------------------------------------"
+
+  if [[ ! -d "$WORKTREE_BASE" ]]; then
+    echo "  (none yet)"
+    return
+  fi
+
+  local running
+  running=$(zellij list-sessions 2>/dev/null | awk '{print $1}' || true)
+
+  find "$WORKTREE_BASE" -mindepth 2 -maxdepth 2 -type d | sort | while read -r p; do
+    local rel="${p#$WORKTREE_BASE/}"
+    local sname
+    sname=$(basename "$rel")
+    local marker=""
+    echo "$running" | grep -qx "$sname" && marker=" [zellij: running]"
+    printf "  %-45s%s\n" "$rel" "$marker"
+  done
+  echo ""
+}
+
+cmd_attach() {
+  local repo
+  repo=$(repo_name 2>/dev/null || echo "")
+  local base="$WORKTREE_BASE${repo:+/$repo}"
+
+  [[ -d "$base" ]] || die "no worktrees found under $base"
+
+  local selection
+  selection=$(
+    find "$base" -mindepth 1 -maxdepth 1 -type d |
+      sed "s|$WORKTREE_BASE/||" |
+      fzf --prompt="attach to session> " \
+        --header="select a worktree to open" ||
+      true
+  )
+  [[ -n "$selection" ]] || {
+    echo "cancelled."
+    exit 0
+  }
+
+  local full_path="$WORKTREE_BASE/$selection"
+  local session
+  session=$(basename "$selection")
+  attach_or_create_session "$session" "$full_path"
+}
+
+# ---------------------------------------------------------------------------
+# Entrypoint
+# ---------------------------------------------------------------------------
+usage() {
+  cat <<EOF
+remi — git worktree + zellij session manager
+
+Usage:
+  remi new <branch>    create worktree & open a zellij session
+  remi attach          fzf-pick an existing worktree to (re)attach to
+  remi delete          fzf-pick a worktree to delete (+ its zellij session)
+  remi list            list all managed worktrees
+
+Worktrees are stored under: ${WORKTREE_BASE}/<repo>/<branch>
+EOF
+}
+
+case "${1:-}" in
+new | n) cmd_new "${2:-}" ;;
+delete | rm) cmd_delete ;;
+attach | a) cmd_attach ;;
+list | ls) cmd_list ;;
+-h | --help) usage ;;
+*)
+  usage
+  exit 1
+  ;;
+esac
