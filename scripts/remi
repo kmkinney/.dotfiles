@@ -48,9 +48,33 @@ worktree_path() {
 in_zellij() { [[ -n "${ZELLIJ:-}" ]]; }
 session_exists() { zellij list-sessions 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g' | awk '{print $1}' | grep -qx "$1"; }
 
+# Write the default remi layout to a known path and print it
+remi_layout() {
+  local f="$WORKTREE_BASE/layout.kdl"
+  mkdir -p "$WORKTREE_BASE"
+  cat > "$f" <<'KDL'
+layout {
+    tab name="editor" focus=true {
+        pane {
+            command "nvim"
+            args "."
+        }
+    }
+    tab name="dev" {
+        pane {
+            command "bash"
+            args "-c" "pnpm install && opencode"
+        }
+    }
+}
+KDL
+  echo "$f"
+}
+
 attach_or_create_session() {
   local name="$1"
   local path="$2"
+  local layout="${3:-}"
 
   if in_zellij; then
     # Already inside zellij — switch to the target session (create if needed)
@@ -59,10 +83,14 @@ attach_or_create_session() {
     else
       info "creating zellij session '$name' in background"
       # Start the session detached, then switch to it
-      zellij attach --create-background "$name" options --default-cwd "$path"
-      sleep 0.4 # give zellij a moment to register
+      if [[ -n "$layout" ]]; then
+        zellij attach --create-background "$name" --layout "$layout" options --default-cwd "$path"
+      else
+        zellij attach --create-background "$name" options --default-cwd "$path"
+      fi
+      # sleep 0.4 # give zellij a moment to register
     fi
-    zellij action -- switch-session "$name"
+    # zellij action -- switch-session "$name"
   else
     # Plain terminal — attach (creating if needed)
     if session_exists "$name"; then
@@ -71,7 +99,11 @@ attach_or_create_session() {
     else
       info "starting new zellij session '$name'"
       cd "$path"
-      exec zellij --session "$name"
+      if [[ -n "$layout" ]]; then
+        exec zellij --session "$name" --layout "$layout"
+      else
+        exec zellij --session "$name"
+      fi
     fi
   fi
 }
@@ -106,7 +138,9 @@ cmd_new() {
     fi
   fi
 
-  attach_or_create_session "$session" "$path"
+  local layout
+  layout=$(remi_layout)
+  attach_or_create_session "$session" "$path" "$layout"
 }
 
 cmd_delete() {
@@ -199,6 +233,124 @@ cmd_list() {
   echo ""
 }
 
+cmd_prune() {
+  local root
+  root=$(git_root)
+  local repo
+  repo=$(repo_name)
+  local base="$WORKTREE_BASE/$repo"
+
+  [[ -d "$base" ]] || die "no worktrees found under $base"
+
+  info "fetching remote & pruning stale tracking branches"
+  git -C "$root" fetch --prune origin 2>/dev/null || true
+
+  # Determine the default branch from the remote HEAD
+  local default_branch
+  default_branch=$(git -C "$root" symbolic-ref refs/remotes/origin/HEAD 2>/dev/null |
+    sed 's|refs/remotes/origin/||') || default_branch="main"
+
+  local to_prune=()
+
+  while read -r wt_path; do
+    [[ -d "$wt_path" ]] || continue
+
+    # Get the branch checked out in this worktree
+    local branch
+    branch=$(git -C "$wt_path" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "")
+
+    local reason=""
+
+    if [[ -z "$branch" || "$branch" == "HEAD" ]]; then
+      # Detached HEAD or not a valid git dir
+      reason="detached or broken worktree"
+    else
+      if ! git -C "$root" show-ref --verify --quiet "refs/heads/$branch"; then
+        # Local branch no longer exists
+        reason="branch '$branch' no longer exists"
+      else
+        # Check if merged into the default branch AND upstream is gone
+        local is_merged=false
+        local upstream_gone=false
+
+        # 1. Regular merge: branch tip is an ancestor of default branch
+        if git -C "$root" merge-base --is-ancestor "$branch" "$default_branch" 2>/dev/null; then
+          is_merged=true
+        fi
+
+        # 2. Squash merge: create a synthetic squash commit and check if
+        #    its changes already exist in the default branch
+        if ! $is_merged; then
+          local mb tree sq
+          mb=$(git -C "$root" merge-base "$default_branch" "$branch" 2>/dev/null || echo "")
+          if [[ -n "$mb" ]]; then
+            tree=$(git -C "$root" rev-parse "$branch^{tree}" 2>/dev/null || echo "")
+            if [[ -n "$tree" ]]; then
+              sq=$(git -C "$root" commit-tree "$tree" -p "$mb" -m _ 2>/dev/null || echo "")
+              if [[ -n "$sq" ]] &&
+                ! git -C "$root" cherry "$default_branch" "$sq" 2>/dev/null | grep -q '^+'; then
+                is_merged=true
+              fi
+            fi
+          fi
+        fi
+
+        if ! git -C "$root" show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+          upstream_gone=true
+        fi
+
+        if $is_merged && $upstream_gone; then
+          reason="merged into $default_branch & upstream deleted"
+        fi
+      fi
+    fi
+
+    if [[ -n "$reason" ]]; then
+      to_prune+=("$wt_path|$branch|$reason")
+    fi
+  done < <(find "$base" -mindepth 1 -maxdepth 1 -type d | sort)
+
+  if [[ ${#to_prune[@]} -eq 0 ]]; then
+    info "nothing to prune"
+    return
+  fi
+
+  echo ""
+  echo "  worktrees to prune:"
+  echo "  --------------------------------------"
+  for entry in "${to_prune[@]}"; do
+    local p="${entry%%|*}"
+    local rest="${entry#*|}"
+    local r="${rest#*|}"
+    printf "    %-40s %s\n" "$(basename "$p")" "($r)"
+  done
+  echo ""
+
+  read -rp "  proceed with pruning? [y/N] " answer
+  [[ "${answer,,}" == "y" ]] || {
+    echo "cancelled."
+    exit 0
+  }
+
+  for entry in "${to_prune[@]}"; do
+    local p="${entry%%|*}"
+    local session
+    session=$(basename "$p")
+
+    info "removing worktree: $p"
+    git -C "$root" worktree remove --force "$p" 2>/dev/null || rm -rf "$p"
+    [[ -d "$p" ]] && rm -rf "$p"
+
+    if session_exists "$session"; then
+      info "deleting zellij session '$session'"
+      zellij delete-session "$session" --force 2>/dev/null || true
+    fi
+  done
+
+  git -C "$root" worktree prune 2>/dev/null || true
+  info "done — pruned ${#to_prune[@]} worktree(s)"
+}
+
 cmd_attach() {
   local repo
   repo=$(repo_name 2>/dev/null || echo "")
@@ -236,6 +388,7 @@ Usage:
   remi new <branch>    create worktree & open a zellij session
   remi attach          fzf-pick an existing worktree to (re)attach to
   remi delete          fzf-pick a worktree to delete (+ its zellij session)
+  remi prune           remove stale worktrees (detached / merged+upstream-deleted)
   remi list            list all managed worktrees
 
 Worktrees are stored under: ${WORKTREE_BASE}/<repo>/<branch>
@@ -246,6 +399,7 @@ case "${1:-}" in
 new | n) cmd_new "${2:-}" ;;
 delete | rm) cmd_delete ;;
 attach | a) cmd_attach ;;
+prune) cmd_prune ;;
 list | ls) cmd_list ;;
 -h | --help) usage ;;
 *)
