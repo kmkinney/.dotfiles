@@ -27,6 +27,7 @@
       nr = "nixosbuild";
       dr = "sudo darwin-rebuild switch --flake ~/.dotfiles/nix-darwin";
       oc = "ocx oc";
+      ap = "pnpm install && claude '/autopilot work on the linear ticket associated with this worktree'";
 
       killport = "f() { kill -9 $(${pkgs.lsof}/bin/lsof -t -i:$1 2>/dev/null) && echo \"Killed process on port $1\" || echo \"No process found on port $1\"; }; f";
 

@@ -48,41 +48,9 @@ worktree_path() {
 in_zellij() { [[ -n "${ZELLIJ:-}" ]]; }
 session_exists() { zellij list-sessions 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g' | awk '{print $1}' | grep -qx "$1"; }
 
-# Write the default remi layout and print the directory containing it.
-# Named "default.kdl" so zellij picks it up via --layout-dir.
-remi_layout_dir() {
-  local dir="$WORKTREE_BASE/layout"
-  mkdir -p "$dir"
-  cat > "$dir/default.kdl" <<'KDL'
-layout {
-    default_tab_template {
-        pane size=1 borderless=true {
-            plugin location="tab-bar"
-        }
-        children
-        pane size=2 borderless=true {
-            plugin location="status-bar"
-        }
-    }
-    tab name="editor" focus=true {
-        pane command="nvim" {
-            args "."
-        }
-    }
-    tab name="dev" {
-        pane command="bash" {
-            args "-c" "pnpm install && opencode"
-        }
-    }
-}
-KDL
-  echo "$dir"
-}
-
 attach_or_create_session() {
   local name="$1"
   local path="$2"
-  local layout_dir="${3:-}"
 
   if in_zellij; then
     # Already inside zellij — switch to the target session (create if needed)
@@ -91,11 +59,7 @@ attach_or_create_session() {
     else
       info "creating zellij session '$name' in background"
       # Start the session detached, then switch to it
-      if [[ -n "$layout_dir" ]]; then
-        zellij attach --create-background "$name" options --default-cwd "$path" --layout-dir "$layout_dir"
-      else
-        zellij attach --create-background "$name" options --default-cwd "$path"
-      fi
+      zellij attach --create-background "$name" options --default-cwd "$path"
       # sleep 0.4 # give zellij a moment to register
     fi
     # zellij action -- switch-session "$name"
@@ -107,11 +71,7 @@ attach_or_create_session() {
     else
       info "starting new zellij session '$name'"
       cd "$path"
-      if [[ -n "$layout_dir" ]]; then
-        exec zellij --session "$name" --layout "$layout_dir/default.kdl"
-      else
-        exec zellij --session "$name"
-      fi
+      exec zellij --session "$name"
     fi
   fi
 }
@@ -146,9 +106,7 @@ cmd_new() {
     fi
   fi
 
-  local layout_dir
-  layout_dir=$(remi_layout_dir)
-  attach_or_create_session "$session" "$path" "$layout_dir"
+  attach_or_create_session "$session" "$path"
 }
 
 cmd_delete() {
