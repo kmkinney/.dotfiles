@@ -9,7 +9,7 @@ in {
     biome
     chromium
     # claude-code
-    codex
+    # codex
     cue
     doppler
     insomnia

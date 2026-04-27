@@ -9,7 +9,7 @@
     chromium
     # claude-code
     # code-cursor
-    codex
+    # codex
     cue
     doppler
     # firebase-tools
