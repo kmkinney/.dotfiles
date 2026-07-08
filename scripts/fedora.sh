@@ -16,8 +16,7 @@ echo "Setting up home-manager"
 # Installing nix and running home manager
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
-nix run home-manager/master -- \
+nix run home-manager/master -- switch \
   -b backup \
-  --flake \
-  --impure \
-  "$DOTFILES"
+  --flake "$DOTFILES" \
+  --impure
