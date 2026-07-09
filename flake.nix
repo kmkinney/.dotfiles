@@ -78,5 +78,16 @@
         ./home-manager/home.nix
       ];
     };
+    # Headless profile for remote devboxes (no GUI packages)
+    homeConfigurations.devbox = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+        config.allowUnfreePredicate = _: true;
+      };
+      modules = [
+        ./home-manager/devbox.nix
+      ];
+    };
   };
 }
