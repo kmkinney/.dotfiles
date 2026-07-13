@@ -10,6 +10,7 @@
     # ./modules/gnome.nix
     # ./modules/gtk
     # ./modules/hyprland
+    ./modules/herdr.nix
     ./modules/neovim.nix
     # ./modules/productivity.nix
     ./modules/terminal
